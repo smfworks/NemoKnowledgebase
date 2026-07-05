@@ -1,0 +1,280 @@
+{
+  "metadata": {
+    "model": "nvidia/Qwen3.6-27B-NVFP4",
+    "engine": "vLLM v0.24.0",
+    "hardware": "NVIDIA DGX Spark (GB10 Grace Blackwell, aarch64)",
+    "endpoint": "http://spark-56bc:8888/v1/chat/completions",
+    "thinking_enabled": false,
+    "timestamp": "2026-07-03T15:57:20Z",
+    "benchmark_duration_seconds": 452.5
+  },
+  "summary": {
+    "thinking_enabled": false,
+    "peak_throughput_single": 23.6,
+    "steady_state_throughput": 23.0,
+    "ttft_short_ms": 266,
+    "ttft_reasoning_ms": 234,
+    "max_concurrency_tested": 8,
+    "concurrency_success_rate": "100%",
+    "context_support": "Full 113804 tokens verified",
+    "reasoning_score": "8/8",
+    "tool_calling_score": "2/2",
+    "speculative_acceptance_rate": 50.3
+  },
+  "test_1_latency_throughput": [
+    {
+      "max_tokens": 64,
+      "actual_tokens": 64,
+      "wall_time": 3.16,
+      "throughput": 20.2,
+      "finish": "length"
+    },
+    {
+      "max_tokens": 128,
+      "actual_tokens": 128,
+      "wall_time": 5.99,
+      "throughput": 21.4,
+      "finish": "length"
+    },
+    {
+      "max_tokens": 256,
+      "actual_tokens": 256,
+      "wall_time": 10.98,
+      "throughput": 23.3,
+      "finish": "length"
+    },
+    {
+      "max_tokens": 512,
+      "actual_tokens": 512,
+      "wall_time": 22.3,
+      "throughput": 23.0,
+      "finish": "length"
+    },
+    {
+      "max_tokens": 1024,
+      "actual_tokens": 1024,
+      "wall_time": 43.37,
+      "throughput": 23.6,
+      "finish": "length"
+    }
+  ],
+  "test_2_ttft": [
+    {
+      "prompt_type": "Short",
+      "ttft_ms": 266,
+      "total_time": 0.72,
+      "content_chars": 10,
+      "reasoning_chars": 0,
+      "finish": "stop"
+    },
+    {
+      "prompt_type": "Medium",
+      "ttft_ms": 233,
+      "total_time": 13.93,
+      "content_chars": 1902,
+      "reasoning_chars": 0,
+      "finish": "stop"
+    },
+    {
+      "prompt_type": "Long reasoning",
+      "ttft_ms": 234,
+      "total_time": 23.01,
+      "content_chars": 2084,
+      "reasoning_chars": 0,
+      "finish": "stop"
+    }
+  ],
+  "test_3_concurrency": [
+    {
+      "concurrency": 1,
+      "success": "1/1",
+      "wall_time": 24.81,
+      "errors": 0
+    },
+    {
+      "concurrency": 2,
+      "success": "2/2",
+      "wall_time": 26.05,
+      "errors": 0
+    },
+    {
+      "concurrency": 4,
+      "success": "4/4",
+      "wall_time": 28.73,
+      "errors": 0
+    },
+    {
+      "concurrency": 8,
+      "success": "8/8",
+      "wall_time": 33.84,
+      "errors": 0
+    }
+  ],
+  "test_4_context_length": [
+    {
+      "input_size": "~100",
+      "actual_prompt_tokens": 115,
+      "output_tokens": 3,
+      "wall_time": 0.43,
+      "throughput": 7.0,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    },
+    {
+      "input_size": "~500",
+      "actual_prompt_tokens": 471,
+      "output_tokens": 3,
+      "wall_time": 0.72,
+      "throughput": 4.2,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    },
+    {
+      "input_size": "~2000",
+      "actual_prompt_tokens": 1804,
+      "output_tokens": 3,
+      "wall_time": 1.89,
+      "throughput": 1.6,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    },
+    {
+      "input_size": "~8000",
+      "actual_prompt_tokens": 7139,
+      "output_tokens": 3,
+      "wall_time": 7.39,
+      "throughput": 0.4,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    },
+    {
+      "input_size": "~32000",
+      "actual_prompt_tokens": 28471,
+      "output_tokens": 3,
+      "wall_time": 28.24,
+      "throughput": 0.1,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    },
+    {
+      "input_size": "~128000",
+      "actual_prompt_tokens": 113804,
+      "output_tokens": 3,
+      "wall_time": 142.56,
+      "throughput": 0.0,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    }
+  ],
+  "test_5_reasoning_quality": [
+    {
+      "category": "Math (basic)",
+      "passed": true,
+      "time": 5.4,
+      "tokens": 155,
+      "response_excerpt": "To calculate $17 \\times 23$, you can use the standard multiplication method or break it down using t"
+    },
+    {
+      "category": "Math (advanced)",
+      "passed": true,
+      "time": 3.9,
+      "tokens": 123,
+      "response_excerpt": "To solve the equation $3x + 7 = 22$ for $x$, follow these steps:\n\n1.  **Subtract 7 from both sides**"
+    },
+    {
+      "category": "Logic",
+      "passed": true,
+      "time": 6.3,
+      "tokens": 165,
+      "response_excerpt": "Cannot determine.\n\n**Reasoning:**\n1.  **Premise 1:** All cats are mammals. (This means the set of ca"
+    },
+    {
+      "category": "Coding",
+      "passed": true,
+      "time": 1.8,
+      "tokens": 55,
+      "response_excerpt": "```python\ndef reverse_linked_list(head):\n    prev = None\n    current = head\n    while current:\n     "
+    },
+    {
+      "category": "Knowledge",
+      "passed": true,
+      "time": 0.6,
+      "tokens": 10,
+      "response_excerpt": "The capital of Australia is **Canberra**."
+    },
+    {
+      "category": "Reasoning",
+      "passed": true,
+      "time": 9.6,
+      "tokens": 317,
+      "response_excerpt": "To find the speed of the train in kilometers per hour (km/h), we can use the formula:\n\n$$ \\text{Spee"
+    },
+    {
+      "category": "Instruction",
+      "passed": true,
+      "time": 0.6,
+      "tokens": 12,
+      "response_excerpt": "1. Apple\n2. Banana\n3. Orange"
+    },
+    {
+      "category": "World knowledge",
+      "passed": true,
+      "time": 2.8,
+      "tokens": 63,
+      "response_excerpt": "The Berlin Wall fell in **1989**.\n\nSpecifically, the border was opened on the night of **November 9,"
+    }
+  ],
+  "test_6_tool_calling": [
+    {
+      "test": "Weather query",
+      "tool_made": true,
+      "correct_tool": true,
+      "correct_arg": true,
+      "tool_name": "get_weather",
+      "tool_args": "\"{\\\"location\\\": \\\"Tokyo\\\"}\"",
+      "time": 1.4,
+      "finish_reason": "tool_calls",
+      "response_excerpt": ""
+    },
+    {
+      "test": "Calculator",
+      "tool_made": true,
+      "correct_tool": true,
+      "correct_arg": true,
+      "tool_name": "calculate",
+      "tool_args": "\"{\\\"expression\\\": \\\"45 * 73\\\"}\"",
+      "time": 1.5,
+      "finish_reason": "tool_calls",
+      "response_excerpt": ""
+    }
+  ],
+  "test_7_resource_utilization": {
+    "vllm:spec_decode_num_drafts_total{engine=\"0\",model_name=\"nvidia/Qwen3.6-27B-NVFP4\"}": 4672.0,
+    "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"nvidia/Qwen3.6-27B-NVFP4\"}": 14016.0,
+    "vllm:estimated_flops_per_gpu_total{engine=\"0\",model_name=\"nvidia/Qwen3.6-27B-NVFP4\"}": 0.0,
+    "vllm:estimated_read_bytes_per_gpu_total{engine=\"0\",model_name=\"nvidia/Qwen3.6-27B-NVFP4\"}": 0.0,
+    "vllm:estimated_write_bytes_per_gpu_total{engine=\"0\",model_name=\"nvidia/Qwen3.6-27B-NVFP4\"}": 0.0,
+    "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"nvidia/Qwen3.6-27B-NVFP4\"}": 153570.0,
+    "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"nvidia/Qwen3.6-27B-NVFP4\"}": 30400.0,
+    "vllm:external_prefix_cache_queries_total{engine=\"0\",model_name=\"nvidia/Qwen3.6-27B-NVFP4\"}": 0.0,
+    "vllm:external_prefix_cache_hits_total{engine=\"0\",model_name=\"nvidia/Qwen3.6-27B-NVFP4\"}": 0.0,
+    "vllm:cache_config_info{_block_size_resolved=\"True\",block_size=\"1600\",cache_dtype=\"fp8_e4m3\",calculate_kv_scales=\"False\",enable_prefix_caching=\"True\",engine=\"0\",gpu_memory_utilization=\"0.6\",hash_block_size=\"None\",is_attention_free=\"False\",kv_cache_dtype_skip_layers=\"[]\",kv_cache_max_concurrency=\"6.988826815642458\",kv_cache_memory_bytes=\"None\",kv_cache_size_tokens=\"1832079\",kv_offloading_backend=\"native\",kv_offloading_size=\"None\",kv_sharing_fast_prefill=\"False\",mamba_block_size=\"16\",mamba_cache_dtype=\"auto\",mamba_cache_mode=\"align\",mamba_page_size_padded=\"None\",mamba_ssm_cache_dtype=\"float32\",num_cpu_blocks=\"None\",num_gpu_blocks=\"1251\",num_gpu_blocks_override=\"None\",prefix_caching_hash_algo=\"sha256\",sliding_window=\"None\",user_specified_block_size=\"False\",user_specified_mamba_block_size=\"False\"}": 1.0
+  },
+  "test_8_speculative_decoding": {
+    "draft_requests": 4672.0,
+    "draft_tokens": 14016.0,
+    "accepted_tokens": 7048.0,
+    "acceptance_rate": 50.3,
+    "accepted_per_pos": [
+      3464.0,
+      2237.0,
+      1347.0
+    ]
+  }
+}
