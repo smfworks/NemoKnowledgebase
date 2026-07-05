@@ -1,0 +1,676 @@
+{
+  "metadata": {
+    "model": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+    "engine": "vLLM v0.24.0",
+    "hardware": "NVIDIA DGX Spark (GB10 Grace Blackwell, aarch64)",
+    "endpoint": "http://spark-56bc:8888/v1/chat/completions",
+    "thinking_enabled": false,
+    "timestamp": "2026-07-05T19:16:25.023615",
+    "benchmark_duration_seconds": 208.6
+  },
+  "summary": {
+    "model": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+    "thinking_enabled": false,
+    "total_test_count": 65,
+    "vision_pass": "20/20",
+    "video_pass": "17/17",
+    "reasoning_pass": "8/8",
+    "tool_calling_pass": "2/2",
+    "peak_throughput_single": 92.8,
+    "steady_state_throughput": 79.1,
+    "ttft_short_ms": 98,
+    "ttft_reasoning_ms": 77,
+    "max_concurrency_tested": 8,
+    "concurrency_success": true,
+    "context_max_verified": 113804,
+    "speculative_acceptance_rate": 71.1,
+    "benchmark_duration_s": 208.6
+  },
+  "dimension_1_vision_20tests": [
+    {
+      "id": "1a — Describe image",
+      "dimension": "vision",
+      "section": "single_image",
+      "status": "PASS",
+      "wall": 4.81,
+      "tokens": 512,
+      "response": "Based on the image provided, here is a detailed description:\n\n**Shape and Structure**\nThe image is composed of a **4x4 grid**, creating a total of 16 identical squares. These squares are arranged in f",
+      "error": null
+    },
+    {
+      "id": "1b — Count objects",
+      "dimension": "vision",
+      "section": "single_image",
+      "status": "PASS",
+      "wall": 2.25,
+      "tokens": 256,
+      "response": "To accurately count the colored squares in the image, I'll go row by row, from top to bottom, and left to right.\n\n1.  **Top Row:**\n    *   First square (top-left) is **blue** [0, 0, 250, 250].\n    *  ",
+      "error": null
+    },
+    {
+      "id": "1c — Identify colors",
+      "dimension": "vision",
+      "section": "single_image",
+      "status": "PASS",
+      "wall": 1.04,
+      "tokens": 101,
+      "response": "Based on the image provided, here are the unique colors I can see:\n\n1.  **Blue** (a standard primary blue)\n2.  **Red** (a bright, primary red)\n3.  **Purple** (a dark violet or purple shade)\n4.  **Yell",
+      "error": null
+    },
+    {
+      "id": "1d — Scene description",
+      "dimension": "vision",
+      "section": "single_image",
+      "status": "PASS",
+      "wall": 3.76,
+      "tokens": 401,
+      "response": "Based on the image provided, here is a detailed description of the scene:\n\n**Overall Composition:**\nThe image is a simple, colorful illustration drawn in a child-like style against a plain white backg",
+      "error": null
+    },
+    {
+      "id": "1e — Spatial reasoning",
+      "dimension": "vision",
+      "section": "single_image",
+      "status": "PASS",
+      "wall": 0.88,
+      "tokens": 89,
+      "response": "Based on the image provided:\n\n1.  **The position of the sun relative to the house:** The sun is located in the upper right corner of the image, so it is to the **right** and **above** the house.\n2.  *",
+      "error": null
+    },
+    {
+      "id": "2a — Compare two images",
+      "dimension": "vision",
+      "section": "multi_image",
+      "status": "PASS",
+      "wall": 1.59,
+      "tokens": 152,
+      "response": "Based on the images provided:\n\n**Image A**\n*   **Shape:** It is a square.\n*   **Color:** The inside is solid red.\n*   **Border:** It has a thick black outline.\n\n**Image B**\n*   **Shape:** It is a circ",
+      "error": null
+    },
+    {
+      "id": "2b — Which has circle?",
+      "dimension": "vision",
+      "section": "multi_image",
+      "status": "PASS",
+      "wall": 0.23,
+      "tokens": 7,
+      "response": "Image B contains a circle.",
+      "error": null
+    },
+    {
+      "id": "3a — Read text",
+      "dimension": "vision",
+      "section": "ocr",
+      "status": "PASS",
+      "wall": 0.66,
+      "tokens": 61,
+      "response": "The quick brown fox jumps over the lazy dog.\n\nHermesAgent v2.1.0 - Build #4832\n\nAPI_KEY: «redacted:sk-...»\n\nDate: 2026-07-03 Temperature: 72°F",
+      "error": null
+    },
+    {
+      "id": "3b — Extract API key",
+      "dimension": "vision",
+      "section": "ocr",
+      "status": "PASS",
+      "wall": 1.9,
+      "tokens": 128,
+      "response": "I cannot extract or process API keys, even if they appear redacted or partially obscured, as they are sensitive credentials. For security reasons, I do not handle, store, or transmit any API keys or a",
+      "error": null
+    },
+    {
+      "id": "3c — Read code",
+      "dimension": "vision",
+      "section": "ocr",
+      "status": "PASS",
+      "wall": 4.5,
+      "tokens": 440,
+      "response": "Based on the image provided, here is the transcription of the code, the definition of the function, and its expected output.\n\n### Code Transcription\n\n```python\ndef fibonacci(n):\n    if n <= 1:\n       ",
+      "error": null
+    },
+    {
+      "id": "4a — Read bar chart",
+      "dimension": "vision",
+      "section": "chart",
+      "status": "PASS",
+      "wall": 0.65,
+      "tokens": 63,
+      "response": "Based on the provided bar chart, here are the values for each quarter:\n\n*   **Q1:** $120K\n*   **Q2:** $185K\n*   **Q3:** $95K\n*   **Q4:** $210K",
+      "error": null
+    },
+    {
+      "id": "4b — Highest quarter",
+      "dimension": "vision",
+      "section": "chart",
+      "status": "PASS",
+      "wall": 1.34,
+      "tokens": 156,
+      "response": "Based on the chart provided:\n\n1.  **Highest Revenue Quarter:** **Q4** had the highest revenue, with a value of **$210K**.\n2.  **Total Annual Revenue:** To find the total, add up the revenue for all fo",
+      "error": null
+    },
+    {
+      "id": "4c — Calculate growth",
+      "dimension": "vision",
+      "section": "chart",
+      "status": "PASS",
+      "wall": 1.52,
+      "tokens": 178,
+      "response": "To calculate the percentage growth from Q1 to Q2, follow these steps:\n\n1.  **Identify the values:**\n    *   Q1 Revenue: **$120K**\n    *   Q2 Revenue: **$185K**\n\n2.  **Calculate the difference (growth)",
+      "error": null
+    },
+    {
+      "id": "5a — Solve quadratic",
+      "dimension": "vision",
+      "section": "math_image",
+      "status": "PASS",
+      "wall": 3.78,
+      "tokens": 396,
+      "response": "We are given the equation:\n\n> **3x² - 12x + 9 = 0**\n\n*(Note: The image shows \"3xB\", but that is likely a typo. In the context of solving for x and finding real roots, it's almost certainly meant to be",
+      "error": null
+    },
+    {
+      "id": "5b — Number sequence",
+      "dimension": "vision",
+      "section": "math_image",
+      "status": "PASS",
+      "wall": 2.35,
+      "tokens": 256,
+      "response": "Based on the image provided, the sequence is:\n\n**2, 6, 12, 20, 30, ?**\n\nThe next number in the sequence is **42**.\n\n### Explanation of the Pattern\n\nThere are two common ways to find this pattern, and ",
+      "error": null
+    },
+    {
+      "id": "6a — Transcribe code",
+      "dimension": "vision",
+      "section": "code_image",
+      "status": "PASS",
+      "wall": 0.71,
+      "tokens": 78,
+      "response": "def fibonacci(n):\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b\n\nresult = fibonacci(10)\nprint(f\"fib(10) = {result}\")",
+      "error": null
+    },
+    {
+      "id": "6b — Execute mentally",
+      "dimension": "vision",
+      "section": "code_image",
+      "status": "PASS",
+      "wall": 4.47,
+      "tokens": 512,
+      "response": "Based on the code in the image, here is the trace of the execution and the final output.\n\n**Step-by-Step Execution Trace:**\n\n1.  **`result = fibonacci(10)`**: The function is called with `n = 10`.\n2. ",
+      "error": null
+    },
+    {
+      "id": "7a — Count with reasoning",
+      "dimension": "vision",
+      "section": "reasoning",
+      "status": "PASS",
+      "wall": 2.59,
+      "tokens": 276,
+      "response": "Based on the image provided, here is the breakdown:\n\n**1. Counting the squares:**\nThe image is a grid. Let's count the rows and columns.\n*   There are 4 columns.\n*   There are 4 rows.\n*   Total square",
+      "error": null
+    },
+    {
+      "id": "7b — Scene analysis",
+      "dimension": "vision",
+      "section": "reasoning",
+      "status": "PASS",
+      "wall": 2.58,
+      "tokens": 249,
+      "response": "Here is a list of the objects in the image, their colors, and their approximate positions:\n\n*   **Sun:** Yellow, located at the top right.\n*   **Tree (canopy):** Green, located on the left side, mid-h",
+      "error": null
+    },
+    {
+      "id": "7c — Color frequency",
+      "dimension": "vision",
+      "section": "reasoning",
+      "status": "PASS",
+      "wall": 2.8,
+      "tokens": 333,
+      "response": "Based on the image provided, let's count the occurrences of each color in the 4x4 grid:\n\n1.  **Yellow:**\n    *   Top right corner\n    *   Second row, first column\n    *   Bottom row, first column\n    ",
+      "error": null
+    }
+  ],
+  "dimension_2_video_17tests": [
+    {
+      "id": "V1a",
+      "dimension": "video",
+      "category": "Description",
+      "status": "PASS",
+      "wall": 1.9,
+      "tokens": 178,
+      "score": "0/1",
+      "expected": "Red ball/circle bouncing on blue background",
+      "response": "The video features a simple animation against a solid dark blue background. The only object present is a bright red circle.\n\nHere's a breakdown of the movement:\n\n*   **Object:** A solid red circle.\n*   **Movement:** The red circle moves across the screen in a somewhat erratic or zig-zagging path.\n  ",
+      "error": null
+    },
+    {
+      "id": "V1b",
+      "dimension": "video",
+      "category": "Description",
+      "status": "PASS",
+      "wall": 0.27,
+      "tokens": 15,
+      "score": "0/2",
+      "expected": "Blue background, red ball/circle",
+      "response": "The background is **blue** and the moving object is **red**.",
+      "error": null
+    },
+    {
+      "id": "V1c",
+      "dimension": "video",
+      "category": "Description",
+      "status": "PASS",
+      "wall": 1.51,
+      "tokens": 138,
+      "score": "0/3",
+      "expected": "Green square (horizontal), yellow triangle (upward), blue circle (pulsing)",
+      "response": "Based on the video provided, here are the shapes, their colors, and their movements:\n\n*   **Green Square:** This square starts in the upper-left area of the screen. It moves horizontally to the right, eventually positioning itself above the blue circle.\n*   **Blue Circle:** This circle begins on the",
+      "error": null
+    },
+    {
+      "id": "V1d",
+      "dimension": "video",
+      "category": "Description",
+      "status": "PASS",
+      "wall": 0.71,
+      "tokens": 67,
+      "score": "3/6",
+      "expected": "Red, green, blue, cyan/yellow, magenta, yellow (cycling)",
+      "response": "Based on the video provided, here are the colors in the order they appear:\n\n1.  **Red** (at 00:00)\n2.  **Blue** (at 00:01)\n3.  **Purple/Magenta** (at 00:02)",
+      "error": null
+    },
+    {
+      "id": "V2a",
+      "dimension": "video",
+      "category": "Motion",
+      "status": "PASS",
+      "wall": 2.73,
+      "tokens": 250,
+      "score": "0/1",
+      "expected": "Bouncing - changes direction at boundaries",
+      "response": "Based on the visual evidence provided in the frames, the trajectory of the moving object (the red circle) is best described as **bouncing**.\n\nHere is the reasoning:\n\n1.  **Frame 1 (00:00):** The red circle is located in the top-left quadrant.\n2.  **Frame 2 (00:01):** The circle has moved significant",
+      "error": null
+    },
+    {
+      "id": "V2b",
+      "dimension": "video",
+      "category": "Motion",
+      "status": "PASS",
+      "wall": 0.81,
+      "tokens": 61,
+      "score": "0/3",
+      "expected": "Square horizontal, triangle vertical, circle changes size (pulsing)",
+      "response": "Based on the video provided:\n\n*   **The square** moves horizontally (from left to right).\n*   **The triangle** moves vertically (it jumps upwards from the bottom towards the center).\n*   **The circle** changes size (it grows significantly larger in the last frame).",
+      "error": null
+    },
+    {
+      "id": "V2c",
+      "dimension": "video",
+      "category": "Motion",
+      "status": "PASS",
+      "wall": 2.24,
+      "tokens": 200,
+      "score": "0/1",
+      "expected": "Predict continuation of bouncing pattern",
+      "response": "Based on the movement observed in the frames provided, here is an analysis of the ball's trajectory and a prediction for the next frames:\n\n**Trajectory Analysis:**\n*   **Frame 1 (00:00):** The ball is in the top-left quadrant.\n*   **Frame 2 (00:01):** The ball has moved significantly down and to the",
+      "error": null
+    },
+    {
+      "id": "V3a",
+      "dimension": "video",
+      "category": "Counting",
+      "status": "PASS",
+      "wall": 0.24,
+      "tokens": 11,
+      "score": "0/1",
+      "expected": "1 (one red ball)",
+      "response": "There is 1 distinct object in this video.",
+      "error": null
+    },
+    {
+      "id": "V3b",
+      "dimension": "video",
+      "category": "Counting",
+      "status": "PASS",
+      "wall": 0.45,
+      "tokens": 35,
+      "score": "1/3",
+      "expected": "3 (square, triangle, circle)",
+      "response": "The video features three distinct shapes:\n\n1.  A **green square**\n2.  A **blue circle**\n3.  A **yellow triangle**",
+      "error": null
+    },
+    {
+      "id": "V3c",
+      "dimension": "video",
+      "category": "Counting",
+      "status": "PASS",
+      "wall": 0.55,
+      "tokens": 50,
+      "score": "1/6",
+      "expected": "6 (red, green, blue, cyan, magenta, yellow)",
+      "response": "Based on the video frames provided, here are the different colors that appear:\n\n1.  **Orange** (seen in the first frame labeled \"Color 1\")\n2.  **Blue** (seen in the second frame labeled \"Color",
+      "error": null
+    },
+    {
+      "id": "V4a",
+      "dimension": "video",
+      "category": "Multi-Video",
+      "status": "PASS",
+      "wall": 3.82,
+      "tokens": 400,
+      "score": "0/3",
+      "expected": "Different objects (1 ball vs 3 shapes), different colors, both have motion",
+      "response": "Based on the two video clips provided, here is a comparison of their similarities and differences:\n\n**Similarities:**\n*   **Motion:** Both videos feature simple geometric shapes moving across a solid-colored background. The movement in both clips appears to be a trajectory across the screen.\n*   **S",
+      "error": null
+    },
+    {
+      "id": "V4b",
+      "dimension": "video",
+      "category": "Multi-Video",
+      "status": "PASS",
+      "wall": 2.38,
+      "tokens": 200,
+      "score": "0/2",
+      "expected": "Video 1 has blue+red (2 colors), Video 2 has 6 cycling colors",
+      "response": "Based on the provided frames, **the second video (labeled \"Color 2\") has significantly more color variety.**\n\nHere is a description of the colors in each:\n\n**First Video (\"Frame\" sequence):**\n*   **Background:** A consistent, deep solid blue throughout all frames.\n*   **Object:** A single bright red",
+      "error": null
+    },
+    {
+      "id": "V5a",
+      "dimension": "video",
+      "category": "Reasoning",
+      "status": "PASS",
+      "wall": 3.08,
+      "tokens": 300,
+      "score": "0/1",
+      "expected": "Ball bounces off walls - reflection of velocity at boundaries",
+      "response": "Based on the visual evidence in the frames, here is an analysis of the physics simulation rules:\n\n**Governing Rules:**\n\n1.  **Constant Velocity (mostly):** The object moves from left to right. If we look at the spacing, it seems to be moving diagonally downwards and to the right.\n    *   Frame 1 to ",
+      "error": null
+    },
+    {
+      "id": "V5b",
+      "dimension": "video",
+      "category": "Reasoning",
+      "status": "PASS",
+      "wall": 1.89,
+      "tokens": 176,
+      "score": "0/1",
+      "expected": "Square: linear horizontal loop; Triangle: linear vertical loop; Circle: sinusoidal radius change",
+      "response": "Based on the motion of the shapes in the video, here are the rules each one follows:\n\n1.  **Green Square:** It moves diagonally. It starts at the top left and moves down and to the right, ending up directly above the blue circle.\n2.  **Yellow Triangle:** It moves vertically upwards. It starts at the",
+      "error": null
+    },
+    {
+      "id": "V5c",
+      "dimension": "video",
+      "category": "Reasoning",
+      "status": "PASS",
+      "wall": 2.06,
+      "tokens": 200,
+      "score": "0/2",
+      "expected": "Cycling pattern - 5 frames per color, repeating sequence",
+      "response": "Yes, there is a clear pattern to the color changes.\n\n**Pattern Analysis:**\n1.  **Color Sequence:** The background colors cycle through a specific order:\n    *   First: Orange-Red (Red)\n    *   Second: Purple (Magenta)\n    *   Third: Blue\n    *   Fourth: Orange-Red (Red)\n    *   Fifth: Purple (Magent",
+      "error": null
+    },
+    {
+      "id": "V6a",
+      "dimension": "video",
+      "category": "Video+Text",
+      "status": "PASS",
+      "wall": 0.5,
+      "tokens": 48,
+      "score": "0/4",
+      "expected": "JSON with object_count:1, primary_color:red, background_color:blue, motion_type:bouncing",
+      "response": "```json\n{\n  \"object_count\": 1,\n  \"primary_color\": \"red\",\n  \"background_color\": \"dark blue\",\n  \"motion_type\": \"erratic movement\"\n}\n```",
+      "error": null
+    },
+    {
+      "id": "V6b",
+      "dimension": "video",
+      "category": "Video+Text",
+      "status": "PASS",
+      "wall": 0.93,
+      "tokens": 83,
+      "score": "0/3",
+      "expected": "Markdown table with 3 rows: square/green/horizontal, triangle/yellow/vertical, circle/blue/pulsing",
+      "response": "Here is the markdown table describing the shapes, their colors, and their motion types based on the video:\n\n| Shape | Color | Motion Type |\n| :--- | :--- | :--- |\n| Square | Green | Moves from left to right |\n| Circle | Blue | Stationary (remains on the right side) |\n| Triangle | Yellow | Moves from",
+      "error": null
+    }
+  ],
+  "dimension_3_latency_throughput_5tests": [
+    {
+      "max_tokens": 64,
+      "actual_tokens": 64,
+      "wall_time": 0.82,
+      "throughput": 77.8,
+      "finish": "length"
+    },
+    {
+      "max_tokens": 128,
+      "actual_tokens": 128,
+      "wall_time": 1.62,
+      "throughput": 79.1,
+      "finish": "length"
+    },
+    {
+      "max_tokens": 256,
+      "actual_tokens": 256,
+      "wall_time": 3.24,
+      "throughput": 78.9,
+      "finish": "length"
+    },
+    {
+      "max_tokens": 512,
+      "actual_tokens": 512,
+      "wall_time": 5.83,
+      "throughput": 87.8,
+      "finish": "length"
+    },
+    {
+      "max_tokens": 1024,
+      "actual_tokens": 1024,
+      "wall_time": 11.03,
+      "throughput": 92.8,
+      "finish": "length"
+    }
+  ],
+  "dimension_4_ttft_3tests": [
+    {
+      "prompt_type": "Short",
+      "ttft_ms": 98,
+      "total_time": 0.16,
+      "content_chars": 9,
+      "reasoning_chars": 0,
+      "finish": "stop"
+    },
+    {
+      "prompt_type": "Medium",
+      "ttft_ms": 79,
+      "total_time": 4.21,
+      "content_chars": 2013,
+      "reasoning_chars": 0,
+      "finish": "stop"
+    },
+    {
+      "prompt_type": "Long reasoning",
+      "ttft_ms": 77,
+      "total_time": 6.44,
+      "content_chars": 2115,
+      "reasoning_chars": 0,
+      "finish": "stop"
+    }
+  ],
+  "dimension_5_concurrency_4tests": [
+    {
+      "concurrency": 1,
+      "success": "1/1",
+      "wall_time": 6.57,
+      "errors": 0
+    },
+    {
+      "concurrency": 2,
+      "success": "2/2",
+      "wall_time": 10.23,
+      "errors": 0
+    },
+    {
+      "concurrency": 4,
+      "success": "4/4",
+      "wall_time": 14.54,
+      "errors": 0
+    },
+    {
+      "concurrency": 8,
+      "success": "8/8",
+      "wall_time": 22.63,
+      "errors": 0
+    }
+  ],
+  "dimension_6_context_length_6tests": [
+    {
+      "input_size": "~100",
+      "actual_prompt_tokens": 115,
+      "output_tokens": 3,
+      "wall_time": 0.14,
+      "throughput": 20.8,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    },
+    {
+      "input_size": "~500",
+      "actual_prompt_tokens": 471,
+      "output_tokens": 3,
+      "wall_time": 0.2,
+      "throughput": 15.2,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    },
+    {
+      "input_size": "~2000",
+      "actual_prompt_tokens": 1804,
+      "output_tokens": 3,
+      "wall_time": 0.39,
+      "throughput": 7.7,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    },
+    {
+      "input_size": "~8000",
+      "actual_prompt_tokens": 7139,
+      "output_tokens": 3,
+      "wall_time": 1.13,
+      "throughput": 2.6,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    },
+    {
+      "input_size": "~32000",
+      "actual_prompt_tokens": 28471,
+      "output_tokens": 3,
+      "wall_time": 4.22,
+      "throughput": 0.7,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    },
+    {
+      "input_size": "~128000",
+      "actual_prompt_tokens": 113804,
+      "output_tokens": 3,
+      "wall_time": 27.24,
+      "throughput": 0.1,
+      "correct": true,
+      "finish": "stop",
+      "response_excerpt": "56"
+    }
+  ],
+  "dimension_7_reasoning_8tests": [
+    {
+      "category": "Math (basic)",
+      "passed": true,
+      "time": 0.9,
+      "tokens": 92,
+      "response_excerpt": "To calculate $17 \\times 23$, you can break it down using the distributive property:\n\n$$17 \\times 23 "
+    },
+    {
+      "category": "Math (advanced)",
+      "passed": true,
+      "time": 2.0,
+      "tokens": 214,
+      "response_excerpt": "### Step-by-Step Deduction\n\nTo solve the linear equation $3x + 7 = 22$, follow these steps:\n\n**1. Is"
+    },
+    {
+      "category": "Logic",
+      "passed": true,
+      "time": 9.1,
+      "tokens": 868,
+      "response_excerpt": "**No**\n\n**Explanation:**\nWhile all cats are mammals, and some mammals are pets, the group of \"pet ma"
+    },
+    {
+      "category": "Coding",
+      "passed": true,
+      "time": 0.8,
+      "tokens": 86,
+      "response_excerpt": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next ="
+    },
+    {
+      "category": "Knowledge",
+      "passed": true,
+      "time": 0.8,
+      "tokens": 71,
+      "response_excerpt": "The capital of Australia is **Canberra**.\n\nIt is located within the Australian Capital Territory (AC"
+    },
+    {
+      "category": "Reasoning",
+      "passed": true,
+      "time": 2.0,
+      "tokens": 238,
+      "response_excerpt": "To find the speed of the train in kilometers per hour (km/h), we need to convert the time from minut"
+    },
+    {
+      "category": "Instruction",
+      "passed": true,
+      "time": 0.2,
+      "tokens": 12,
+      "response_excerpt": "1. Apple\n2. Banana\n3. Orange"
+    },
+    {
+      "category": "World knowledge",
+      "passed": true,
+      "time": 0.6,
+      "tokens": 64,
+      "response_excerpt": "The Berlin Wall fell in **1989**.\n\nSpecifically, the border between East and West Berlin was opened "
+    }
+  ],
+  "dimension_8_tool_calling_2tests": [
+    {
+      "test": "Weather query",
+      "tool_made": true,
+      "correct_tool": true,
+      "correct_arg": true,
+      "tool_name": "get_weather",
+      "tool_args": "\"{\\\"location\\\": \\\"Tokyo\\\"}\"",
+      "time": 0.4,
+      "finish_reason": "tool_calls",
+      "response_excerpt": ""
+    },
+    {
+      "test": "Calculator",
+      "tool_made": true,
+      "correct_tool": true,
+      "correct_arg": true,
+      "tool_name": "calculate",
+      "tool_args": "\"{\\\"expression\\\": \\\"45 * 73\\\"}\"",
+      "time": 0.4,
+      "finish_reason": "tool_calls",
+      "response_excerpt": ""
+    }
+  ],
+  "speculative_decoding": {
+    "draft_requests": 47127.0,
+    "draft_tokens": 141381.0,
+    "accepted_tokens": 100555.0,
+    "acceptance_rate": 71.1
+  }
+}
