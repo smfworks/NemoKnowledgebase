@@ -1,0 +1,150 @@
+{
+  "serve_recipe_id": "SMF-Spark-vLLM-0.24-nemotron3-embed-8b-bf16",
+  "model": "nvidia/Nemotron-3-Embed-8B-BF16",
+  "base": "http://127.0.0.1:18001",
+  "timestamp_utc": "2026-07-17T16:07:21.347438+00:00",
+  "mean_ndcg@10": 0.9750574842557924,
+  "mean_recall@3": 0.9166666666666666,
+  "per_query": [
+    {
+      "query_id": "q1",
+      "query": "Which port and recipe serve Nemotron embedding models for RAG?",
+      "relevant": [
+        "d2",
+        "d8"
+      ],
+      "ranked_top5": [
+        "d2",
+        "d1",
+        "d6",
+        "d3",
+        "d8"
+      ],
+      "scores_top5": [
+        0.6020123958587646,
+        0.3328031599521637,
+        0.2929583787918091,
+        0.2783429026603699,
+        0.2776143252849579
+      ],
+      "ndcg@10": 0.8503449055347546,
+      "recall@3": 0.5
+    },
+    {
+      "query_id": "q2",
+      "query": "How do I launch the frozen Qwen 35B NVFP4 model on Spark?",
+      "relevant": [
+        "d1"
+      ],
+      "ranked_top5": [
+        "d1",
+        "d6",
+        "d4",
+        "d8",
+        "d2"
+      ],
+      "scores_top5": [
+        0.5575865507125854,
+        0.36645781993865967,
+        0.3127559423446655,
+        0.29594558477401733,
+        0.20703032612800598
+      ],
+      "ndcg@10": 1.0,
+      "recall@3": 1.0
+    },
+    {
+      "query_id": "q3",
+      "query": "What is Nemo's AgentMail address?",
+      "relevant": [
+        "d3"
+      ],
+      "ranked_top5": [
+        "d3",
+        "d2",
+        "d6",
+        "d1",
+        "d7"
+      ],
+      "scores_top5": [
+        0.6247661113739014,
+        0.22258062660694122,
+        0.17948943376541138,
+        0.11202957481145859,
+        0.10337744653224945
+      ],
+      "ndcg@10": 1.0,
+      "recall@3": 1.0
+    },
+    {
+      "query_id": "q4",
+      "query": "GPU memory utilization guidance on DGX Spark UMA for large models",
+      "relevant": [
+        "d4",
+        "d8"
+      ],
+      "ranked_top5": [
+        "d4",
+        "d8",
+        "d1",
+        "d6",
+        "d2"
+      ],
+      "scores_top5": [
+        0.7034677267074585,
+        0.4065634608268738,
+        0.2775886654853821,
+        0.27097684144973755,
+        0.17223167419433594
+      ],
+      "ndcg@10": 1.0,
+      "recall@3": 1.0
+    },
+    {
+      "query_id": "q5",
+      "query": "Where is the SMF technical blog deployed?",
+      "relevant": [
+        "d7"
+      ],
+      "ranked_top5": [
+        "d7",
+        "d1",
+        "d3",
+        "d6",
+        "d5"
+      ],
+      "scores_top5": [
+        0.5669527053833008,
+        0.2277064323425293,
+        0.20790612697601318,
+        0.1759544461965561,
+        0.16236498951911926
+      ],
+      "ndcg@10": 1.0,
+      "recall@3": 1.0
+    },
+    {
+      "query_id": "q6",
+      "query": "Remote GLM model via NVIDIA NIM free tier",
+      "relevant": [
+        "d6"
+      ],
+      "ranked_top5": [
+        "d6",
+        "d4",
+        "d8",
+        "d1",
+        "d2"
+      ],
+      "scores_top5": [
+        0.719048023223877,
+        0.30354946851730347,
+        0.2962755262851715,
+        0.2845793664455414,
+        0.2613197863101959
+      ],
+      "ndcg@10": 1.0,
+      "recall@3": 1.0
+    }
+  ]
+}

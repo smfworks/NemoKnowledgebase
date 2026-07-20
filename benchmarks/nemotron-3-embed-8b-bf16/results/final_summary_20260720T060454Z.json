@@ -1,0 +1,150 @@
+{
+  "serve_recipe_id": "SMF-Spark-vLLM-0.24-nemotron3-embed-8b-bf16",
+  "finalized_utc": "2026-07-20T06:04:54.179184+00:00",
+  "status": "COMPLETE_PUBLIC",
+  "beir_macro_ndcg_at_10": 0.71576,
+  "rteb_eng_public_macro_ndcg_at_10": 0.74691,
+  "rteb_eng_public_n": 15,
+  "rteb_eng_total_benchmark": 21,
+  "rteb_private_skipped": [
+    "Code1Retrieval",
+    "EnglishFinance1Retrieval",
+    "EnglishFinance2Retrieval",
+    "EnglishFinance3Retrieval",
+    "EnglishFinance4Retrieval",
+    "EnglishHealthcare1Retrieval"
+  ],
+  "beir": [
+    {
+      "name": "SciFact",
+      "ndcg_at_10": 0.83375,
+      "recall_at_10": 0.94667,
+      "split": "test"
+    },
+    {
+      "name": "NFCorpus",
+      "ndcg_at_10": 0.42278,
+      "recall_at_10": 0.20801,
+      "split": "test"
+    },
+    {
+      "name": "ArguAna",
+      "ndcg_at_10": 0.63127,
+      "recall_at_10": 0.91323,
+      "split": "test"
+    },
+    {
+      "name": "FiQA2018",
+      "ndcg_at_10": 0.65639,
+      "recall_at_10": 0.72132,
+      "split": "test"
+    },
+    {
+      "name": "TRECCOVID",
+      "ndcg_at_10": 0.86605,
+      "recall_at_10": 0.02381,
+      "split": "test"
+    },
+    {
+      "name": "QuoraRetrieval",
+      "ndcg_at_10": 0.88432,
+      "recall_at_10": 0.95796,
+      "split": "test"
+    }
+  ],
+  "rteb_eng_public": [
+    {
+      "name": "HumanEvalRetrieval",
+      "ndcg_at_10": 1.0,
+      "recall_at_10": 1.0,
+      "split": "test"
+    },
+    {
+      "name": "WikiSQLRetrieval",
+      "ndcg_at_10": 0.99477,
+      "recall_at_10": 1.0,
+      "split": "test"
+    },
+    {
+      "name": "AppsRetrieval",
+      "ndcg_at_10": 0.95943,
+      "recall_at_10": 0.99442,
+      "split": "test"
+    },
+    {
+      "name": "MBPPRetrieval",
+      "ndcg_at_10": 0.95681,
+      "recall_at_10": 0.99795,
+      "split": "test"
+    },
+    {
+      "name": "FinanceBenchRetrieval",
+      "ndcg_at_10": 0.95265,
+      "recall_at_10": 1.0,
+      "split": "test"
+    },
+    {
+      "name": "FinQARetrieval",
+      "ndcg_at_10": 0.88742,
+      "recall_at_10": 0.97803,
+      "split": "test"
+    },
+    {
+      "name": "HC3FinanceRetrieval",
+      "ndcg_at_10": 0.79927,
+      "recall_at_10": 0.9253,
+      "split": "test"
+    },
+    {
+      "name": "ChatDoctorRetrieval",
+      "ndcg_at_10": 0.76906,
+      "recall_at_10": 0.86854,
+      "split": "test"
+    },
+    {
+      "name": "LegalSummarization",
+      "ndcg_at_10": 0.76794,
+      "recall_at_10": 0.88397,
+      "split": "test"
+    },
+    {
+      "name": "DS1000Retrieval",
+      "ndcg_at_10": 0.76227,
+      "recall_at_10": 1.0,
+      "split": "test"
+    },
+    {
+      "name": "CUREv1",
+      "ndcg_at_10": 0.67665,
+      "recall_at_10": 0.40623,
+      "split": "all"
+    },
+    {
+      "name": "AILAStatutes",
+      "ndcg_at_10": 0.58445,
+      "recall_at_10": 0.63633,
+      "split": "test"
+    },
+    {
+      "name": "AILACasedocs",
+      "ndcg_at_10": 0.4899,
+      "recall_at_10": 0.55024,
+      "split": "test"
+    },
+    {
+      "name": "FreshStackRetrieval",
+      "ndcg_at_10": 0.48425,
+      "recall_at_10": 0.46321,
+      "split": "test"
+    },
+    {
+      "name": "SWEbenchCodeRetrieval",
+      "ndcg_at_10": 0.11878,
+      "recall_at_10": 0.27833,
+      "split": "test"
+    }
+  ],
+  "praxis_mean_ndcg_at_10": 0.9750574842557924,
+  "praxis_mean_recall_at_3": 0.9166666666666666,
+  "query_latency_s_mean": 0.07477336140000261
+}
