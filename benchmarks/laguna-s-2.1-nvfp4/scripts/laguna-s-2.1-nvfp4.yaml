@@ -1,0 +1,41 @@
+# Model manifest: Poolside Laguna S 2.1 NVFP4
+# Running on DGX Spark (spark-56bc) via vLLM 0.25.1 + FlashInfer + DFlash
+# Port 8888, host network, 262K context, native NVFP4 MoE
+# 117.6B total / 8.5B activated, tool + reasoning parsers poolside_v1
+
+model_id: "laguna-s-2.1-nvfp4"
+name: "Laguna-S-2.1-NVFP4"
+provider: "poolside"
+served_name: "poolside/Laguna-S-2.1-NVFP4"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - agentic
+  - context_long
+  - streaming
+
+context_length: 262144
+max_output_tokens: 8192
+
+metadata:
+  endpoint: "http://spark-56bc:8888/v1"
+  api_key: "dummy"
+  engine: "vLLM"
+  engine_version: "0.25.1"
+  quantization: "NVFP4"
+  speculative_decoding: "DFlash"
+  draft_model: "poolside/Laguna-S-2.1-DFlash-NVFP4"
+  tool_call_parser: "poolside_v1"
+  reasoning_parser: "poolside_v1"
+  gpu_memory_utilization: 0.82
+  max_num_seqs: 32
+  architecture: "117.6B-A8.5B MoE SWA"
