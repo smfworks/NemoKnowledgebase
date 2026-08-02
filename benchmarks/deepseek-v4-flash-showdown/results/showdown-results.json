@@ -1,0 +1,1013 @@
+[
+  {
+    "name": "DeepSeek V4 Flash (Local ds4)",
+    "short": "DSv4-Flash-Local",
+    "category": "local",
+    "endpoint": "http://spark-56bc:8888/v1",
+    "model": "deepseek-v4-flash",
+    "reasoning": {
+      "passed": 8,
+      "total": 8,
+      "tests": [
+        {
+          "test": "math_basic",
+          "passed": true,
+          "wall_time_s": 6.85,
+          "completion_tokens": 98,
+          "content_preview": "17 \u00d7 23 = 17 \u00d7 (20 + 3)  \n= 17 \u00d7 20 + 17 \u00d7 3  \n= 340 + 51  \n= **391**"
+        },
+        {
+          "test": "math_advanced",
+          "passed": true,
+          "wall_time_s": 2.36,
+          "completion_tokens": 35,
+          "content_preview": "x = 5"
+        },
+        {
+          "test": "logic",
+          "passed": true,
+          "wall_time_s": 19.25,
+          "completion_tokens": 252,
+          "content_preview": "No, we cannot conclude that some cats are pets.\n\nReasoning:\n\n- \u201cAll cats are mammals\u201d means every cat is in the category"
+        },
+        {
+          "test": "coding",
+          "passed": true,
+          "wall_time_s": 57.7,
+          "completion_tokens": 856,
+          "content_preview": "Here's a Python function to reverse a singly linked list, along with a simple `ListNode` class:\n\n```python\nclass ListNod"
+        },
+        {
+          "test": "knowledge",
+          "passed": true,
+          "wall_time_s": 8.42,
+          "completion_tokens": 83,
+          "content_preview": "The capital of Australia is **Canberra**."
+        },
+        {
+          "test": "reasoning",
+          "passed": true,
+          "wall_time_s": 6.85,
+          "completion_tokens": 94,
+          "content_preview": "Speed = distance \u00f7 time  \nDistance = 60 km  \nTime = 45 minutes = 45/60 = 0.75 hours  \n\nSpeed = 60 \u00f7 0.75 = **80 km/h**"
+        },
+        {
+          "test": "instruction",
+          "passed": true,
+          "wall_time_s": 5.85,
+          "completion_tokens": 77,
+          "content_preview": "1. Apple\n2. Banana\n3. Cherry"
+        },
+        {
+          "test": "world_knowledge",
+          "passed": true,
+          "wall_time_s": 6.91,
+          "completion_tokens": 89,
+          "content_preview": "The Berlin Wall fell on **November 9, 1989**."
+        }
+      ]
+    },
+    "tool_calling": {
+      "passed": 3,
+      "total": 3,
+      "tests": [
+        {
+          "test": "weather",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 1,
+          "wall_time_s": 6.3
+        },
+        {
+          "test": "calc",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 1,
+          "wall_time_s": 5.45
+        },
+        {
+          "test": "multi_tool",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 2,
+          "wall_time_s": 8.14
+        }
+      ]
+    },
+    "latency": [
+      {
+        "max_tokens": 128,
+        "completion_tokens": 128,
+        "wall_time_s": 14.19,
+        "tokens_per_second": 9.0
+      },
+      {
+        "max_tokens": 512,
+        "completion_tokens": 512,
+        "wall_time_s": 39.39,
+        "tokens_per_second": 13.0
+      },
+      {
+        "max_tokens": 1024,
+        "completion_tokens": 1024,
+        "wall_time_s": 83.28,
+        "tokens_per_second": 12.3
+      }
+    ],
+    "ttft": [
+      {
+        "prompt": "short",
+        "ttft_ms": 1138.0,
+        "total_time_s": 6.87,
+        "content_chars": 1,
+        "reasoning_chars": 272
+      },
+      {
+        "prompt": "medium",
+        "ttft_ms": 774.1,
+        "total_time_s": 68.94,
+        "content_chars": 2101,
+        "reasoning_chars": 3475
+      },
+      {
+        "prompt": "coding",
+        "ttft_ms": 1026.9,
+        "total_time_s": 54.64,
+        "content_chars": 1433,
+        "reasoning_chars": 2055
+      }
+    ],
+    "coding": {
+      "wall_time_s": 61.84,
+      "completion_tokens": 908,
+      "has_function": true,
+      "has_docstring": true,
+      "has_type_hints": true,
+      "has_case_handling": true,
+      "has_punctuation_handling": false,
+      "quality_score": "4/5",
+      "code_preview": "```python\ndef is_palindrome(s: str) -> bool:\n    \"\"\"\n    Check if a string is a palindrome, ignoring case, spaces, and punctuation.\n\n    Args:\n        s (str): The input string.\n\n    Returns:\n        bool: True if the string is a palindrome, False otherwise.\n    \"\"\"\n    # Normalize the string: keep "
+    }
+  },
+  {
+    "name": "DeepSeek V4 Flash (NVIDIA NIM)",
+    "short": "DSv4-Flash-NIM",
+    "category": "cloud-same-model",
+    "endpoint": "https://integrate.api.nvidia.com/v1",
+    "model": "deepseek-ai/deepseek-v4-flash",
+    "reasoning": {
+      "passed": 1,
+      "total": 8,
+      "tests": [
+        {
+          "test": "math_basic",
+          "passed": true,
+          "wall_time_s": 3.46,
+          "completion_tokens": 86,
+          "content_preview": "We can compute \\( 17 \\times 23 \\) using the distributive property:\n\n\\[\n17 \\times 23 = 17 \\times (20 + 3)\n\\]\n\n\\[\n= (17 \\t"
+        },
+        {
+          "test": "math_advanced",
+          "passed": false,
+          "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+          "wall_time_s": 0.07
+        },
+        {
+          "test": "logic",
+          "passed": false,
+          "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+          "wall_time_s": 0.08
+        },
+        {
+          "test": "coding",
+          "passed": false,
+          "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+          "wall_time_s": 0.07
+        },
+        {
+          "test": "knowledge",
+          "passed": false,
+          "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+          "wall_time_s": 0.75
+        },
+        {
+          "test": "reasoning",
+          "passed": false,
+          "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+          "wall_time_s": 0.06
+        },
+        {
+          "test": "instruction",
+          "passed": false,
+          "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+          "wall_time_s": 0.06
+        },
+        {
+          "test": "world_knowledge",
+          "passed": false,
+          "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+          "wall_time_s": 1.15
+        }
+      ]
+    },
+    "tool_calling": {
+      "passed": 1,
+      "total": 3,
+      "tests": [
+        {
+          "test": "weather",
+          "passed": false,
+          "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+          "wall_time_s": 0.27
+        },
+        {
+          "test": "calc",
+          "passed": false,
+          "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+          "wall_time_s": 0.06
+        },
+        {
+          "test": "multi_tool",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 2,
+          "wall_time_s": 2.57
+        }
+      ]
+    },
+    "latency": [
+      {
+        "max_tokens": 128,
+        "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+        "wall_time_s": 0.32
+      },
+      {
+        "max_tokens": 512,
+        "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+        "wall_time_s": 0.29
+      },
+      {
+        "max_tokens": 1024,
+        "completion_tokens": 1024,
+        "wall_time_s": 74.6,
+        "tokens_per_second": 13.7
+      }
+    ],
+    "ttft": [
+      {
+        "prompt": "short",
+        "error": "HTTP 529: b'{\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}'",
+        "wall_time_s": 0.25
+      },
+      {
+        "prompt": "medium",
+        "ttft_ms": 589.4,
+        "total_time_s": 21.1,
+        "content_chars": 2024,
+        "reasoning_chars": 0
+      },
+      {
+        "prompt": "coding",
+        "error": "HTTP 529: b'{\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}'",
+        "wall_time_s": 0.13
+      }
+    ],
+    "coding": {
+      "error": "HTTP 529: {\"message\":\"Service temporarily overloaded\",\"type\":\"Overloaded\",\"code\":529}",
+      "wall_time_s": 0.06
+    }
+  },
+  {
+    "name": "DeepSeek V4 Flash (Ollama Cloud)",
+    "short": "DSv4-Flash-Ollama",
+    "category": "cloud-same-model",
+    "endpoint": "http://127.0.0.1:11434/v1",
+    "model": "deepseek-v4-flash:cloud",
+    "reasoning": {
+      "passed": 8,
+      "total": 8,
+      "tests": [
+        {
+          "test": "math_basic",
+          "passed": true,
+          "wall_time_s": 1.1,
+          "completion_tokens": 83,
+          "content_preview": "17 * 23 = 17 * (20 + 3) = 340 + 51 = 391."
+        },
+        {
+          "test": "math_advanced",
+          "passed": true,
+          "wall_time_s": 0.72,
+          "completion_tokens": 84,
+          "content_preview": "The solution to the equation \\(3x + 7 = 22\\) is \\(x = 5\\)."
+        },
+        {
+          "test": "logic",
+          "passed": true,
+          "wall_time_s": 1.92,
+          "completion_tokens": 262,
+          "content_preview": "No, we cannot conclude that some cats are pets. The reasoning is as follows: The first premise states that all cats are "
+        },
+        {
+          "test": "coding",
+          "passed": true,
+          "wall_time_s": 2.44,
+          "completion_tokens": 604,
+          "content_preview": "Below is a Python function that reverses a singly linked list. The function takes the head node of the list and returns "
+        },
+        {
+          "test": "knowledge",
+          "passed": true,
+          "wall_time_s": 1.0,
+          "completion_tokens": 46,
+          "content_preview": "The capital of Australia is Canberra."
+        },
+        {
+          "test": "reasoning",
+          "passed": true,
+          "wall_time_s": 0.99,
+          "completion_tokens": 155,
+          "content_preview": "The train travels 60 km in 45 minutes. To find the speed in km/h, convert 45 minutes to hours:  \n45 minutes = 45/60 = 0."
+        },
+        {
+          "test": "instruction",
+          "passed": true,
+          "wall_time_s": 0.71,
+          "completion_tokens": 54,
+          "content_preview": "1. Apple\n2. Banana\n3. Cherry"
+        },
+        {
+          "test": "world_knowledge",
+          "passed": true,
+          "wall_time_s": 0.62,
+          "completion_tokens": 46,
+          "content_preview": "The Berlin Wall fell in **1989**."
+        }
+      ]
+    },
+    "tool_calling": {
+      "passed": 3,
+      "total": 3,
+      "tests": [
+        {
+          "test": "weather",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 1,
+          "wall_time_s": 0.8
+        },
+        {
+          "test": "calc",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 1,
+          "wall_time_s": 1.68
+        },
+        {
+          "test": "multi_tool",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 2,
+          "wall_time_s": 0.89
+        }
+      ]
+    },
+    "latency": [
+      {
+        "max_tokens": 128,
+        "completion_tokens": 128,
+        "wall_time_s": 1.29,
+        "tokens_per_second": 99.3
+      },
+      {
+        "max_tokens": 512,
+        "completion_tokens": 512,
+        "wall_time_s": 3.09,
+        "tokens_per_second": 165.5
+      },
+      {
+        "max_tokens": 1024,
+        "completion_tokens": 1024,
+        "wall_time_s": 10.88,
+        "tokens_per_second": 94.1
+      }
+    ],
+    "ttft": [
+      {
+        "prompt": "short",
+        "ttft_ms": 625.9,
+        "total_time_s": 0.83,
+        "content_chars": 13,
+        "reasoning_chars": 101
+      },
+      {
+        "prompt": "medium",
+        "ttft_ms": 464.1,
+        "total_time_s": 2.47,
+        "content_chars": 1828,
+        "reasoning_chars": 972
+      },
+      {
+        "prompt": "coding",
+        "ttft_ms": 603.1,
+        "total_time_s": 4.94,
+        "content_chars": 2396,
+        "reasoning_chars": 863
+      }
+    ],
+    "coding": {
+      "wall_time_s": 3.18,
+      "completion_tokens": 508,
+      "has_function": true,
+      "has_docstring": true,
+      "has_type_hints": true,
+      "has_case_handling": true,
+      "has_punctuation_handling": false,
+      "quality_score": "4/5",
+      "code_preview": "```python\ndef is_palindrome(s: str) -> bool:\n    \"\"\"\n    Check if a string is a palindrome, ignoring case, spaces, and punctuation.\n\n    A palindrome is a sequence that reads the same forwards and backwards.\n    The function cleans the input by removing all non-alphanumeric characters\n    and conver"
+    }
+  },
+  {
+    "name": "DeepSeek V4 Pro (NVIDIA NIM)",
+    "short": "DSv4-Pro-NIM",
+    "category": "cloud-competitor",
+    "endpoint": "https://integrate.api.nvidia.com/v1",
+    "model": "deepseek-ai/deepseek-v4-pro",
+    "reasoning": {
+      "passed": 2,
+      "total": 8,
+      "tests": [
+        {
+          "test": "math_basic",
+          "passed": false,
+          "error": "",
+          "wall_time_s": 120.18
+        },
+        {
+          "test": "math_advanced",
+          "passed": false,
+          "error": "",
+          "wall_time_s": 120.18
+        },
+        {
+          "test": "logic",
+          "passed": false,
+          "error": "",
+          "wall_time_s": 120.12
+        },
+        {
+          "test": "coding",
+          "passed": false,
+          "error": "",
+          "wall_time_s": 120.21
+        },
+        {
+          "test": "knowledge",
+          "passed": false,
+          "error": "",
+          "wall_time_s": 120.18
+        },
+        {
+          "test": "reasoning",
+          "passed": false,
+          "error": "",
+          "wall_time_s": 120.22
+        },
+        {
+          "test": "instruction",
+          "passed": true,
+          "wall_time_s": 111.28,
+          "completion_tokens": 12,
+          "content_preview": "1. Apple  \n2. Banana  \n3. Cherry"
+        },
+        {
+          "test": "world_knowledge",
+          "passed": true,
+          "wall_time_s": 104.7,
+          "completion_tokens": 10,
+          "content_preview": "The Berlin Wall fell in 1989."
+        }
+      ]
+    },
+    "tool_calling": {
+      "passed": 3,
+      "total": 3,
+      "tests": [
+        {
+          "test": "weather",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 1,
+          "wall_time_s": 82.83
+        },
+        {
+          "test": "calc",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 1,
+          "wall_time_s": 71.34
+        },
+        {
+          "test": "multi_tool",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 2,
+          "wall_time_s": 114.43
+        }
+      ]
+    },
+    "latency": [
+      {
+        "max_tokens": 128,
+        "completion_tokens": 128,
+        "wall_time_s": 119.36,
+        "tokens_per_second": 1.1
+      },
+      {
+        "max_tokens": 512,
+        "error": "",
+        "wall_time_s": 120.1
+      },
+      {
+        "max_tokens": 1024,
+        "completion_tokens": 1024,
+        "wall_time_s": 96.57,
+        "tokens_per_second": 10.6
+      }
+    ],
+    "ttft": [
+      {
+        "prompt": "short",
+        "ttft_ms": 102560.5,
+        "total_time_s": 102.65,
+        "content_chars": 20,
+        "reasoning_chars": 0
+      },
+      {
+        "prompt": "medium",
+        "ttft_ms": 95811.5,
+        "total_time_s": 136.96,
+        "content_chars": 2094,
+        "reasoning_chars": 0
+      },
+      {
+        "prompt": "coding",
+        "ttft_ms": 74868.4,
+        "total_time_s": 179.23,
+        "content_chars": 4865,
+        "reasoning_chars": 0
+      }
+    ],
+    "coding": {
+      "wall_time_s": 78.04,
+      "completion_tokens": 210,
+      "has_function": true,
+      "has_docstring": true,
+      "has_type_hints": true,
+      "has_case_handling": true,
+      "has_punctuation_handling": false,
+      "quality_score": "4/5",
+      "code_preview": "```python\ndef is_palindrome(s: str) -> bool:\n    \"\"\"\n    Check if a given string is a palindrome, ignoring case, spaces, and punctuation.\n    \n    A palindrome is a word, phrase, or sequence that reads the same forwards\n    and backwards after removing non-alphanumeric characters and normalizing cas"
+    }
+  },
+  {
+    "name": "Kimi K2.6 (NVIDIA NIM)",
+    "short": "Kimi-K2.6-NIM",
+    "category": "cloud-competitor",
+    "endpoint": "https://integrate.api.nvidia.com/v1",
+    "model": "moonshotai/kimi-k2.6",
+    "reasoning": {
+      "passed": 0,
+      "total": 8,
+      "tests": [
+        {
+          "test": "math_basic",
+          "passed": false,
+          "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+          "wall_time_s": 0.19
+        },
+        {
+          "test": "math_advanced",
+          "passed": false,
+          "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+          "wall_time_s": 0.07
+        },
+        {
+          "test": "logic",
+          "passed": false,
+          "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+          "wall_time_s": 0.07
+        },
+        {
+          "test": "coding",
+          "passed": false,
+          "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+          "wall_time_s": 0.06
+        },
+        {
+          "test": "knowledge",
+          "passed": false,
+          "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+          "wall_time_s": 0.08
+        },
+        {
+          "test": "reasoning",
+          "passed": false,
+          "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+          "wall_time_s": 0.07
+        },
+        {
+          "test": "instruction",
+          "passed": false,
+          "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+          "wall_time_s": 0.06
+        },
+        {
+          "test": "world_knowledge",
+          "passed": false,
+          "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+          "wall_time_s": 0.06
+        }
+      ]
+    },
+    "tool_calling": {
+      "passed": 0,
+      "total": 3,
+      "tests": [
+        {
+          "test": "weather",
+          "passed": false,
+          "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+          "wall_time_s": 0.07
+        },
+        {
+          "test": "calc",
+          "passed": false,
+          "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+          "wall_time_s": 0.06
+        },
+        {
+          "test": "multi_tool",
+          "passed": false,
+          "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+          "wall_time_s": 0.06
+        }
+      ]
+    },
+    "latency": [
+      {
+        "max_tokens": 128,
+        "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+        "wall_time_s": 0.06
+      },
+      {
+        "max_tokens": 512,
+        "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+        "wall_time_s": 0.06
+      },
+      {
+        "max_tokens": 1024,
+        "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+        "wall_time_s": 0.06
+      }
+    ],
+    "ttft": [
+      {
+        "prompt": "short",
+        "error": "HTTP 404: b'{\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function \\'23d4f03a-b8a6-4adb-a183-7daa083a09cc\\': Not found for account \\'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30\\'\"}'",
+        "wall_time_s": 0.06
+      },
+      {
+        "prompt": "medium",
+        "error": "HTTP 404: b'{\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function \\'23d4f03a-b8a6-4adb-a183-7daa083a09cc\\': Not found for account \\'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30\\'\"}'",
+        "wall_time_s": 0.06
+      },
+      {
+        "prompt": "coding",
+        "error": "HTTP 404: b'{\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function \\'23d4f03a-b8a6-4adb-a183-7daa083a09cc\\': Not found for account \\'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30\\'\"}'",
+        "wall_time_s": 0.06
+      }
+    ],
+    "coding": {
+      "error": "HTTP 404: {\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function '23d4f03a-b8a6-4adb-a183-7daa083a09cc': Not found for account 'GtpqtxbK1r0O_KMY3g82yUmDPcil-tycRfAJf6D-B30'\"}",
+      "wall_time_s": 0.07
+    }
+  },
+  {
+    "name": "GLM-5.2 (NVIDIA NIM)",
+    "short": "GLM-5.2-NIM",
+    "category": "cloud-competitor",
+    "endpoint": "https://integrate.api.nvidia.com/v1",
+    "model": "z-ai/glm-5.2",
+    "reasoning": {
+      "passed": 8,
+      "total": 8,
+      "tests": [
+        {
+          "test": "math_basic",
+          "passed": true,
+          "wall_time_s": 6.27,
+          "completion_tokens": 50,
+          "content_preview": "17 * 23 = 391\n\n**Work:**\n  17\nx 23\n----\n  51   (17 x 3)\n 34    (17 x 2, shifted one position)\n----\n 391"
+        },
+        {
+          "test": "math_advanced",
+          "passed": true,
+          "wall_time_s": 6.57,
+          "completion_tokens": 101,
+          "content_preview": "To find the value of x, you can solve the equation step by step:\n\n**Equation:** \n3x + 7 = 22\n\n**Step 1:** Subtract 7 fro"
+        },
+        {
+          "test": "logic",
+          "passed": true,
+          "wall_time_s": 10.99,
+          "completion_tokens": 300,
+          "content_preview": "**No**, we cannot conclude that some cats are pets. \n\nHere is the clear reasoning:\n\n**1. The Logical Structure**\nLet\u2019s b"
+        },
+        {
+          "test": "coding",
+          "passed": true,
+          "wall_time_s": 27.51,
+          "completion_tokens": 789,
+          "content_preview": "Here is the Python function to reverse a singly linked list. \n\nI have included the `ListNode` class definition, the reve"
+        },
+        {
+          "test": "knowledge",
+          "passed": true,
+          "wall_time_s": 7.4,
+          "completion_tokens": 8,
+          "content_preview": "The capital of Australia is Canberra."
+        },
+        {
+          "test": "reasoning",
+          "passed": true,
+          "wall_time_s": 7.97,
+          "completion_tokens": 105,
+          "content_preview": "The train's speed is **80 km/h**. \n\nHere is the step-by-step calculation:\n\n1. **Convert the time to hours:** Since speed"
+        },
+        {
+          "test": "instruction",
+          "passed": true,
+          "wall_time_s": 2.94,
+          "completion_tokens": 12,
+          "content_preview": "1. Apple\n2. Banana\n3. Orange"
+        },
+        {
+          "test": "world_knowledge",
+          "passed": true,
+          "wall_time_s": 2.89,
+          "completion_tokens": 16,
+          "content_preview": "The Berlin Wall fell on **November 9, 1989**."
+        }
+      ]
+    },
+    "tool_calling": {
+      "passed": 3,
+      "total": 3,
+      "tests": [
+        {
+          "test": "weather",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 1,
+          "wall_time_s": 3.02
+        },
+        {
+          "test": "calc",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 1,
+          "wall_time_s": 3.23
+        },
+        {
+          "test": "multi_tool",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 2,
+          "wall_time_s": 11.82
+        }
+      ]
+    },
+    "latency": [
+      {
+        "max_tokens": 128,
+        "completion_tokens": 128,
+        "wall_time_s": 13.87,
+        "tokens_per_second": 9.2
+      },
+      {
+        "max_tokens": 512,
+        "completion_tokens": 512,
+        "wall_time_s": 22.2,
+        "tokens_per_second": 23.1
+      },
+      {
+        "max_tokens": 1024,
+        "completion_tokens": 1024,
+        "wall_time_s": 45.9,
+        "tokens_per_second": 22.3
+      }
+    ],
+    "ttft": [
+      {
+        "prompt": "short",
+        "ttft_ms": 696.3,
+        "total_time_s": 1.01,
+        "content_chars": 9,
+        "reasoning_chars": 0
+      },
+      {
+        "prompt": "medium",
+        "ttft_ms": 7191.6,
+        "total_time_s": 24.37,
+        "content_chars": 2020,
+        "reasoning_chars": 0
+      },
+      {
+        "prompt": "coding",
+        "ttft_ms": 1375.5,
+        "total_time_s": 30.06,
+        "content_chars": 3027,
+        "reasoning_chars": 0
+      }
+    ],
+    "coding": {
+      "wall_time_s": 14.73,
+      "completion_tokens": 209,
+      "has_function": true,
+      "has_docstring": true,
+      "has_type_hints": true,
+      "has_case_handling": true,
+      "has_punctuation_handling": false,
+      "quality_score": "4/5",
+      "code_preview": "```python\ndef is_palindrome(s: str) -> bool:\n    \"\"\"\n    Check if a string is a palindrome.\n    \n    A palindrome is a word, phrase, number, or other sequence of characters\n    which reads the same backward as forward, ignoring case, spaces, and punctuation.\n    \n    Args:\n        s (str): The input"
+    }
+  },
+  {
+    "name": "MiniMax M3 (NVIDIA NIM)",
+    "short": "MiniMax-M3-NIM",
+    "category": "cloud-competitor",
+    "endpoint": "https://integrate.api.nvidia.com/v1",
+    "model": "minimaxai/minimax-m3",
+    "reasoning": {
+      "passed": 5,
+      "total": 8,
+      "tests": [
+        {
+          "test": "math_basic",
+          "passed": false,
+          "error": "",
+          "wall_time_s": 120.09
+        },
+        {
+          "test": "math_advanced",
+          "passed": true,
+          "wall_time_s": 70.59,
+          "completion_tokens": 96,
+          "content_preview": "# Solving for x\n\n**Equation:** 3x + 7 = 22\n\n**Step 1:** Subtract 7 from both sides\n$$3x + 7 - 7 = 22 - 7$$\n$$3x = 15$$\n\n"
+        },
+        {
+          "test": "logic",
+          "passed": true,
+          "wall_time_s": 72.37,
+          "completion_tokens": 273,
+          "content_preview": "# No, we cannot conclude that some cats are pets.\n\n## Reasoning\n\nLet's examine the premises:\n\n1. **All cats are mammals."
+        },
+        {
+          "test": "coding",
+          "passed": false,
+          "error": "",
+          "wall_time_s": 120.1
+        },
+        {
+          "test": "knowledge",
+          "passed": true,
+          "wall_time_s": 71.26,
+          "completion_tokens": 36,
+          "content_preview": "The capital of Australia is **Canberra**. It is located in the Australian Capital Territory (ACT) and is home to importa"
+        },
+        {
+          "test": "reasoning",
+          "passed": false,
+          "error": "",
+          "wall_time_s": 120.1
+        },
+        {
+          "test": "instruction",
+          "passed": true,
+          "wall_time_s": 43.25,
+          "completion_tokens": 12,
+          "content_preview": "1. Apple\n2. Banana\n3. Cherry"
+        },
+        {
+          "test": "world_knowledge",
+          "passed": true,
+          "wall_time_s": 53.49,
+          "completion_tokens": 52,
+          "content_preview": "The Berlin Wall fell in **1989**, specifically on **November 9, 1989**. The fall of the wall marked a pivotal moment in "
+        }
+      ]
+    },
+    "tool_calling": {
+      "passed": 2,
+      "total": 3,
+      "tests": [
+        {
+          "test": "weather",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 1,
+          "wall_time_s": 50.89
+        },
+        {
+          "test": "calc",
+          "passed": true,
+          "tool_calls_made": true,
+          "correct_tool": true,
+          "correct_args": true,
+          "num_calls": 1,
+          "wall_time_s": 37.46
+        },
+        {
+          "test": "multi_tool",
+          "passed": false,
+          "error": "",
+          "wall_time_s": 120.02
+        }
+      ]
+    },
+    "latency": [
+      {
+        "max_tokens": 128,
+        "completion_tokens": 128,
+        "wall_time_s": 76.65,
+        "tokens_per_second": 1.7
+      },
+      {
+        "max_tokens": 512,
+        "error": "",
+        "wall_time_s": 120.1
+      },
+      {
+        "max_tokens": 1024,
+        "error": "",
+        "wall_time_s": 120.15
+      }
+    ],
+    "ttft": [
+      {
+        "prompt": "short",
+        "ttft_ms": 79610.9,
+        "total_time_s": 80.82,
+        "content_chars": 10,
+        "reasoning_chars": 0
+      },
+      {
+        "prompt": "medium",
+        "ttft_ms": 69554.9,
+        "total_time_s": 167.66,
+        "content_chars": 2109,
+        "reasoning_chars": 0
+      },
+      {
+        "prompt": "coding",
+        "ttft_ms": 61596.2,
+        "total_time_s": 200.86,
+        "content_chars": 3590,
+        "reasoning_chars": 0
+      }
+    ],
+    "coding": {
+      "error": "",
+      "wall_time_s": 120.1
+    }
+  }
+]
