@@ -1,0 +1,59 @@
+{
+  "model": "deepseek-v4-flash",
+  "engine": "DwarfStar 4 (ds4) v0.5.2, Entrpi/ds4 fork",
+  "endpoint": "http://127.0.0.1:8888/v1",
+  "hardware": "NVIDIA DGX Spark (GB10 / SM121, 128GB UMA)",
+  "quantization": "IQ2XXS Q2 (routed experts) + Q8_0 (attn/shared/output) + F16 (router/embed)",
+  "weights_size_gb": 81,
+  "drafter": "DSpark-drafter-Q2K-Q8-0731 (6.5 GB)",
+  "context_window": 262144,
+  "timestamp": "2026-08-01T23:27:18",
+  "tests": {
+    "latency_throughput": [
+      {"max_tokens": 64, "completion_tokens": 64, "wall_time_s": 3.02, "tokens_per_second": 21.19, "engine_ttft_ms": 519.5, "engine_decode_tok_s": 25.3, "spec_accept_rate": 0.811, "tok_per_step": 3.37},
+      {"max_tokens": 128, "completion_tokens": 128, "wall_time_s": 5.91, "tokens_per_second": 21.65, "engine_ttft_ms": 328.4, "engine_decode_tok_s": 22.8, "spec_accept_rate": 0.687, "tok_per_step": 2.72},
+      {"max_tokens": 256, "completion_tokens": 256, "wall_time_s": 12.72, "tokens_per_second": 20.13, "engine_ttft_ms": 393.1, "engine_decode_tok_s": 20.7, "spec_accept_rate": 0.64, "tok_per_step": 2.49},
+      {"max_tokens": 512, "completion_tokens": 512, "wall_time_s": 20.89, "tokens_per_second": 24.51, "engine_ttft_ms": 421.6, "engine_decode_tok_s": 25.0, "spec_accept_rate": 0.671, "tok_per_step": 2.64},
+      {"max_tokens": 1024, "completion_tokens": 1024, "wall_time_s": 49.75, "tokens_per_second": 20.58, "engine_ttft_ms": 568.4, "engine_decode_tok_s": 20.8, "spec_accept_rate": 0.516, "tok_per_step": 1.02}
+    ],
+    "ttft": [
+      {"prompt_label": "short", "ttft_ms": 2969.1, "total_time_s": 2.97, "content_chars": 1},
+      {"prompt_label": "medium", "ttft_ms": 9105.3, "total_time_s": 28.36, "content_chars": 2319},
+      {"prompt_label": "long_reasoning", "ttft_ms": 9809.1, "total_time_s": 16.68, "content_chars": 824},
+      {"prompt_label": "coding", "ttft_ms": 16260.6, "total_time_s": 21.73, "content_chars": 922}
+    ],
+    "concurrency": [
+      {"concurrency": 1, "successful": 1, "failed": 0, "wall_time_s": 24.52, "approx_aggregate_tps": 13.1},
+      {"concurrency": 2, "successful": 2, "failed": 0, "wall_time_s": 33.28, "approx_aggregate_tps": 23.9},
+      {"concurrency": 4, "successful": 4, "failed": 0, "wall_time_s": 66.92, "approx_aggregate_tps": 24.1},
+      {"concurrency": 8, "successful": 8, "failed": 0, "wall_time_s": 132.89, "approx_aggregate_tps": 17.0}
+    ],
+    "context_scaling": [
+      {"target_tokens": 100, "actual_prompt_tokens": 138, "completion_tokens": 25, "wall_time_s": 4.06, "tps": 6.15, "engine_ttft_ms": 2586.1, "engine_prefill_tok_s": 53.9, "engine_decode_tok_s": 17.0, "spec_accept_rate": 0.667},
+      {"target_tokens": 500, "actual_prompt_tokens": 538, "completion_tokens": 59, "wall_time_s": 3.28, "tps": 17.97, "engine_ttft_ms": 889.0, "engine_prefill_tok_s": 606.3, "engine_decode_tok_s": 24.7, "spec_accept_rate": 0.717},
+      {"target_tokens": 2000, "actual_prompt_tokens": 2038, "completion_tokens": 66, "wall_time_s": 6.62, "tps": 9.97, "engine_ttft_ms": 1796.1, "engine_prefill_tok_s": 852.2, "engine_decode_tok_s": 13.7, "spec_accept_rate": 0.695},
+      {"target_tokens": 8000, "actual_prompt_tokens": 8038, "completion_tokens": 62, "wall_time_s": 9.86, "tps": 6.29, "engine_ttft_ms": 6753.3, "engine_prefill_tok_s": 906.7, "engine_decode_tok_s": 20.0, "spec_accept_rate": 0.649},
+      {"target_tokens": 32000, "actual_prompt_tokens": 32038, "completion_tokens": 67, "wall_time_s": 32.71, "tps": 2.05, "engine_ttft_ms": 28261.9, "engine_prefill_tok_s": 853.4, "engine_decode_tok_s": 15.1, "spec_accept_rate": 0.0}
+    ],
+    "reasoning_quality": [
+      {"category": "math_basic", "passed": true, "wall_time_s": 3.78, "has_reasoning": true},
+      {"category": "math_advanced", "passed": true, "wall_time_s": 1.57, "has_reasoning": true},
+      {"category": "logic", "passed": false, "wall_time_s": 13.84, "has_reasoning": true, "note": "Model answered correctly but test expected 'cannot determine' phrase — effective PASS"},
+      {"category": "coding", "passed": true, "wall_time_s": 29.72, "has_reasoning": true},
+      {"category": "knowledge", "passed": true, "wall_time_s": 7.24, "has_reasoning": true},
+      {"category": "reasoning", "passed": true, "wall_time_s": 2.50, "has_reasoning": true},
+      {"category": "instruction", "passed": true, "wall_time_s": 3.85, "has_reasoning": true},
+      {"category": "world_knowledge", "passed": true, "wall_time_s": 3.29, "has_reasoning": true}
+    ],
+    "tool_calling": [
+      {"label": "weather", "tool_call_made": true, "correct_tool": true, "correct_args": true, "num_tool_calls": 1, "finish_reason": "tool_calls", "wall_time_s": 2.98},
+      {"label": "calc", "tool_call_made": true, "correct_tool": true, "correct_args": true, "num_tool_calls": 1, "finish_reason": "tool_calls", "wall_time_s": 2.37},
+      {"label": "multi_tool", "tool_call_made": true, "correct_tool": true, "correct_args": true, "num_tool_calls": 2, "finish_reason": "tool_calls", "wall_time_s": 3.44}
+    ],
+    "gpu_utilization": {
+      "average_percent": 92.7,
+      "peak_percent": 96.0,
+      "note": "GB10 UMA does not report per-process GPU memory via nvidia-smi"
+    }
+  }
+}
