@@ -1,0 +1,19 @@
+Viking saga prompts and video job IDs:
+Scene 1 (Departure): XKBiDVkpTaP7rG0Ic1Y8 - minimax/hailuo-3 2K
+Scene 2 (Storm): NDYFrvTyqVkp1ehBOFvK - minimax/hailuo-3 2K
+Scene 3 (Landfall): YXYl3skrSLuZU4zSi4a0 - minimax/hailuo-3 2K
+
+Video prompts:
+Scene 1: Cinematic aerial shot of a Viking longship departing from a Danish fjord at dawn...
+Scene 2: A Viking longship battling through a violent North Sea storm...
+Scene 3: A Viking longship sailing into a Norwegian fjord at golden hour...
+
+Image prompts:
+Scene 1: Cinematic historical illustration: a Viking longship departing from a Danish fjord at dawn...
+Scene 2: Cinematic historical illustration: a Viking longship battling through a violent North Sea storm...
+Scene 3: Cinematic historical illustration: a Viking longship sailing into a Norwegian fjord at golden hour...
+
+All videos: 2560x1440, 5.167s, H.264 + AAC, 24fps
+All images: FAL FLUX 2 Klein, landscape 16:9
+Total video cost: $1.95 (3 x $0.65)
+
