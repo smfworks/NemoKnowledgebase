@@ -1,0 +1,32 @@
+# Model manifest: Grok 4.5 (OpenRouter)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# 500K context, reasoning + coding + tool-calling capable
+
+model_id: "grok-4.5-or"
+name: "Grok 4.5"
+provider: "xai"
+served_name: "x-ai/grok-4.5"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 500000
+max_output_tokens: 32768
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"

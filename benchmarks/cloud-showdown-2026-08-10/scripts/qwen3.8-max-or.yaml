@@ -1,0 +1,32 @@
+# Model manifest: Qwen3.8-Max (OpenRouter)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# 1M context, 131K max output, reasoning + coding + tool-calling capable
+
+model_id: "qwen3.8-max-or"
+name: "Qwen3.8-Max"
+provider: "qwen"
+served_name: "qwen/qwen3.8-max"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 1000000
+max_output_tokens: 131072
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"

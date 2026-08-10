@@ -1,0 +1,33 @@
+# Model manifest: GLM-5.2 (Ollama Cloud)
+# Cloud-hosted reasoning model via Ollama Cloud
+# Produces reasoning_content separate from content
+
+model_id: "glm-5.2-ollama-cloud"
+name: "GLM-5.2"
+provider: "zai"
+served_name: "glm-5.2:cloud"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 131072
+max_output_tokens: 16384
+
+metadata:
+  endpoint: "https://ollama.com/v1"
+  engine: "Ollama"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"
+  reasoning_model: true
