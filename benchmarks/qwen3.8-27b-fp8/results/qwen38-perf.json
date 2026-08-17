@@ -1,0 +1,136 @@
+{
+  "model": "Qwen3.8-27B-FP8",
+  "endpoint": "http://spark-56bc:30000/v1",
+  "timestamp": "2026-08-16T21:44:30",
+  "serve_recipe_id": "SMF-Spark-SGLang-qwen38-27b-fp8-eagle",
+  "tests": {
+    "latency_throughput": [
+      {
+        "max_tokens": 64,
+        "completion_tokens": 64,
+        "wall_s": 6.628,
+        "tok_s": 9.66
+      },
+      {
+        "max_tokens": 128,
+        "completion_tokens": 128,
+        "wall_s": 8.758,
+        "tok_s": 14.62
+      },
+      {
+        "max_tokens": 256,
+        "completion_tokens": 256,
+        "wall_s": 17.939,
+        "tok_s": 14.27
+      },
+      {
+        "max_tokens": 512,
+        "completion_tokens": 512,
+        "wall_s": 34.86,
+        "tok_s": 14.69
+      },
+      {
+        "max_tokens": 1024,
+        "completion_tokens": 1024,
+        "wall_s": 65.704,
+        "tok_s": 15.59
+      }
+    ],
+    "ttft": [
+      {
+        "label": "short",
+        "ttft_ms": 324.3,
+        "total_s": 0.827
+      },
+      {
+        "label": "medium",
+        "ttft_ms": 317.6,
+        "total_s": 25.019
+      },
+      {
+        "label": "reasoning",
+        "ttft_ms": 318.6,
+        "total_s": 37.796
+      }
+    ],
+    "concurrency": [
+      {
+        "concurrency": 1,
+        "ok": 1,
+        "failed": 0,
+        "wall_s": 37.621
+      },
+      {
+        "concurrency": 2,
+        "ok": 2,
+        "failed": 0,
+        "wall_s": 38.81
+      },
+      {
+        "concurrency": 4,
+        "ok": 4,
+        "failed": 0,
+        "wall_s": 44.004
+      },
+      {
+        "concurrency": 8,
+        "ok": 8,
+        "failed": 0,
+        "wall_s": 51.063
+      },
+      {
+        "concurrency": 16,
+        "ok": 16,
+        "failed": 0,
+        "wall_s": 65.016
+      }
+    ],
+    "context_scaling": [
+      {
+        "target": 100,
+        "prompt_tokens": 148,
+        "completion_tokens": 3,
+        "wall_s": 0.507,
+        "tok_s": 5.92
+      },
+      {
+        "target": 500,
+        "prompt_tokens": 548,
+        "completion_tokens": 3,
+        "wall_s": 0.618,
+        "tok_s": 4.86
+      },
+      {
+        "target": 2000,
+        "prompt_tokens": 2048,
+        "completion_tokens": 3,
+        "wall_s": 0.504,
+        "tok_s": 5.95
+      },
+      {
+        "target": 8000,
+        "prompt_tokens": 8048,
+        "completion_tokens": 3,
+        "wall_s": 7.225,
+        "tok_s": 0.42
+      },
+      {
+        "target": 32000,
+        "prompt_tokens": 32048,
+        "completion_tokens": 3,
+        "wall_s": 0.596,
+        "tok_s": 5.03
+      },
+      {
+        "target": 128000,
+        "prompt_tokens": 128048,
+        "completion_tokens": 3,
+        "wall_s": 40.571,
+        "tok_s": 0.07
+      }
+    ],
+    "spec_metrics": {
+      "status": 404
+    }
+  }
+}
