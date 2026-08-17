@@ -1,0 +1,265 @@
+{
+  "tag": "cal-qwen38-27b-fp8-math-thinking-on",
+  "endpoint": "http://spark-56bc:30000/v1",
+  "model": "Qwen3.8-27B-FP8",
+  "timestamp": "2026-08-17T04:55:28",
+  "thinking": "on",
+  "core_profile": "math_only",
+  "serve_recipe_id": "SMF-Spark-SGLang-qwen38-27b-fp8-eagle",
+  "wall_time_seconds": 4738.0,
+  "summary": {
+    "total": 30,
+    "passed": 21,
+    "failed": 9,
+    "error": 0
+  },
+  "by_category": {
+    "math": {
+      "pass": 21,
+      "fail": 9,
+      "error": 0
+    }
+  },
+  "tests": [
+    {
+      "test_id": "v3.math.easy.01",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 15072",
+      "elapsed": 4.877929636000772,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.easy.02",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 7",
+      "elapsed": 2.4977963470009854,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.medium.01",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 105",
+      "elapsed": 8.808613993998733,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.medium.02",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 16.913",
+      "elapsed": 209.34958397299488,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.medium.03",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 10.312",
+      "elapsed": 57.028204154994455,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.hard.01",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 4.101",
+      "elapsed": 119.29433567099477,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.hard.02",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 142.73",
+      "elapsed": 201.5560588139997,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.hard.03",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 5.461",
+      "elapsed": 208.29440239100222,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.hard.04",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 1.2986",
+      "elapsed": 59.549605392996455,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.hard.05",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 8.750",
+      "elapsed": 217.93077898499905,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.expert.01",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 14.595",
+      "elapsed": 215.55534823400376,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.expert.02",
+      "category": "math",
+      "status": "fail",
+      "detail": "Regex '\\b7.683\\b' did not match",
+      "elapsed": 201.1632480709959,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.expert.03",
+      "category": "math",
+      "status": "fail",
+      "detail": "Regex '\\b135.96\\b' did not match",
+      "elapsed": 195.96539542100072,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.expert.04",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 160.971",
+      "elapsed": 117.11582186799933,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.expert.05",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 0.631",
+      "elapsed": 204.41071959599503,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.expert.06",
+      "category": "math",
+      "status": "fail",
+      "detail": "Regex '\\b-0.01384\\b' did not match",
+      "elapsed": 39.20705631899909,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.expert.07",
+      "category": "math",
+      "status": "fail",
+      "detail": "Regex '\\b-9.417\\b' did not match",
+      "elapsed": 207.21115437499975,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.expert.08",
+      "category": "math",
+      "status": "fail",
+      "detail": "Regex '\\b29.924\\b' did not match",
+      "elapsed": 230.99502865400427,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.01",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 2.794",
+      "elapsed": 188.6655294259981,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.02",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 0.978308",
+      "elapsed": 176.87324601300497,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.03",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 2.146",
+      "elapsed": 204.0782290940042,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.04",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 1.8250",
+      "elapsed": 94.66393509900081,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.05",
+      "category": "math",
+      "status": "fail",
+      "detail": "Regex '\\b6.815\\b' did not match",
+      "elapsed": 200.69437741900038,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.06",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 16.5545",
+      "elapsed": 208.2630760020038,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.07",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 100.446",
+      "elapsed": 96.77995575399837,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.08",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 15.7987",
+      "elapsed": 206.55209187099535,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.09",
+      "category": "math",
+      "status": "pass",
+      "detail": "Regex matched: 0.481138",
+      "elapsed": 216.5041061189986,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.10",
+      "category": "math",
+      "status": "fail",
+      "detail": "Regex '\\b0.7819\\b' did not match",
+      "elapsed": 203.82863299200108,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.11",
+      "category": "math",
+      "status": "fail",
+      "detail": "Regex '\\b59.596\\b' did not match",
+      "elapsed": 215.8621569800016,
+      "tokens_used": null
+    },
+    {
+      "test_id": "v3.math.frontier.12",
+      "category": "math",
+      "status": "fail",
+      "detail": "Regex '\\b83.5165\\b' did not match",
+      "elapsed": 224.4095198340001,
+      "tokens_used": null
+    }
+  ]
+}
