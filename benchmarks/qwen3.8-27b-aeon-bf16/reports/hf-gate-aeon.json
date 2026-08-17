@@ -1,0 +1,18 @@
+{
+  "hf_gate": {
+    "verdict": "green",
+    "architecture": "qwen3_5_hybrid_gdn",
+    "hidden_size": 5120,
+    "intermediate_size": 17408,
+    "num_hidden_layers": 64,
+    "num_experts": null,
+    "num_experts_per_tok": null,
+    "tile_align_ok": true,
+    "intermediate_size_risk": false,
+    "nvfp4_checkpoint": false,
+    "moe_backend": "none",
+    "serve_smoke": "pass",
+    "serve_recipe_id": "SMF-Spark-SGLang-qwen38-27b-aeon-bf16-eagle",
+    "notes": "AEON-7 abliteration of Qwen3.8-27B (BF16, uncensored). Same hybrid Gated DeltaNet (GDN) VLM architecture: 48 linear-attention + 16 full-attention layers. BF16 full precision (~52GB). In-checkpoint MTP head (EAGLE 3/1/4). Vision tower unmodified. Served via SGLang (lmsysorg/sglang:qwen38-27b, flashinfer 0.6.18) on DGX Spark port 30000. Thinking ON by default; vision requires thinking on."
+  }
+}
