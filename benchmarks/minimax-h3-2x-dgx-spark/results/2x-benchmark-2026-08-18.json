@@ -1,0 +1,58 @@
+{
+  "model": "MiniMax H3 FL2VA",
+  "deployment": "2x NVIDIA DGX Spark (GB10 Grace Blackwell)",
+  "engine": "vLLM-Omni 0.26.0 + Ray 2.56.1",
+  "quantization": "online FP8",
+  "parallelism": "Ulysses sequence parallelism, TP=2 via NCCL/RoCE v2",
+  "interconnect": "CX-7 200 GbE RoCE v2, ~22 GB/s NCCL",
+  "date": "2026-08-18",
+  "benchmarks": {
+    "standard_warm": {
+      "resolution": "768x448",
+      "steps": 20,
+      "duration_s": 2.0,
+      "frames": 56,
+      "runs": [
+        {"run": 1, "elapsed_ms": 50635, "file_size_bytes": 628836},
+        {"run": 2, "elapsed_ms": 51207, "file_size_bytes": 628836}
+      ],
+      "single_spark_baseline_ms": 163500,
+      "speedup": 3.2
+    },
+    "high_quality": {
+      "resolution": "960x544",
+      "steps": 30,
+      "duration_s": 3.0,
+      "frames": 73,
+      "elapsed_ms": 221178,
+      "file_size_bytes": 1585000,
+      "single_spark_baseline_ms": 578700,
+      "speedup": 2.62
+    },
+    "resolution_scaling": {
+      "params": {"steps": 20, "duration_s": 2.0, "seed": 42},
+      "results": [
+        {"resolution": "512x320", "pixels": 163840, "elapsed_ms": 22001, "file_size_bytes": 960812},
+        {"resolution": "640x384", "pixels": 245760, "elapsed_ms": 38944, "file_size_bytes": 1184759},
+        {"resolution": "768x448", "pixels": 344064, "elapsed_ms": 57179, "file_size_bytes": 2334255},
+        {"resolution": "960x544", "pixels": 522240, "elapsed_ms": 106892, "file_size_bytes": 3115522}
+      ]
+    },
+    "step_scaling": {
+      "params": {"resolution": "768x448", "duration_s": 2.0, "seed": 42},
+      "results": [
+        {"steps": 10, "elapsed_ms": 34819},
+        {"steps": 20, "elapsed_ms": 50467},
+        {"steps": 30, "elapsed_ms": 74508},
+        {"steps": 50, "elapsed_ms": 121490}
+      ]
+    },
+    "thermal": {
+      "head_peak_c": 63,
+      "worker_peak_c": 60,
+      "head_post_idle_c": 54,
+      "worker_post_idle_c": 52,
+      "thermal_events": 0
+    }
+  }
+}
