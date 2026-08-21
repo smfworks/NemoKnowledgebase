@@ -1,0 +1,41 @@
+# Model manifest: Ox Alpha (OpenRouter stealth)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# 1M context, mandatory reasoning, text+image+video → text
+# Official A ranking uses text capabilities only (apples-to-apples vs Grok/Kimi/etc.)
+# Vision/video claimed by the provider; probed separately, not in Official A.
+
+model_id: "ox-alpha-or"
+name: "Ox Alpha"
+provider: "stealth"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 1048576
+max_output_tokens: 131072
+
+served_name: "stealth/ox-alpha"
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"
+  reasoning_model: true
+  reasoning_mandatory: true
+  reasoning_default_effort: "max"
+  default_temperature: 1.0
+  default_top_p: 0.95
+  claimed_input_modalities: ["text", "image", "video"]
