@@ -1,0 +1,18 @@
+{
+  "piece": "SUMI",
+  "title": "SUMI — a study in fluid pigment",
+  "html_path": "/home/mikesai1/workspace/glm53-flash-tests/01-most-beautiful-html/glm53-flash.html",
+  "html_bytes": 46039,
+  "html_lines": 1060,
+  "doctype": true,
+  "closing_html": true,
+  "inline_scripts": 1,
+  "inline_script_bytes": 34543,
+  "node_check": "pass",
+  "external_js": false,
+  "google_fonts": true,
+  "webgl": true,
+  "canvas": true,
+  "finish_reason": "stop",
+  "truncated": false
+}
