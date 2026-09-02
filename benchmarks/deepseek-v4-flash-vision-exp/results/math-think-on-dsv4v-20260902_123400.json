@@ -1,0 +1,281 @@
+{
+  "tag": "diag-math-think-on-dsv4v",
+  "thinking": "on",
+  "n": 30,
+  "passed": 25,
+  "failed": 5,
+  "pass_rate": 83.3,
+  "wall_time_seconds": 1056.5389864444733,
+  "tests": [
+    {
+      "test_id": "v3.math.easy.01",
+      "status": "pass",
+      "elapsed": 1.5083045959472656,
+      "detail": "Regex matched: 15072",
+      "tokens_used": 0,
+      "content_preview": "\\[\n7314 + 2586 \\times 3 = 7314 + 7758 = 15072\n\\]\n\n\\[\n\\boxed{15072}\n\\]",
+      "reasoning_preview": "We need to compute 7314 + 2586 * 3 following order of operations. Multiplication first: 2586 * 3 = 7758. Then addition: 7314 + 7758 = 15072. Final answer in boxed."
+    },
+    {
+      "test_id": "v3.math.easy.02",
+      "status": "pass",
+      "elapsed": 1.4392194747924805,
+      "detail": "Regex matched: 7",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{7}",
+      "reasoning_preview": "We need to solve 6x + 15 = 57 for x.\nSubtract 15 from both sides: 6x = 42.\nDivide by 6: x = 7.\nExact integer: 7.\nPut final answer inside \\boxed{}."
+    },
+    {
+      "test_id": "v3.math.medium.01",
+      "status": "pass",
+      "elapsed": 3.1190333366394043,
+      "detail": "Regex matched: 105",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{105}",
+      "reasoning_preview": "We need to solve the linear system:\n7x + 3y = 94\n2x - 5y = -61\n\nWe can use elimination or substitution. Let's use elimination. Multiply first equation by 5: 35x + 15y = 470. Multiply second equation b"
+    },
+    {
+      "test_id": "v3.math.medium.02",
+      "status": "pass",
+      "elapsed": 13.709746599197388,
+      "detail": "Regex matched: 16.913",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{16.913}",
+      "reasoning_preview": "We need to compute the length of the third side c using the law of cosines. Given sides a = 13.4, b = 21.7, and angle C = 51.2 degrees. The law of cosines formula is c^2 = a^2 + b^2 - 2ab*cos(C). Let'"
+    },
+    {
+      "test_id": "v3.math.medium.03",
+      "status": "pass",
+      "elapsed": 8.250154495239258,
+      "detail": "Regex matched: 10.312",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{10.312}",
+      "reasoning_preview": "We need answer only final rounded number in boxed. Compute escape velocity v = sqrt(2GM/r). M=4.7e24 kg, r=5.9e6 m, G=6.674e-11. 2GM = 2*6.674e-11*4.7e24 = 13.348e-11 *4.7e24? 6.674*2=13.348. *4.7 = 6"
+    },
+    {
+      "test_id": "v3.math.hard.01",
+      "status": "pass",
+      "elapsed": 24.29363703727722,
+      "detail": "Regex matched: 4.101",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{4.101}",
+      "reasoning_preview": "We need answer physics. Need compute proper time aboard ship. Earth frame distance d=11.3 ly, speed v=0.94c. Time in Earth frame t = d/v = 11.3/0.94 years. Proper time aboard ship = t / gamma = t * sq"
+    },
+    {
+      "test_id": "v3.math.hard.02",
+      "status": "pass",
+      "elapsed": 16.282891511917114,
+      "detail": "Regex matched: 142.73",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{142.73}",
+      "reasoning_preview": "We need answer physics. Need compute orbital period. Circular orbit radius r=8600 km = 8.6e6 m. Mass M=5.13e24 kg. G=6.674e-11. Period T = 2\u03c0 sqrt(r^3/(GM)). Compute.\n\nr^3 = (8.6e6)^3 = 8.6^3 *10^18 ="
+    },
+    {
+      "test_id": "v3.math.hard.03",
+      "status": "pass",
+      "elapsed": 33.93377923965454,
+      "detail": "Regex matched: 5.461",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{5.461}",
+      "reasoning_preview": "We need answer. Need compute. Need be careful. n_e=3.7e17 m^-3. e=1.602e-19 C, m_e=9.109e-31 kg, eps0=8.854e-12 F/m. f_pe = (1/(2\u03c0)) sqrt(n_e e^2/(eps0 m_e)). Compute in Hz then GHz (divide by 1e9). R"
+    },
+    {
+      "test_id": "v3.math.hard.04",
+      "status": "pass",
+      "elapsed": 8.34132719039917,
+      "detail": "Regex matched: 1.2986",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{1.2986}",
+      "reasoning_preview": "We need answer. Need evaluate integral \u222b0^1 x^3 e^{2x} dx exactly then numeric rounded 4 decimals. Need put only final number inside boxed. Let's compute.\n\nIntegral \u222b x^3 e^{2x} dx. Use formula \u222b x^n "
+    },
+    {
+      "test_id": "v3.math.hard.05",
+      "status": "pass",
+      "elapsed": 25.643904447555542,
+      "detail": "Regex matched: 8.750",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{8.750}",
+      "reasoning_preview": "We need answer only final number in boxed. Need compute. Triangle sides a=13.2, b=17.5, included angle C=41.3 deg. Law of cosines: c^2 = a^2 + b^2 - 2ab cos C. Then R = c/(2 sin C). Compute accurately"
+    },
+    {
+      "test_id": "v3.math.expert.01",
+      "status": "pass",
+      "elapsed": 45.25775766372681,
+      "detail": "Regex matched: 14.595",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{14.595}",
+      "reasoning_preview": "We need answer physics. Need compute difference Earth time minus ship proper time for round trip with two legs different speeds. Distance 11.83 ly in Earth frame. Outbound speed 0.9642c, return speed "
+    },
+    {
+      "test_id": "v3.math.expert.02",
+      "status": "pass",
+      "elapsed": 81.62212920188904,
+      "detail": "Regex matched: 7.683",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{7.683}",
+      "reasoning_preview": "We need answer. Need compute. Problem: uniform density sphere rho=4870 kg/m^3, R=3.41e6 m. M = (4/3) pi R^3 rho. U = 3 G M^2/(5 R). Need x such that U = x * 10^30 J. Round x to 3 decimals. Use G=6.674"
+    },
+    {
+      "test_id": "v3.math.expert.03",
+      "status": "pass",
+      "elapsed": 49.977540493011475,
+      "detail": "Regex matched: 135.96",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{135.96}",
+      "reasoning_preview": "We need answer. Need compute. Problem: probe orbits star mass M=3.2e30 kg, r1=7.8e10, r2=2.1e11. Hohmann transfer semi-major a=(r1+r2)/2. Transfer time half period = pi*sqrt(a^3/(G M)). Convert to day"
+    },
+    {
+      "test_id": "v3.math.expert.04",
+      "status": "pass",
+      "elapsed": 12.100074529647827,
+      "detail": "Regex matched: 160.971",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{160.971}",
+      "reasoning_preview": "We need answer. Need compute Debye length. Constants given. T_e=3.1e5 K, n_e=5.7e16 m^-3. lambda_D = sqrt(epsilon0 * k_B * T_e / (n_e * e^2)). Compute.\n\nepsilon0=8.854e-12, k_B=1.381e-23, T=3.1e5. Pro"
+    },
+    {
+      "test_id": "v3.math.expert.05",
+      "status": "pass",
+      "elapsed": 38.81854557991028,
+      "detail": "Regex matched: 0.631",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{0.631}",
+      "reasoning_preview": "We need answer. Need compute. Need be careful. Problem asks compute (a) f_pe, (b) f_ce, (c) ratio f_pe/f_ce rounded exactly 3 decimal places and put ONLY that rounded number inside \\boxed{} (no other "
+    },
+    {
+      "test_id": "v3.math.expert.06",
+      "status": "fail",
+      "elapsed": 8.756155490875244,
+      "detail": "Regex '\\b-0.01384\\b' did not match",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{-0.01384}",
+      "reasoning_preview": "We need answer. Need evaluate integral I = \u222b_0^\u221e x e^{-3x} cos(5x) dx. Need exact rational, then decimal rounded 5 places, put only rounded number in boxed. Need compute.\n\nIntegral of x e^{-ax} cos(bx"
+    },
+    {
+      "test_id": "v3.math.expert.07",
+      "status": "fail",
+      "elapsed": 20.666528701782227,
+      "detail": "Regex '\\b-9.417\\b' did not match",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{-9.419}",
+      "reasoning_preview": "We need to solve the initial value problem: y'' - 6y' + 25y = 0, y(0) = 3, y'(0) = -2.\n\nCharacteristic equation: r^2 - 6r + 25 = 0.\nr = [6 \u00b1 sqrt(36 - 100)] / 2 = [6 \u00b1 sqrt(-64)] / 2 = [6 \u00b1 8i] / 2 = "
+    },
+    {
+      "test_id": "v3.math.expert.08",
+      "status": "fail",
+      "elapsed": 157.78792715072632,
+      "detail": "Regex '\\b29.924\\b' did not match",
+      "tokens_used": 0,
+      "content_preview": "",
+      "reasoning_preview": "We need answer. Need compute spherical triangle sides a=47.3\u00b0, b=62.8\u00b0, c=71.9\u00b0. Use spherical law of cosines for angles:\ncos A = (cos a - cos b cos c)/(sin b sin c)\ncos B = (cos b - cos c cos a)/(sin"
+    },
+    {
+      "test_id": "v3.math.frontier.01",
+      "status": "pass",
+      "elapsed": 44.621931076049805,
+      "detail": "Regex matched: 2.794",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{2.794}",
+      "reasoning_preview": "We need answer physics. Need compute total proper time for two legs at constant speeds. Distances in rest frame of stars. Leg1: 6.20 ly at v=0.945c. Coordinate time t1 = d1/beta = 6.20 / 0.945 years. "
+    },
+    {
+      "test_id": "v3.math.frontier.02",
+      "status": "pass",
+      "elapsed": 47.26377820968628,
+      "detail": "Regex matched: 0.978308",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{0.978308}",
+      "reasoning_preview": "We need answer. Need compute successive relativistic boosts same direction. Starting from rest, apply boost1 u1=0.740c -> v1=0.740. Then boost2 u2=0.610c: v2 = (v1+u2)/(1+v1*u2) with beta units c=1. T"
+    },
+    {
+      "test_id": "v3.math.frontier.03",
+      "status": "pass",
+      "elapsed": 40.11118507385254,
+      "detail": "Regex matched: 2.146",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{2.146}",
+      "reasoning_preview": "We need answer physics. Need compute time of flight Hohmann transfer half period of ellipse semi-major a=(r1+r2)/2. r1=7300 km = 7.3e6 m, r2=19800 km=1.98e7 m. a=(7.3e6+1.98e7)/2 = (2.71e7)/2=1.355e7 "
+    },
+    {
+      "test_id": "v3.math.frontier.04",
+      "status": "pass",
+      "elapsed": 10.680601358413696,
+      "detail": "Regex matched: 1.8250",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{1.8250}",
+      "reasoning_preview": "We need answer only number k in boxed. Need compute U = 3 G M^2 / (5 R). M=5.32e24 kg, R=6210 km = 6.21e6 m. G=6.674e-11. Compute k = U / 1e32.\n\nLet's calculate carefully.\n\nM^2 = (5.32e24)^2 = 28.3024"
+    },
+    {
+      "test_id": "v3.math.frontier.05",
+      "status": "pass",
+      "elapsed": 63.23258113861084,
+      "detail": "Regex matched: 6.815",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{6.815}",
+      "reasoning_preview": "We need answer only final number in boxed. Need compute orbital period days. Given masses m1=1.42, m2=0.89 solar masses total 2.31 solar masses. a=0.093 AU. Use formula P = 2\u03c0 sqrt(a^3/(G(M))). Need u"
+    },
+    {
+      "test_id": "v3.math.frontier.06",
+      "status": "pass",
+      "elapsed": 42.87830305099487,
+      "detail": "Regex matched: 16.5545",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{16.5545}",
+      "reasoning_preview": "We need answer. Need compute f_pe in GHz rounded 4 decimal places. Use constants given. n_e=3.4e18. f_pe = (1/(2pi)) sqrt(n_e e^2/(eps0 m_e)). Compute.\n\nLet's calculate carefully.\n\nn_e = 3.4e18\ne^2 = "
+    },
+    {
+      "test_id": "v3.math.frontier.07",
+      "status": "fail",
+      "elapsed": 14.518410682678223,
+      "detail": "Regex '\\b100.446\\b' did not match",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{100.456}",
+      "reasoning_preview": "We need answer compute. Need be careful. Problem: n_e = 8.5e16 m^-3, T_e=1.8e5 K. Debye length lambda_D = sqrt(epsilon0 k_B T_e / (n_e e^2)). Constants given. Compute in micrometers, round 3 decimals."
+    },
+    {
+      "test_id": "v3.math.frontier.08",
+      "status": "pass",
+      "elapsed": 38.31739258766174,
+      "detail": "Regex matched: 15.7987",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{15.7987}",
+      "reasoning_preview": "We need answer. Need compute. Let's solve carefully.\n\nGiven K = 2.75 MeV, rest energy m_e c^2 = 0.5110 MeV exactly. (pc)^2 = K^2 + 2 K (m_e c^2) in MeV^2. So pc in MeV = sqrt(K^2 + 2 K * 0.5110). K=2."
+    },
+    {
+      "test_id": "v3.math.frontier.09",
+      "status": "pass",
+      "elapsed": 16.5814208984375,
+      "detail": "Regex matched: 0.481138",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{0.481138}",
+      "reasoning_preview": "We need answer. Need evaluate integral I = \u222b_0^\u221e (e^{-3x} - e^{-8x}) cos(5x)/x dx. Frullani type. Need exact closed form and numerical rounded 6 decimals. Put only final number in boxed.\n\nWe need comp"
+    },
+    {
+      "test_id": "v3.math.frontier.10",
+      "status": "pass",
+      "elapsed": 16.774736166000366,
+      "detail": "Regex matched: 0.7819",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{0.7819}",
+      "reasoning_preview": "We need to solve the initial value problem: y'' + 6y' + 25y = 0, y(0) = 3, y'(0) = -2.\n\nCharacteristic equation: r^2 + 6r + 25 = 0.\nr = [-6 \u00b1 sqrt(36 - 100)] / 2 = [-6 \u00b1 sqrt(-64)] / 2 = [-6 \u00b1 8i] / 2"
+    },
+    {
+      "test_id": "v3.math.frontier.11",
+      "status": "fail",
+      "elapsed": 154.44376254081726,
+      "detail": "Regex '\\b59.596\\b' did not match",
+      "tokens_used": 0,
+      "content_preview": "",
+      "reasoning_preview": "We need answer only final number in boxed. Need compute spherical law of cosines: cos a = cos b cos c + sin b sin c cos A. b=74.3\u00b0, c=51.8\u00b0, A=63.4\u00b0. Compute a degrees. Need full precision, round 3 de"
+    },
+    {
+      "test_id": "v3.math.frontier.12",
+      "status": "pass",
+      "elapsed": 15.575474977493286,
+      "detail": "Regex matched: 83.5165",
+      "tokens_used": 0,
+      "content_preview": "\\boxed{83.5165}",
+      "reasoning_preview": "We need answer only final number in boxed. Need compute volume of tetrahedron with edges: KL=9, KM=10, KN=8, LM=11, LN=7, MN=12. Need volume rounded 4 decimals. Use Cayley-Menger. Let's compute carefu"
+    }
+  ]
+}
