@@ -1,0 +1,38 @@
+# Model manifest: Google Gemini 3.8 Flash (OpenRouter)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# 1M context. Reasoning is mandatory on this endpoint (cannot disable).
+# Official A thinking-off analogue: reasoning.effort=low (smoke: content
+# lands, reasoning_tokens=0). Do not add "gemini" to reasoning_indicators.
+
+model_id: "gemini-3.8-flash-or"
+name: "Gemini 3.8 Flash"
+provider: "google"
+served_name: "google/gemini-3.8-flash"
+
+input_modalities:
+  - text
+  - image_in
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - vision
+  - context_long
+  - streaming
+
+context_length: 1048576
+max_output_tokens: 65536
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"
+  released: "2026-09-02"
+  official_a_thinking: "effort=low (disable forbidden)"
