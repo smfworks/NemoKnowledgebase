@@ -1,0 +1,43 @@
+# Model manifest: Meta Muse Spark 1.3 (OpenRouter)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# 1M context. Reasoning is mandatory on this endpoint (cannot disable).
+# Official A thinking-off analogue: reasoning.effort=minimal (smoke:
+# content lands; disable is HTTP 400; effort=low still burns more
+# reasoning tokens). Do not add "muse" to reasoning_indicators.
+
+model_id: "muse-spark-1.3-or"
+name: "Muse Spark 1.3"
+provider: "meta"
+served_name: "meta/muse-spark-1.3"
+
+input_modalities:
+  - text
+  - image_in
+  - video_in
+  - audio_in
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - vision
+  - video
+  - audio
+  - context_long
+  - streaming
+
+context_length: 1048576
+max_output_tokens: 943718
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"
+  released: "2026-09-02"
+  official_a_thinking: "effort=minimal (disable forbidden)"

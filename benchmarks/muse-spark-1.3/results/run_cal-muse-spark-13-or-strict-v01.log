@@ -1,0 +1,199 @@
+  hf_gate: not found (optional unless --require-hf-gate)
+  Core profile: strict_v01 (standard v0.1.1)
+  Thinking mode: off
+  serve_recipe_id: OpenRouter-cloud
+  Loaded  30 math tests
+  Loaded  30 coding tests
+  Loaded  30 reasoning_tier0 tests
+  Loaded  30 instruction tests
+  Loaded  30 prose tests
+  Loaded   5 writing tests
+  Loaded   2 tool_calling tests
+
+Total: 157 tests across 7 suites
+Endpoint: https://openrouter.ai/api/v1
+Model:    meta/muse-spark-1.3
+Tag:      cal-muse-spark-13-or-strict-v01
+
+  (per-request timeout: 300s)
+
+Endpoint healthy: True
+
+  ⚠ Could not query server max_model_len — skipping context validation
+     If you see HTTP 400 'context length' errors, the server's
+     --max-model-len is too small. Restart vLLM with a larger value.
+
+  ✅ PASS v3.math.easy.01                               [math          ]   3.2s Regex matched: 15072
+  ✅ PASS v3.math.easy.02                               [math          ]   0.9s Regex matched: 7
+  ✅ PASS v3.math.medium.01                             [math          ]   1.4s Regex matched: 105
+  ✅ PASS v3.math.medium.02                             [math          ]   9.1s Regex matched: 16.913
+  ✅ PASS v3.math.medium.03                             [math          ]   3.9s Regex matched: 10.312
+  ✅ PASS v3.math.hard.01                               [math          ]   3.8s Regex matched: 4.101
+  ❌ FAIL v3.math.hard.02                               [math          ]   4.7s Regex '\b142.73\b' did not match
+  ✅ PASS v3.math.hard.03                               [math          ]   5.6s Regex matched: 5.461
+  ✅ PASS v3.math.hard.04                               [math          ]   5.9s Regex matched: 1.2986
+  ✅ PASS v3.math.hard.05                               [math          ]  10.7s Regex matched: 8.750
+  ✅ PASS v3.math.expert.01                             [math          ]   7.3s Regex matched: 14.595
+  ✅ PASS v3.math.expert.02                             [math          ]   7.1s Regex matched: 7.683
+  ✅ PASS v3.math.expert.03                             [math          ]  12.7s Regex matched: 135.96
+  ✅ PASS v3.math.expert.04                             [math          ]   5.9s Regex matched: 160.971
+  ✅ PASS v3.math.expert.05                             [math          ]   7.9s Regex matched: 0.631
+  ❌ FAIL v3.math.expert.06                             [math          ]   4.8s Regex '\b-0.01384\b' did not match
+  ❌ FAIL v3.math.expert.07                             [math          ]   4.5s Regex '\b-9.417\b' did not match
+  ❌ FAIL v3.math.expert.08                             [math          ]  44.7s Regex '\b29.924\b' did not match
+  ✅ PASS v3.math.frontier.01                           [math          ]   7.1s Regex matched: 2.794
+  ✅ PASS v3.math.frontier.02                           [math          ]  11.7s Regex matched: 0.978308
+  ✅ PASS v3.math.frontier.03                           [math          ]   8.8s Regex matched: 2.146
+  ✅ PASS v3.math.frontier.04                           [math          ]   5.0s Regex matched: 1.8250
+  ✅ PASS v3.math.frontier.05                           [math          ]  11.5s Regex matched: 6.815
+  ❌ FAIL v3.math.frontier.06                           [math          ]   5.6s Regex '\b16.5545\b' did not match
+  ✅ PASS v3.math.frontier.07                           [math          ]   4.4s Regex matched: 100.446
+  ✅ PASS v3.math.frontier.08                           [math          ]   8.3s Regex matched: 15.7987
+  ✅ PASS v3.math.frontier.09                           [math          ]   3.0s Regex matched: 0.481138
+  ✅ PASS v3.math.frontier.10                           [math          ]   5.6s Regex matched: 0.7819
+  ✅ PASS v3.math.frontier.11                           [math          ]  34.8s Regex matched: 59.596
+  ✅ PASS v3.math.frontier.12                           [math          ]  11.2s Regex matched: 83.5165
+  ✅ PASS v3.coding.easy.01                             [coding        ]   3.1s All assertions passed
+  ✅ PASS v3.coding.easy.02                             [coding        ]   1.6s All assertions passed
+  ✅ PASS v3.coding.medium.01                           [coding        ]   2.3s All assertions passed
+  ✅ PASS v3.coding.medium.02                           [coding        ]   1.7s All assertions passed
+  ✅ PASS v3.coding.medium.03                           [coding        ]   2.3s All assertions passed
+  ✅ PASS v3.coding.hard.01                             [coding        ]   4.2s All assertions passed
+  ✅ PASS v3.coding.hard.02                             [coding        ]   3.6s All assertions passed
+  ✅ PASS v3.coding.hard.03                             [coding        ]  15.4s All assertions passed
+  ✅ PASS v3.coding.hard.04                             [coding        ]   2.9s All assertions passed
+  ✅ PASS v3.coding.hard.05                             [coding        ]   2.2s All assertions passed
+  ✅ PASS v3.coding.expert.01                           [coding        ]   4.3s All assertions passed
+  ✅ PASS v3.coding.expert.02                           [coding        ]   5.0s All assertions passed
+  ✅ PASS v3.coding.expert.03                           [coding        ]   4.1s All assertions passed
+  ✅ PASS v3.coding.expert.04                           [coding        ]  11.1s All assertions passed
+  ✅ PASS v3.coding.expert.05                           [coding        ]   3.5s All assertions passed
+  ✅ PASS v3.coding.expert.06                           [coding        ]   6.1s All assertions passed
+  ✅ PASS v3.coding.expert.07                           [coding        ]  15.7s All assertions passed
+  ✅ PASS v3.coding.expert.08                           [coding        ]   3.9s All assertions passed
+  ✅ PASS v3.coding.frontier.01                         [coding        ]   5.4s All assertions passed
+  ✅ PASS v3.coding.frontier.02                         [coding        ]   5.3s All assertions passed
+  ✅ PASS v3.coding.frontier.03                         [coding        ]  11.7s All assertions passed
+  ✅ PASS v3.coding.frontier.04                         [coding        ]   8.3s All assertions passed
+  ✅ PASS v3.coding.frontier.05                         [coding        ]  26.8s All assertions passed
+  ✅ PASS v3.coding.frontier.06                         [coding        ]   3.9s All assertions passed
+  ✅ PASS v3.coding.frontier.07                         [coding        ]  11.5s All assertions passed
+  ✅ PASS v3.coding.frontier.08                         [coding        ]   2.9s All assertions passed
+  ✅ PASS v3.coding.frontier.09                         [coding        ]   3.4s All assertions passed
+  ✅ PASS v3.coding.frontier.10                         [coding        ]  21.9s All assertions passed
+  ✅ PASS v3.coding.frontier.11                         [coding        ]   4.2s All assertions passed
+  ✅ PASS v3.coding.frontier.12                         [coding        ]   9.6s All assertions passed
+  ✅ PASS v3.reasoning.easy.01                          [reasoning     ]   2.5s Regex matched: \boxed{Dario}
+  ✅ PASS v3.reasoning.easy.02                          [reasoning     ]   2.0s Regex matched: 14
+  ✅ PASS v3.reasoning.medium.01                        [reasoning     ]   3.4s Regex matched: \boxed{Tobin}
+  ✅ PASS v3.reasoning.medium.02                        [reasoning     ]   1.7s Regex matched: \boxed{Alba}
+  ✅ PASS v3.reasoning.medium.03                        [reasoning     ]   1.9s Regex matched: 36
+  ✅ PASS v3.reasoning.hard.01                          [reasoning     ]   7.0s Regex matched: \boxed{Marisol}
+  ✅ PASS v3.reasoning.hard.02                          [reasoning     ]   3.7s Regex matched: \boxed{Sana}
+  ✅ PASS v3.reasoning.hard.03                          [reasoning     ]   3.7s Regex matched: \boxed{E}
+  ✅ PASS v3.reasoning.hard.04                          [reasoning     ]  13.1s Regex matched: 402
+  ✅ PASS v3.reasoning.hard.05                          [reasoning     ]   3.4s Regex matched: \boxed{Bram}
+  ✅ PASS v3.reasoning.expert.01                        [reasoning     ]  10.0s Regex matched: 5
+  ✅ PASS v3.reasoning.expert.02                        [reasoning     ]   7.6s Regex matched: \boxed{Fenna}
+  ✅ PASS v3.reasoning.expert.03                        [reasoning     ]   5.5s Regex matched: \boxed{Joren}
+  ✅ PASS v3.reasoning.expert.04                        [reasoning     ]   3.6s Regex matched: 4
+  ✅ PASS v3.reasoning.expert.05                        [reasoning     ]  19.2s Regex matched: 64400
+  ✅ PASS v3.reasoning.expert.06                        [reasoning     ]   7.0s Regex matched: \boxed{Yotam}
+  ✅ PASS v3.reasoning.expert.07                        [reasoning     ]   7.8s Regex matched: \boxed{Fife}
+  ✅ PASS v3.reasoning.expert.08                        [reasoning     ]  13.0s Regex matched: 336
+  ✅ PASS v3.reasoning.frontier.01                      [reasoning     ]  18.8s Regex matched: 4
+  ✅ PASS v3.reasoning.frontier.02                      [reasoning     ]  19.5s Regex matched: \boxed{Fenra}
+  ✅ PASS v3.reasoning.frontier.03                      [reasoning     ]   6.8s Regex matched: \boxed{Hutt}
+  ✅ PASS v3.reasoning.frontier.04                      [reasoning     ]   7.2s Regex matched: \boxed{Maro}
+  ✅ PASS v3.reasoning.frontier.05                      [reasoning     ]   6.1s Regex matched: 10
+  ✅ PASS v3.reasoning.frontier.06                      [reasoning     ]  11.0s Regex matched: 321
+  ✅ PASS v3.reasoning.frontier.07                      [reasoning     ]  27.9s Regex matched: 292
+  ✅ PASS v3.reasoning.frontier.08                      [reasoning     ]  14.5s Regex matched: \boxed{Marek}
+  ✅ PASS v3.reasoning.frontier.09                      [reasoning     ]   6.1s Regex matched: 4
+  ✅ PASS v3.reasoning.frontier.10                      [reasoning     ]   8.5s Regex matched: 24
+  ✅ PASS v3.reasoning.frontier.11                      [reasoning     ]   5.6s Regex matched: 18
+  ✅ PASS v3.reasoning.frontier.12                      [reasoning     ]   3.7s Regex matched: \boxed{Kolvo}
+  ✅ PASS v3.instruction.easy.01                        [instruction   ]   0.6s Exact match
+  ✅ PASS v3.instruction.easy.02                        [instruction   ]   1.5s Expected 3 line(s), got 3
+  ✅ PASS v3.instruction.medium.01                      [instruction   ]   4.4s Expected 3 sentence(s), got 3
+  ✅ PASS v3.instruction.medium.02                      [instruction   ]   3.4s Expected 5 line(s), got 5
+  ✅ PASS v3.instruction.medium.03                      [instruction   ]   0.8s Exact match
+  ✅ PASS v3.instruction.hard.01                        [instruction   ]   6.5s Expected 5 line(s), got 5
+  ✅ PASS v3.instruction.hard.02                        [instruction   ]   5.0s Expected 3 sentence(s), got 3
+  ✅ PASS v3.instruction.hard.03                        [instruction   ]   3.2s Expected 4 line(s), got 4
+  ✅ PASS v3.instruction.hard.04                        [instruction   ]   1.5s Exact match
+  ✅ PASS v3.instruction.hard.05                        [instruction   ]   7.3s Expected 3 stanza(s), got 3
+  ✅ PASS v3.instruction.expert.01                      [instruction   ]   9.9s Expected 6 line(s), got 6
+  ✅ PASS v3.instruction.expert.02                      [instruction   ]   4.8s Expected 7 line(s), got 7
+  ✅ PASS v3.instruction.expert.03                      [instruction   ]   4.7s Expected 5 line(s), got 5
+  ✅ PASS v3.instruction.expert.04                      [instruction   ]   2.0s Exact match
+  ✅ PASS v3.instruction.expert.05                      [instruction   ]   4.1s Expected 4 sentence(s), got 4
+  ✅ PASS v3.instruction.expert.06                      [instruction   ]   6.6s Expected 3 stanza(s), got 3
+  ✅ PASS v3.instruction.expert.07                      [instruction   ]   5.5s Expected 3 line(s), got 3
+  ✅ PASS v3.instruction.expert.08                      [instruction   ]   9.7s Expected 5 line(s), got 5
+  ✅ PASS v3.instruction.frontier.01                    [instruction   ]   7.1s Expected 7 line(s), got 7
+  ✅ PASS v3.instruction.frontier.02                    [instruction   ]   6.8s Expected 5 sentence(s), got 5
+  ✅ PASS v3.instruction.frontier.03                    [instruction   ]   6.4s Expected 6 line(s), got 6
+  ✅ PASS v3.instruction.frontier.04                    [instruction   ]   6.5s Exact match
+  ✅ PASS v3.instruction.frontier.05                    [instruction   ]  12.6s Expected 3 stanza(s), got 3
+  ✅ PASS v3.instruction.frontier.06                    [instruction   ]   8.9s Expected 7 sentence(s), got 7
+  ✅ PASS v3.instruction.frontier.07                    [instruction   ]   6.2s Expected 5 line(s), got 5
+  ✅ PASS v3.instruction.frontier.08                    [instruction   ]   4.3s Expected 2 stanza(s), got 2
+  ✅ PASS v3.instruction.frontier.09                    [instruction   ]  10.1s Expected 4 line(s), got 4
+  ✅ PASS v3.instruction.frontier.10                    [instruction   ]   3.7s Expected 8 line(s), got 8
+  ✅ PASS v3.instruction.frontier.11                    [instruction   ]   6.0s Expected 9 line(s), got 9
+  ✅ PASS v3.instruction.frontier.12                    [instruction   ]   5.9s Expected 8 line(s), got 8
+  ✅ PASS v3.prose.easy.01                              [prose         ]   3.4s Expected 5 line(s), got 5
+  ✅ PASS v3.prose.easy.02                              [prose         ]   7.3s Expected 4 sentence(s), got 4
+  ✅ PASS v3.prose.medium.01                            [prose         ]   2.2s Expected 6 line(s), got 6
+  ✅ PASS v3.prose.medium.02                            [prose         ]   5.2s Expected 8 sentence(s), got 8
+  ✅ PASS v3.prose.medium.03                            [prose         ]   2.4s Expected 5 stanza(s), got 5
+  ✅ PASS v3.prose.hard.01                              [prose         ]   3.7s Expected 8 line(s), got 8
+  ✅ PASS v3.prose.hard.02                              [prose         ]   7.6s Expected 4 stanza(s), got 4
+  ✅ PASS v3.prose.hard.03                              [prose         ]   6.5s Expected 12 sentence(s), got 12
+  ❌ FAIL v3.prose.hard.04                              [prose         ]  10.4s Regex '[eE]' did not match
+  ✅ PASS v3.prose.hard.05                              [prose         ]   6.3s Expected 10 line(s), got 10
+  ✅ PASS v3.prose.expert.01                            [prose         ]   9.4s Expected 39 line(s), got 39
+  ✅ PASS v3.prose.expert.02                            [prose         ]   3.5s Expected 10 line(s), got 10
+  ❌ FAIL v3.prose.expert.03                            [prose         ]  14.0s Regex 'e' did not match
+  ✅ PASS v3.prose.expert.04                            [prose         ]   3.4s Expected 12 line(s), got 12
+  ✅ PASS v3.prose.expert.05                            [prose         ]   3.6s Expected 15 line(s), got 15
+  ✅ PASS v3.prose.expert.06                            [prose         ]   6.2s Expected 8 stanza(s), got 8
+  ✅ PASS v3.prose.expert.07                            [prose         ]   6.2s Expected 1 stanza(s), got 1
+  ✅ PASS v3.prose.expert.08                            [prose         ]   7.7s Expected 1 stanza(s), got 1
+  ❌ FAIL v3.prose.frontier.01                          [prose         ]   5.5s Expected 7 stanza(s), got 9
+  ✅ PASS v3.prose.frontier.02                          [prose         ]   7.2s Expected 12 line(s), got 12
+  ✅ PASS v3.prose.frontier.03                          [prose         ]  18.4s Expected 1 stanza(s), got 1
+  ✅ PASS v3.prose.frontier.04                          [prose         ]  14.9s Expected 1 stanza(s), got 1
+  ✅ PASS v3.prose.frontier.05                          [prose         ]   7.1s Expected 19 line(s), got 19
+  ✅ PASS v3.prose.frontier.06                          [prose         ]   7.0s Expected 12 line(s), got 12
+  ✅ PASS v3.prose.frontier.07                          [prose         ]  14.5s Expected 7 stanza(s), got 7
+  ✅ PASS v3.prose.frontier.08                          [prose         ]   8.6s Expected 14 line(s), got 14
+  ✅ PASS v3.prose.frontier.09                          [prose         ]   3.7s Expected 1 line(s), got 1
+  ✅ PASS v3.prose.frontier.10                          [prose         ]  10.8s Expected 26 line(s), got 26
+  ✅ PASS v3.prose.frontier.11                          [prose         ]   3.9s Expected 1 line(s), got 1
+  ✅ PASS v3.prose.frontier.12                          [prose         ]   4.8s Expected 1 stanza(s), got 1
+  ❌ FAIL writing_article                               [writing       ]   5.6s Matched 3/6 keywords (need 4); missing: ['title', 'para
+  ✅ PASS writing_summary                               [writing       ]   1.4s Matched 4/4 keywords (need 2)
+  ❌ FAIL writing_creative                              [writing       ]   7.3s Matched 0/5 keywords (need 3); missing: ['robot', 'art'
+  ✅ PASS writing_technical                             [writing       ]  11.3s Matched 6/7 keywords (need 3); missing: ['SSL']
+  ❌ FAIL writing_format                                [writing       ]   1.8s Matched 0/4 keywords (need 4); missing: ['name', 'age',
+  ✅ PASS tool_call_weather                             [tool_calling  ]   0.9s tool=get_weather ✓; arg location=Tokyo ✓
+  ❌ FAIL tool_call_calculator                          [tool_calling  ]   0.9s tool=calculate ✓; arg expression=45 * 73 ✗
+
+======================================================================
+RESULTS BY CATEGORY — cal-muse-spark-13-or-strict-v01
+======================================================================
+  coding          :  30/ 30 passed (100.0%)  [fail=0, err=0]
+  instruction     :  30/ 30 passed (100.0%)  [fail=0, err=0]
+  math            :  25/ 30 passed ( 83.3%)  [fail=5, err=0]
+  prose           :  27/ 30 passed ( 90.0%)  [fail=3, err=0]
+  reasoning       :  30/ 30 passed (100.0%)  [fail=0, err=0]
+  tool_calling    :   1/  2 passed ( 50.0%)  [fail=1, err=0]
+  writing         :   2/  5 passed ( 40.0%)  [fail=3, err=0]
+  ──────────────────────────────────────────────────
+  TOTAL           : 145/157 passed ( 92.4%)  [fail=12, err=0]
+  Wall time: 1134.7s
+======================================================================
+
+Results saved to: /home/mikesai1/workspace/smf-bench/results/stage1_cal-muse-spark-13-or-strict-v01_20260902_234054.json
