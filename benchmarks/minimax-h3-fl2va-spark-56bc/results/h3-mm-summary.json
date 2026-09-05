@@ -1,0 +1,43 @@
+{
+  "host": "spark-56bc",
+  "endpoint": "http://spark-56bc:8000",
+  "model": "/models/MiniMax-H3/FL2VA",
+  "date": "2026-09-05",
+  "notes": "1x GB10 FL2VA partition supports tasks ['fl2va','t2va'] only. Ref2VA (video/audio reference) is not loaded.",
+  "video_production": {
+    "id": "t2va_production",
+    "status": "pass",
+    "http": 200,
+    "secs": 159.1,
+    "bytes": 698852,
+    "duration_s": 2.357,
+    "video": "h264 768x448 24fps",
+    "audio": "aac stereo 32000",
+    "path": "/home/mikesai1/workspace/h3-mm-tests/out/t2va-standard.mp4"
+  },
+  "image_ingest": {
+    "id": "fl2va_from_png",
+    "status": "pass",
+    "http": 200,
+    "inference_s": 180.047,
+    "bytes": 357384,
+    "duration_s": 2.357,
+    "video": "h264 768x448 24fps",
+    "audio": "aac stereo 32000",
+    "path": "/home/mikesai1/workspace/h3-mm-tests/out/fl2va-from-png.mp4",
+    "identity": {
+      "source_left_rgb": [220.0, 40.0, 40.0],
+      "frame0_left_rgb": [216.7, 39.0, 37.9],
+      "source_right_rgb": [35.8, 67.3, 182.0],
+      "frame0_right_rgb": [34.0, 65.1, 178.0]
+    }
+  },
+  "rejected": [
+    {"id": "task=i2va", "http": 500, "error": "checkpoint partition 'fl2va' supports ['fl2va', 't2va'], got task='i2va'"},
+    {"id": "t2va + input_reference image", "http": 500, "error": "t2va does not accept an image condition"},
+    {"id": "audio_reference as UploadFile", "http": 400, "error": "Input should be a valid string"},
+    {"id": "video_reference as UploadFile", "http": 400, "error": "Input should be a valid string"},
+    {"id": "audio_speech voice=alloy", "http": 400, "error": "Invalid voice 'alloy'. Supported: none"},
+    {"id": "chat image/audio/video as VLM ingest", "result": "chat completions launches diffusion T2VA from the text; 30s client timeout aborted jobs. Not a VLM."}
+  ]
+}

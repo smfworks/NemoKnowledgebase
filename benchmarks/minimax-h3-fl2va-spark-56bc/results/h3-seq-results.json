@@ -1,0 +1,82 @@
+{
+  "gpu_end": "70, 0 %",
+  "mem_end": 21.4,
+  "results": [
+    {
+      "id": "t2va_production",
+      "status": "pass",
+      "http": 200,
+      "secs": 159.1,
+      "bytes": 698852,
+      "head": "\u0000\u0000\u0000 ftypisom\u0000\u0000\u0002\u0000isomiso2avc1mp41\u0000\u0000\u0000\bfree\u0000\n\ufffd\u0017mdat\u0000\u0000\u0002O\u0006\u0005\ufffd\ufffdK\ufffdE\ufffd\ufffd\ufffdH\ufffd\ufffd,\ufffd \ufffd#\ufffd\ufffdx264 - core 165 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblo",
+      "probe": {
+        "ok": true,
+        "duration": "2.357000",
+        "size": "698852",
+        "streams": [
+          {
+            "codec": "h264",
+            "type": "video",
+            "w": 768,
+            "h": 448,
+            "ch": null,
+            "sr": null
+          },
+          {
+            "codec": "aac",
+            "type": "audio",
+            "w": null,
+            "h": null,
+            "ch": 2,
+            "sr": "32000"
+          }
+        ]
+      },
+      "gpu_end": "70, 0 %",
+      "mem_end": 21.3,
+      "path": "/home/mikesai3/h3-mm-tests/out/t2va-standard.mp4"
+    },
+    {
+      "id": "image_ingest_i2va",
+      "status": "fail",
+      "http": 500,
+      "secs": 0.08,
+      "bytes": 176,
+      "head": "{\"error\":{\"message\":\"Video generation failed: checkpoint partition 'fl2va' supports ['fl2va', 't2va'], got task='i2va'\",\"type\":\"Internal Server Error\",\"param\":null,\"code\":500}}",
+      "probe": {
+        "ok": false
+      },
+      "gpu_end": "70, 0 %",
+      "mem_end": 21.5,
+      "path": null
+    },
+    {
+      "id": "audio_ingest_ref",
+      "status": "fail",
+      "http": 400,
+      "secs": 0.01,
+      "bytes": 420,
+      "head": "{\"error\":{\"message\":\"1 validation error:\\n  {'type': 'string_type', 'loc': ('body', 'audio_reference'), 'msg': 'Input should be a valid string', 'input': UploadFile(filename='tone-440.wav', size=32044",
+      "probe": {
+        "ok": false
+      },
+      "gpu_end": "70, 0 %",
+      "mem_end": 21.5,
+      "path": null
+    },
+    {
+      "id": "video_ingest_ref",
+      "status": "fail",
+      "http": 400,
+      "secs": 0.01,
+      "bytes": 428,
+      "head": "{\"error\":{\"message\":\"1 validation error:\\n  {'type': 'string_type', 'loc': ('body', 'video_reference'), 'msg': 'Input should be a valid string', 'input': UploadFile(filename='green-yellow.mp4', size=1",
+      "probe": {
+        "ok": false
+      },
+      "gpu_end": "70, 0 %",
+      "mem_end": 21.4,
+      "path": null
+    }
+  ]
+}
