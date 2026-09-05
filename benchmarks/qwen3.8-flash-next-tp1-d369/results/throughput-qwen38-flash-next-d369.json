@@ -1,0 +1,84 @@
+{
+  "endpoint": "http://spark-d369:8888/v1",
+  "model": "qwen3.8-flash-next",
+  "serve": "SMF-Spark-d369-Qwen38FN-TP1-16k-mtp0-fp8kv-gmu0671",
+  "cells": [
+    {
+      "cell": "256xc1",
+      "concurrency": 1,
+      "repeats": 3,
+      "runs": [
+        {
+          "ttft_s": 0.27277600999514107,
+          "wall_s": 10.341176150992396,
+          "prompt_tokens": 55,
+          "completion_tokens": 249,
+          "decode_tok_s": 24.730840700907724,
+          "prefill_tok_s": 201.63063460375312
+        },
+        {
+          "ttft_s": 0.28522806700493675,
+          "wall_s": 10.715035775006982,
+          "prompt_tokens": 55,
+          "completion_tokens": 256,
+          "decode_tok_s": 24.545035456750515,
+          "prefill_tok_s": 192.82814828685164
+        },
+        {
+          "ttft_s": 0.24771148001309484,
+          "wall_s": 10.113861065008678,
+          "prompt_tokens": 55,
+          "completion_tokens": 243,
+          "decode_tok_s": 24.62966914362963,
+          "prefill_tok_s": 222.03250328605085
+        }
+      ]
+    },
+    {
+      "cell": "256xc6",
+      "concurrency": 6,
+      "repeats": 1,
+      "runs": [
+        {
+          "ttft_s": 1.0449524139985442,
+          "wall_s": 27.480352327009314,
+          "prompt_tokens": 328,
+          "completion_tokens": 1536,
+          "decode_tok_s": 55.89447987136353,
+          "n": 6
+        }
+      ]
+    },
+    {
+      "cell": "8kxc1",
+      "concurrency": 1,
+      "repeats": 2,
+      "runs": [
+        {
+          "ttft_s": 0.8693494720064336,
+          "wall_s": 0.9111923650052631,
+          "prompt_tokens": 7862,
+          "completion_tokens": 2,
+          "decode_tok_s": 47.79784227768257,
+          "prefill_tok_s": 9043.54376825551
+        },
+        {
+          "ttft_s": 0.8997512939968146,
+          "wall_s": 0.9373257179977372,
+          "prompt_tokens": 7862,
+          "completion_tokens": 2,
+          "decode_tok_s": 53.227695518390185,
+          "prefill_tok_s": 8737.970206273283
+        }
+      ],
+      "cold": {
+        "ttft_s": 5.382746664996375,
+        "wall_s": 5.418714392988477,
+        "prompt_tokens": 12034,
+        "completion_tokens": 2,
+        "prefill_tok_s": 2235.661596013102,
+        "note": "salted cold"
+      }
+    }
+  ]
+}
