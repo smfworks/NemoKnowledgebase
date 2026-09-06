@@ -1,0 +1,72 @@
+{
+  "host": "spark-56bc",
+  "endpoint": "http://spark-56bc:8000/v1/videos/sync",
+  "model": "/models/MiniMax-H3/FL2VA",
+  "recipe": {
+    "width": 768,
+    "height": 448,
+    "num_inference_steps": 20,
+    "flow_shift": 12,
+    "fps": 24,
+    "task": "t2va"
+  },
+  "date": "2026-09-05",
+  "cells": [
+    {
+      "requested_s": 2.0,
+      "http": 200,
+      "inference_s": 159.1,
+      "clip_s": 2.357,
+      "frames": 56,
+      "bytes": 698852,
+      "max_time_s": 900,
+      "file": "t2va-standard.mp4"
+    },
+    {
+      "requested_s": 5.0,
+      "http": 200,
+      "inference_s": 423.227,
+      "clip_s": 5.207,
+      "video_s": 5.166667,
+      "frames": 124,
+      "bytes": 1359114,
+      "peak_mb": 93972,
+      "max_time_s": 900,
+      "request_id": "video_sync-a6587e95ea025095",
+      "file": "t2va-5s-standard.mp4"
+    },
+    {
+      "requested_s": 8.0,
+      "http": 200,
+      "inference_s": 1445.366,
+      "stage_gen_ms": 1339848.463,
+      "encode_ms": 105439.43,
+      "clip_s": 8.032,
+      "video_s": 8.0,
+      "frames": 192,
+      "bytes": 2868087,
+      "peak_mb": 95212,
+      "max_time_s": 1800,
+      "request_id": "video_sync-b6b51d717a016dd7",
+      "file": "t2va-8s-standard.mp4",
+      "note": "first attempt --max-time 1200 curl exit 28 0 bytes after GPU denoise ~1241s"
+    }
+  ],
+  "splice": {
+    "method": "ffmpeg concat demuxer -c copy",
+    "inputs": [
+      "t2va-5s-standard.mp4",
+      "t2va-8s-standard.mp4"
+    ],
+    "duration_s": 13.239,
+    "frames": 316,
+    "bytes": 4225924,
+    "file": "splice-5s-plus-8s.mp4"
+  },
+  "fleet": {
+    "skill": "minimax-h3-video-generation",
+    "version": "1.1.0",
+    "profiles": 15,
+    "shared": "~/.hermes/skills/mlops/minimax-h3-video-generation"
+  }
+}
