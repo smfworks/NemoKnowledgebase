@@ -1,0 +1,43 @@
+# Model manifest: Nex AGI Nex-N2.5-Pro (OpenRouter free)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# 262K context. Vendor documents reasoning_effort=none as non-thinking
+# (Official A analogue). Default is medium/adaptive. Do not add "nex"
+# to reasoning_indicators.
+#
+# Weights were not on Hugging Face at intake (siblings: README + figures
+# only). OpenRouter endpoint quantization: fp8. Tokenizer: Qwen3.
+
+model_id: "nex-n2.5-pro-or"
+name: "Nex-N2.5-Pro"
+provider: "nex-agi"
+served_name: "nex-agi/nex-n2.5-pro:free"
+
+input_modalities:
+  - text
+  - image_in
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - vision
+  - context_long
+  - streaming
+
+context_length: 262144
+max_output_tokens: 235929
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "fp8"
+  tool_call_parser: "native"
+  released: "2026-09-08"
+  official_a_thinking: "reasoning.effort=none (vendor non-thinking)"
+  hf_repo: "nex-agi/Nex-N2.5-Pro"
+  license: "apache-2.0"

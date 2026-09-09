@@ -1,0 +1,17 @@
+{
+  "id": "gen-1788922973-ScqupbSASQLN2qpkGJna",
+  "model": "nex-agi/nex-n2.5-pro:free",
+  "provider": "Nex AGI",
+  "prompt": "Reply with exactly: NEX_OK",
+  "reasoning": {"effort": "none"},
+  "content": "NEX_OK",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 19,
+    "completion_tokens": 4,
+    "total_tokens": 23,
+    "cost": 0,
+    "reasoning_tokens": 0
+  },
+  "notes": "First smoke (gen-1788922642-CVyPX378qryuLyXwr5wa) queued 240s with 571 OPENROUTER PROCESSING comments and 0 tokens. Second smoke completed immediately with exact NEX_OK and zero reasoning tokens."
+}

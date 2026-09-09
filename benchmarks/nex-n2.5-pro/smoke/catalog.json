@@ -1,0 +1,49 @@
+{
+  "captured_at": "2026-09-08T22:53:00-04:00",
+  "slug": "nex-agi/nex-n2.5-pro:free",
+  "openrouter": {
+    "name": "Nex AGI: Nex-N2.5-Pro (free)",
+    "context_length": 262144,
+    "pricing_prompt": "0",
+    "pricing_completion": "0",
+    "input_modalities": ["text", "image"],
+    "output_modalities": ["text"],
+    "tokenizer": "Qwen3",
+    "created_unix": 1788890050,
+    "supported_parameters": [
+      "include_reasoning", "logprobs", "max_tokens", "reasoning",
+      "reasoning_effort", "response_format", "structured_outputs",
+      "temperature", "tool_choice", "tools", "top_k", "top_logprobs", "top_p"
+    ]
+  },
+  "endpoint": {
+    "provider_name": "Nex AGI",
+    "tag": "nex-agi/fp8",
+    "quantization": "fp8",
+    "status": -5,
+    "max_completion_tokens": 235929,
+    "uptime_last_5m": 55.32212885154062,
+    "uptime_last_30m": 69.8545788025678,
+    "uptime_last_1d": 82.14627802138897,
+    "latency_last_30m_ms": {"p50": 12966, "p75": 68776, "p90": 162749.2, "p99": 281089.78},
+    "throughput_last_30m_tps": {"p50": 16, "p75": 27, "p90": 36, "p99": 47},
+    "request_count_last_30m_text": 5080
+  },
+  "huggingface": {
+    "id": "nex-agi/Nex-N2.5-Pro",
+    "license": "apache-2.0",
+    "likes": 24,
+    "downloads": 0,
+    "createdAt": "2026-09-08T11:01:41.000Z",
+    "lastModified": "2026-09-08T16:17:52.000Z",
+    "siblings": [".gitattributes", "README.md", "figures/NEX_logo.svg", "figures/Nex-N2-Benchmark-white.png", "figures/Nex-N2.5-Benchmark-white.png"],
+    "weights": "coming soon — no safetensors at intake"
+  },
+  "vendor_thinking": {
+    "none": "Non-thinking",
+    "medium": "Adaptive thinking (default)",
+    "high": "Thinking always on"
+  },
+  "vendor_sampling": {"temperature": 0.7, "top_p": 0.95, "top_k": 40},
+  "notes": "Official A analogue is reasoning.effort=none. Do not add nex to reasoning_indicators. Local weights not published; Spark serve is not possible until HF upload."
+}

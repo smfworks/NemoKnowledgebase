@@ -1,0 +1,199 @@
+  hf_gate: not found (optional unless --require-hf-gate)
+  Core profile: strict_v01 (standard v0.1.1)
+  Thinking mode: off
+  serve_recipe_id: OpenRouter-cloud
+  Loaded  30 math tests
+  Loaded  30 coding tests
+  Loaded  30 reasoning_tier0 tests
+  Loaded  30 instruction tests
+  Loaded  30 prose tests
+  Loaded   5 writing tests
+  Loaded   2 tool_calling tests
+
+Total: 157 tests across 7 suites
+Endpoint: https://openrouter.ai/api/v1
+Model:    nex-agi/nex-n2.5-pro:free
+Tag:      cal-nex-n25-pro-or-strict-v01
+
+  (per-request timeout: 420s)
+
+Endpoint healthy: True
+
+  ⚠ Could not query server max_model_len — skipping context validation
+     If you see HTTP 400 'context length' errors, the server's
+     --max-model-len is too small. Restart vLLM with a larger value.
+
+  ✅ PASS v3.math.easy.01                               [math          ]   5.8s Regex matched: 15072
+  ❌ FAIL v3.math.easy.02                               [math          ] 108.1s Regex '\b7\b' did not match
+  ❌ FAIL v3.math.medium.01                             [math          ]  25.2s Regex '\b105\b' did not match
+  ❌ FAIL v3.math.medium.02                             [math          ]  34.7s Regex '\b16.913\b' did not match
+  ❌ FAIL v3.math.medium.03                             [math          ]  22.8s Regex '\b10.312\b' did not match
+  ❌ FAIL v3.math.hard.01                               [math          ] 277.3s Regex '\b4.101\b' did not match
+  ❌ FAIL v3.math.hard.02                               [math          ] 153.4s Regex '\b142.73\b' did not match
+  ❌ FAIL v3.math.hard.03                               [math          ]  63.2s Regex '\b5.461\b' did not match
+  ❌ FAIL v3.math.hard.04                               [math          ] 300.1s Regex '\b1.2986\b' did not match
+  ❌ FAIL v3.math.hard.05                               [math          ]  85.5s Regex '\b8.750\b' did not match
+  ❌ FAIL v3.math.expert.01                             [math          ] 162.2s Regex '\b14.595\b' did not match
+  ❌ FAIL v3.math.expert.02                             [math          ] 187.4s Regex '\b7.683\b' did not match
+  ❌ ERR  v3.math.expert.03                             [math          ] HTTP 429: {"error":{"message":"Provider returned e
+  ❌ FAIL v3.math.expert.04                             [math          ]  35.4s Regex '\b160.971\b' did not match
+  ❌ ERR  v3.math.expert.05                             [math          ] HTTP 429: {"error":{"message":"Provider returned e
+  ❌ FAIL v3.math.expert.06                             [math          ]   0.9s Regex '\b-0.01384\b' did not match
+  ❌ FAIL v3.math.expert.07                             [math          ] 125.8s Regex '\b-9.417\b' did not match
+  ❌ FAIL v3.math.expert.08                             [math          ]   2.2s Regex '\b29.924\b' did not match
+  ❌ FAIL v3.math.frontier.01                           [math          ]   1.1s Regex '\b2.794\b' did not match
+  ❌ FAIL v3.math.frontier.02                           [math          ]   1.9s Regex '\b0.978308\b' did not match
+  ❌ FAIL v3.math.frontier.03                           [math          ]   0.9s Regex '\b2.146\b' did not match
+  ❌ FAIL v3.math.frontier.04                           [math          ]   1.3s Regex '\b1.8250\b' did not match
+  ❌ FAIL v3.math.frontier.05                           [math          ] 199.4s Regex '\b6.815\b' did not match
+  ❌ FAIL v3.math.frontier.06                           [math          ]   1.2s Regex '\b16.5545\b' did not match
+  ❌ FAIL v3.math.frontier.07                           [math          ]   1.1s Regex '\b100.446\b' did not match
+  ❌ FAIL v3.math.frontier.08                           [math          ]   0.9s Regex '\b15.7987\b' did not match
+  ❌ FAIL v3.math.frontier.09                           [math          ]   1.9s Regex '\b0.481138\b' did not match
+  ❌ FAIL v3.math.frontier.10                           [math          ]   1.8s Regex '\b0.7819\b' did not match
+  ❌ FAIL v3.math.frontier.11                           [math          ]   0.9s Regex '\b59.596\b' did not match
+  ❌ FAIL v3.math.frontier.12                           [math          ]   8.7s Regex '\b83.5165\b' did not match
+  ✅ PASS v3.coding.easy.01                             [coding        ]   1.6s All assertions passed
+  ✅ PASS v3.coding.easy.02                             [coding        ]   1.6s All assertions passed
+  ✅ PASS v3.coding.medium.01                           [coding        ]   4.4s All assertions passed
+  ❌ FAIL v3.coding.medium.02                           [coding        ] 300.1s No code in response
+  ✅ PASS v3.coding.medium.03                           [coding        ]   6.9s All assertions passed
+  ❌ FAIL v3.coding.hard.01                             [coding        ]   9.7s Assertion failed: AssertionError
+  ❌ FAIL v3.coding.hard.02                             [coding        ] 123.5s Assertion failed: NameError: name 'bisect_right' is not
+  ✅ PASS v3.coding.hard.03                             [coding        ]  14.3s All assertions passed
+  ✅ PASS v3.coding.hard.04                             [coding        ]  51.8s All assertions passed
+  ✅ PASS v3.coding.hard.05                             [coding        ]   8.6s All assertions passed
+  ✅ PASS v3.coding.expert.01                           [coding        ]   6.2s All assertions passed
+  ✅ PASS v3.coding.expert.02                           [coding        ]   9.3s All assertions passed
+  ✅ PASS v3.coding.expert.03                           [coding        ]  11.6s All assertions passed
+  ❌ FAIL v3.coding.expert.04                           [coding        ] 300.3s No code in response
+  ❌ FAIL v3.coding.expert.05                           [coding        ]   9.0s Assertion failed: AssertionError
+  ✅ PASS v3.coding.expert.06                           [coding        ]   9.7s All assertions passed
+  ❌ FAIL v3.coding.expert.07                           [coding        ]  26.2s Assertion failed: AssertionError
+  ❌ FAIL v3.coding.expert.08                           [coding        ]  14.9s Assertion failed: AssertionError
+  ✅ PASS v3.coding.frontier.01                         [coding        ]  14.0s All assertions passed
+  ✅ PASS v3.coding.frontier.02                         [coding        ]  12.5s All assertions passed
+  ❌ FAIL v3.coding.frontier.03                         [coding        ]  29.3s Assertion failed: TypeError: argument of type 'int' is 
+  ❌ FAIL v3.coding.frontier.04                         [coding        ]  10.5s Assertion failed: AssertionError
+  ✅ PASS v3.coding.frontier.05                         [coding        ]  14.6s All assertions passed
+  ❌ ERR  v3.coding.frontier.06                         [coding        ] HTTP 429: {"error":{"message":"Provider returned e
+  ❌ ERR  v3.coding.frontier.07                         [coding        ] HTTP 429: {"error":{"message":"Provider returned e
+  ❌ ERR  v3.coding.frontier.08                         [coding        ] HTTP 429: {"error":{"message":"Provider returned e
+  ✅ PASS v3.coding.frontier.09                         [coding        ]  13.7s All assertions passed
+  ❌ ERR  v3.coding.frontier.10                         [coding        ] HTTP 429: {"error":{"message":"Provider returned e
+  ✅ PASS v3.coding.frontier.11                         [coding        ]  10.2s All assertions passed
+  ❌ ERR  v3.coding.frontier.12                         [coding        ] HTTP 429: {"error":{"message":"Provider returned e
+  ✅ PASS v3.reasoning.easy.01                          [reasoning     ]   0.7s Regex matched: \boxed{Dario}
+  ✅ PASS v3.reasoning.easy.02                          [reasoning     ]   0.7s Regex matched: 14
+  ❌ ERR  v3.reasoning.medium.01                        [reasoning     ] HTTP 429: {"error":{"message":"Provider returned e
+  ❌ ERR  v3.reasoning.medium.02                        [reasoning     ] HTTP 429: {"error":{"message":"Provider returned e
+  ❌ ERR  v3.reasoning.medium.03                        [reasoning     ] HTTP 429: {"error":{"message":"Provider returned e
+  ❌ ERR  v3.reasoning.hard.01                          [reasoning     ] HTTP 429: {"error":{"message":"Provider returned e
+  ✅ PASS v3.reasoning.hard.02                          [reasoning     ]   0.9s Regex matched: \boxed{Sana}
+  ❌ FAIL v3.reasoning.hard.03                          [reasoning     ]   1.3s Regex '\\boxed\{\s*(?:\\text(?:bf|rm|tt)?\{)?\s*\(?E\)?
+  ❌ FAIL v3.reasoning.hard.04                          [reasoning     ]   5.7s Regex '\b402\b' did not match
+  ❌ FAIL v3.reasoning.hard.05                          [reasoning     ]   0.8s Regex '\\boxed\{\s*(?:\\text(?:bf|rm|tt)?\{)?\s*Bram\s*
+  ❌ FAIL v3.reasoning.expert.01                        [reasoning     ]  10.0s Regex '\b5\b' did not match
+  ❌ FAIL v3.reasoning.expert.02                        [reasoning     ]   5.0s Regex '\\boxed\{\s*Fenna\s*\}' did not match
+  ✅ PASS v3.reasoning.expert.03                        [reasoning     ]   2.0s Regex matched: \boxed{Joren}
+  ✅ PASS v3.reasoning.expert.04                        [reasoning     ]   7.6s Regex matched: 4
+  ❌ FAIL v3.reasoning.expert.05                        [reasoning     ]  11.9s Regex '\b64400\b' did not match
+  ✅ PASS v3.reasoning.expert.06                        [reasoning     ]   4.1s Regex matched: \boxed{Yotam}
+  ❌ ERR  v3.reasoning.expert.07                        [reasoning     ] HTTP 429: {"error":{"message":"Provider returned e
+  ✅ PASS v3.reasoning.expert.08                        [reasoning     ] 146.4s Regex matched: 336
+  ✅ PASS v3.reasoning.frontier.01                      [reasoning     ]  12.7s Regex matched: 4
+  ❌ FAIL v3.reasoning.frontier.02                      [reasoning     ]  11.3s Regex '\\boxed\{\s*Fenra\s*\}' did not match
+  ❌ FAIL v3.reasoning.frontier.03                      [reasoning     ]   0.7s Regex '\\boxed\{\s*Hutt\s*\}' did not match
+  ❌ FAIL v3.reasoning.frontier.04                      [reasoning     ]   3.9s Regex '\\boxed\{\s*Maro\s*\}' did not match
+  ❌ FAIL v3.reasoning.frontier.05                      [reasoning     ]   8.5s Regex '\b10\b' did not match
+  ❌ FAIL v3.reasoning.frontier.06                      [reasoning     ]   7.3s Regex '\b321\b' did not match
+  ❌ FAIL v3.reasoning.frontier.07                      [reasoning     ]   7.0s Regex '\b292\b' did not match
+  ✅ PASS v3.reasoning.frontier.08                      [reasoning     ]   0.8s Regex matched: \boxed{Marek}
+  ❌ FAIL v3.reasoning.frontier.09                      [reasoning     ]   6.7s Regex '\b4\b' did not match
+  ❌ FAIL v3.reasoning.frontier.10                      [reasoning     ]   0.9s Regex '\b24\b' did not match
+  ❌ FAIL v3.reasoning.frontier.11                      [reasoning     ]   6.7s Regex '\b18\b' did not match
+  ❌ FAIL v3.reasoning.frontier.12                      [reasoning     ]   7.8s Regex '\\boxed\{\s*Kolvo\s*\}' did not match
+  ✅ PASS v3.instruction.easy.01                        [instruction   ]  11.6s Exact match
+  ✅ PASS v3.instruction.easy.02                        [instruction   ]   1.3s Expected 3 line(s), got 3
+  ✅ PASS v3.instruction.medium.01                      [instruction   ]   2.6s Expected 3 sentence(s), got 3
+  ✅ PASS v3.instruction.medium.02                      [instruction   ] 258.6s Expected 5 line(s), got 5
+  ✅ PASS v3.instruction.medium.03                      [instruction   ]   0.8s Exact match
+  ✅ PASS v3.instruction.hard.01                        [instruction   ]   4.2s Expected 5 line(s), got 5
+  ✅ PASS v3.instruction.hard.02                        [instruction   ]   1.8s Expected 3 sentence(s), got 3
+  ✅ PASS v3.instruction.hard.03                        [instruction   ]  12.2s Expected 4 line(s), got 4
+  ❌ FAIL v3.instruction.hard.04                        [instruction   ]   1.0s Expected 'obsidian-caravel-plinth-fern-mist', got 'cara
+  ❌ FAIL v3.instruction.hard.05                        [instruction   ]   1.8s Expected 3 stanza(s), got 1
+  ✅ PASS v3.instruction.expert.01                      [instruction   ]  75.9s Expected 6 line(s), got 6
+  ✅ PASS v3.instruction.expert.02                      [instruction   ]   2.0s Expected 7 line(s), got 7
+  ✅ PASS v3.instruction.expert.03                      [instruction   ]   1.9s Expected 5 line(s), got 5
+  ❌ FAIL v3.instruction.expert.04                      [instruction   ]   0.8s Expected 'sguor5', got 'rfsnhjvgs6'
+  ✅ PASS v3.instruction.expert.05                      [instruction   ]   2.8s Expected 4 sentence(s), got 4
+  ✅ PASS v3.instruction.expert.06                      [instruction   ]   3.7s Expected 3 stanza(s), got 3
+  ✅ PASS v3.instruction.expert.07                      [instruction   ]   1.8s Expected 3 line(s), got 3
+  ✅ PASS v3.instruction.expert.08                      [instruction   ]   1.9s Expected 5 line(s), got 5
+  ✅ PASS v3.instruction.frontier.01                    [instruction   ]   1.8s Expected 7 line(s), got 7
+  ✅ PASS v3.instruction.frontier.02                    [instruction   ]   2.5s Expected 5 sentence(s), got 5
+  ✅ PASS v3.instruction.frontier.03                    [instruction   ]   2.1s Expected 6 line(s), got 6
+  ❌ FAIL v3.instruction.frontier.04                    [instruction   ]   2.4s Expected 'a9gre9dni9ckk13', got 's9ndk9lgr9c9e912'
+  ✅ PASS v3.instruction.frontier.05                    [instruction   ]   6.5s Expected 3 stanza(s), got 3
+  ✅ PASS v3.instruction.frontier.06                    [instruction   ]   2.1s Expected 7 sentence(s), got 7
+  ❌ FAIL v3.instruction.frontier.07                    [instruction   ] 300.1s No output to count lines
+  ✅ PASS v3.instruction.frontier.08                    [instruction   ]  18.5s Expected 2 stanza(s), got 2
+  ✅ PASS v3.instruction.frontier.09                    [instruction   ]  41.0s Expected 4 line(s), got 4
+  ✅ PASS v3.instruction.frontier.10                    [instruction   ]   2.2s Expected 8 line(s), got 8
+  ✅ PASS v3.instruction.frontier.11                    [instruction   ]   1.9s Expected 9 line(s), got 9
+  ✅ PASS v3.instruction.frontier.12                    [instruction   ]   1.6s Expected 8 line(s), got 8
+  ✅ PASS v3.prose.easy.01                              [prose         ]   1.5s Expected 5 line(s), got 5
+  ❌ FAIL v3.prose.easy.02                              [prose         ]   5.0s Expected 4 sentence(s), got 1
+  ✅ PASS v3.prose.medium.01                            [prose         ] 121.6s Expected 6 line(s), got 6
+  ✅ PASS v3.prose.medium.02                            [prose         ]   4.1s Expected 8 sentence(s), got 8
+  ❌ FAIL v3.prose.medium.03                            [prose         ]  11.8s Expected 5 stanza(s), got 4
+  ✅ PASS v3.prose.hard.01                              [prose         ]   2.5s Expected 8 line(s), got 8
+  ✅ PASS v3.prose.hard.02                              [prose         ]  18.5s Expected 4 stanza(s), got 4
+  ✅ PASS v3.prose.hard.03                              [prose         ]  22.0s Expected 12 sentence(s), got 12
+  ✅ PASS v3.prose.hard.04                              [prose         ]   3.5s Regex matched: e
+  ✅ PASS v3.prose.hard.05                              [prose         ]   3.4s Expected 10 line(s), got 10
+  ❌ FAIL v3.prose.expert.01                            [prose         ]  42.1s Expected 39 line(s), got 83
+  ✅ PASS v3.prose.expert.02                            [prose         ]   2.8s Expected 10 line(s), got 10
+  ✅ PASS v3.prose.expert.03                            [prose         ]  51.7s Regex matched: e
+  ✅ PASS v3.prose.expert.04                            [prose         ]   2.6s Expected 12 line(s), got 12
+  ✅ PASS v3.prose.expert.05                            [prose         ]   2.7s Expected 15 line(s), got 15
+  ✅ PASS v3.prose.expert.06                            [prose         ]   6.6s Expected 8 stanza(s), got 8
+  ✅ PASS v3.prose.expert.07                            [prose         ]  13.2s Expected 1 stanza(s), got 1
+  ✅ PASS v3.prose.expert.08                            [prose         ]   4.5s Expected 1 stanza(s), got 1
+  ❌ FAIL v3.prose.frontier.01                          [prose         ]   7.8s Expected 7 stanza(s), got 1
+  ✅ PASS v3.prose.frontier.02                          [prose         ]   3.0s Expected 12 line(s), got 12
+  ✅ PASS v3.prose.frontier.03                          [prose         ]   3.3s Expected 1 stanza(s), got 1
+  ✅ PASS v3.prose.frontier.04                          [prose         ]   2.3s Expected 1 stanza(s), got 1
+  ✅ PASS v3.prose.frontier.05                          [prose         ]   3.0s Expected 19 line(s), got 19
+  ✅ PASS v3.prose.frontier.06                          [prose         ]   9.4s Expected 12 line(s), got 12
+  ✅ PASS v3.prose.frontier.07                          [prose         ]   7.8s Expected 7 stanza(s), got 7
+  ✅ PASS v3.prose.frontier.08                          [prose         ]   6.5s Expected 14 line(s), got 14
+  ✅ PASS v3.prose.frontier.09                          [prose         ]   1.6s Expected 1 line(s), got 1
+  ✅ PASS v3.prose.frontier.10                          [prose         ]   7.4s Expected 26 line(s), got 26
+  ✅ PASS v3.prose.frontier.11                          [prose         ]   1.0s Expected 1 line(s), got 1
+  ✅ PASS v3.prose.frontier.12                          [prose         ]   1.5s Expected 1 stanza(s), got 1
+  ✅ PASS writing_article                               [writing       ]   5.9s Matched 4/6 keywords (need 4); missing: ['title', 'para
+  ✅ PASS writing_summary                               [writing       ]   1.6s Matched 4/4 keywords (need 2)
+  ✅ PASS writing_creative                              [writing       ]   6.6s Matched 3/5 keywords (need 3); missing: ['dialogue', 'd
+  ✅ PASS writing_technical                             [writing       ]   5.5s Matched 5/7 keywords (need 3); missing: ['SSL', 'secure
+  ❌ FAIL writing_format                                [writing       ]   1.3s Matched 3/4 keywords (need 4); missing: ['JSON']
+  ❌ FAIL tool_call_weather                             [tool_calling  ]   1.2s tool=get_weather ✓; arg location=Tokyo ✗
+  ❌ FAIL tool_call_calculator                          [tool_calling  ]  23.0s No tool call in response
+
+======================================================================
+RESULTS BY CATEGORY — cal-nex-n25-pro-or-strict-v01
+======================================================================
+  coding          :  16/ 30 passed ( 53.3%)  [fail=9, err=5]
+  instruction     :  25/ 30 passed ( 83.3%)  [fail=5, err=0]
+  math            :   1/ 30 passed (  3.3%)  [fail=27, err=2]
+  prose           :  26/ 30 passed ( 86.7%)  [fail=4, err=0]
+  reasoning       :   9/ 30 passed ( 30.0%)  [fail=16, err=5]
+  tool_calling    :   0/  2 passed (  0.0%)  [fail=2, err=0]
+  writing         :   4/  5 passed ( 80.0%)  [fail=1, err=0]
+  ──────────────────────────────────────────────────
+  TOTAL           :  81/157 passed ( 51.6%)  [fail=64, err=12]
+  Wall time: 4715.3s
+======================================================================
+
+Results saved to: /home/mikesai1/workspace/smf-bench/results/stage1_cal-nex-n25-pro-or-strict-v01_20260909_030620.json
