@@ -1,0 +1,37 @@
+# Model manifest: Tencent Hy4 preview (OpenRouter)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# 1M context. Official A thinking-off analogue: reasoning.effort=none
+# (smoke: content '4', reasoning_tokens=0). Default still thinks.
+# Do not add "hy4" or "tencent" to reasoning_indicators.
+
+model_id: "hy4-preview-or"
+name: "Hy4 preview"
+provider: "tencent"
+served_name: "tencent/hy4-preview"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 1048576
+max_output_tokens: 64000
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "fp8"
+  tool_call_parser: "native"
+  released: "2026-08-28"
+  official_a_thinking: "reasoning.effort=none"
+  openrouter_params: "770B total / 49B active (OpenRouter description)"

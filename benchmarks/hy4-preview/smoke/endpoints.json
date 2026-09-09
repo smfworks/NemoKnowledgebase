@@ -1,0 +1,92 @@
+{
+  "data": {
+    "id": "tencent/hy4-preview",
+    "name": "Tencent: Hy4 preview",
+    "created": 1787897375,
+    "description": "Tencent: Hy4 preview is a mixture-of-experts model from Tencent, with 49B active parameters out of 770B total. It is designed for coding agents, complex tool-use workflows, and productivity tasks that...",
+    "architecture": {
+      "tokenizer": "Other",
+      "instruct_type": null,
+      "modality": "text->text",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "Tencent | tencent/hy4-preview-20260827",
+        "model_id": "tencent/hy4-preview",
+        "model_name": "Tencent: Hy4 preview",
+        "context_length": 1048576,
+        "pricing": {
+          "prompt": "0.000000834",
+          "completion": "0.000002501",
+          "input_cache_read": "0.000000042",
+          "discount": 0
+        },
+        "provider_name": "Tencent",
+        "tag": "tencent/fp8",
+        "quantization": "fp8",
+        "max_completion_tokens": 64000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "stop",
+          "max_completion_tokens",
+          "max_tokens",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "supports_tool_choice": {
+          "none": true,
+          "auto": true,
+          "required": false,
+          "function": false
+        },
+        "status": 0,
+        "uptime_last_30m": 100,
+        "uptime_last_5m": 100,
+        "uptime_last_1d": 100,
+        "supports_implicit_caching": false,
+        "supports_voice_cloning": false,
+        "latency_last_30m": {
+          "p50": 3523,
+          "p75": 4673.25,
+          "p90": 6104,
+          "p99": 10057.070000000003
+        },
+        "throughput_last_30m": {
+          "p50": 40,
+          "p75": 52,
+          "p90": 62,
+          "p99": 87
+        },
+        "perf_last_30m_by_workload": {
+          "text_generation": {
+            "latency": {
+              "p50": 3532.5,
+              "p75": 4689,
+              "p90": 6187.600000000002,
+              "p99": 10533.18
+            },
+            "throughput": {
+              "p50": 39,
+              "p75": 52,
+              "p90": 63,
+              "p99": 84.09000000000015
+            },
+            "request_count": 529850
+          }
+        }
+      }
+    ]
+  }
+}

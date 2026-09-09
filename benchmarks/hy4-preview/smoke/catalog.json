@@ -1,0 +1,33 @@
+{
+  "captured_at": "2026-09-09T06:53:00-04:00",
+  "slug": "tencent/hy4-preview",
+  "openrouter": {
+    "name": "Tencent: Hy4 preview",
+    "context_length": 1048576,
+    "pricing_prompt_per_token": "0.000000834",
+    "pricing_completion_per_token": "0.000002501",
+    "price_per_1m": {"prompt": 0.834, "completion": 2.501},
+    "input_modalities": ["text"],
+    "output_modalities": ["text"],
+    "tokenizer": "Other",
+    "created_unix": 1787897375,
+    "released_openrouter_page": "2026-08-28"
+  },
+  "endpoint": {
+    "provider_name": "Tencent",
+    "quantization": "fp8",
+    "status": 0,
+    "max_completion_tokens": 64000,
+    "uptime_last_5m": 100,
+    "uptime_last_30m": 100,
+    "latency_last_30m_ms": {"p50": 3523, "p75": 4673.25, "p90": 6104, "p99": 10057.07},
+    "throughput_last_30m_tps": {"p50": 40, "p75": 52, "p90": 62, "p99": 87}
+  },
+  "smoke_effort_none": {
+    "id": "gen-1788951246-oHyNpU4NzKB73ypV93He",
+    "content": "4",
+    "reasoning_tokens": 0,
+    "elapsed_s": 1.649
+  },
+  "notes": "Official A analogue is reasoning.effort=none. Default thinks (~50 reasoning tokens). Do not add hy4 to reasoning_indicators. Same-day Lumen one-shot is a different artifact."
+}
