@@ -1,0 +1,1 @@
+{"error":{"message":"This model is only available through the Batch API. Use the /api/beta/batches endpoint instead.","code":404,"metadata":{"routing_funnel":[{"step":"Initial Endpoints","endpoint_count":1}],"failed_routing_step":"Filter Batch-Only Endpoints"}}}

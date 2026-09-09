@@ -1,0 +1,265 @@
+{
+  "id": "batch-1788973557-9iM5S44XgKTnTnEd1sZn",
+  "object": "batch",
+  "endpoint": "/v1/chat/completions",
+  "model": "openai/gpt-6-astra-pro-20260903",
+  "completion_window": "24h",
+  "status": "completed",
+  "created_at": 1788973557,
+  "finalized_at": 1788974000,
+  "request_counts": {
+    "total": 5,
+    "completed": 5,
+    "failed": 0
+  },
+  "usage": {
+    "prompt_tokens": 7380,
+    "completion_tokens": 125,
+    "total_tokens": 7505,
+    "cost": 0.023339,
+    "is_byok": false
+  },
+  "error": null,
+  "results": [
+    {
+      "id": "batch_req_6aa1936643948190bd9c5e322babd378",
+      "custom_id": "effort_low_mt64",
+      "response": {
+        "status_code": 200,
+        "request_id": "9512c6e5-ae8f-43be-8e09-d5a8b732a210",
+        "body": {
+          "model": "openai/gpt-6-astra-pro:batch",
+          "id": "gen-batch-1788973557-a8f2df09a1ae9e949f56",
+          "created": 1788973603,
+          "system_fingerprint": null,
+          "object": "chat.completion",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "4",
+                "refusal": null,
+                "reasoning": null
+              },
+              "finish_reason": "stop",
+              "native_finish_reason": "completed",
+              "logprobs": null
+            }
+          ],
+          "service_tier": "default",
+          "usage": {
+            "prompt_tokens": 1476,
+            "completion_tokens": 25,
+            "total_tokens": 1501,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "provider": "OpenAI"
+        }
+      },
+      "error": null
+    },
+    {
+      "id": "batch_req_6aa1936646988190824e8c0a670ffc1f",
+      "custom_id": "effort_minimal_mt64",
+      "response": {
+        "status_code": 200,
+        "request_id": "8668f286-3e2a-4799-b08b-c614fc592fc0",
+        "body": {
+          "model": "openai/gpt-6-astra-pro:batch",
+          "id": "gen-batch-1788973557-7a8c615383ae40a13e25",
+          "created": 1788973688,
+          "system_fingerprint": null,
+          "object": "chat.completion",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "4",
+                "refusal": null,
+                "reasoning": null
+              },
+              "finish_reason": "stop",
+              "native_finish_reason": "completed",
+              "logprobs": null
+            }
+          ],
+          "service_tier": "default",
+          "usage": {
+            "prompt_tokens": 1476,
+            "completion_tokens": 25,
+            "total_tokens": 1501,
+            "prompt_tokens_details": {
+              "cached_tokens": 1236,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "provider": "OpenAI"
+        }
+      },
+      "error": null
+    },
+    {
+      "id": "batch_req_6aa193663fd881908e714d19535a4a4b",
+      "custom_id": "default_mt64",
+      "response": {
+        "status_code": 200,
+        "request_id": "22dee125-fb0e-4346-abae-9404482495dd",
+        "body": {
+          "model": "openai/gpt-6-astra-pro:batch",
+          "id": "gen-batch-1788973557-71050a5b5fc9fdf87bd4",
+          "created": 1788973691,
+          "system_fingerprint": null,
+          "object": "chat.completion",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "4",
+                "refusal": null,
+                "reasoning": null
+              },
+              "finish_reason": "stop",
+              "native_finish_reason": "completed",
+              "logprobs": null
+            }
+          ],
+          "service_tier": "default",
+          "usage": {
+            "prompt_tokens": 1476,
+            "completion_tokens": 25,
+            "total_tokens": 1501,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "provider": "OpenAI"
+        }
+      },
+      "error": null
+    },
+    {
+      "id": "batch_req_6aa193663cd08190a75eef48ea5ac72f",
+      "custom_id": "effort_low_mt1024",
+      "response": {
+        "status_code": 200,
+        "request_id": "5660bc50-6b41-4ed7-9bbd-ca7a33041157",
+        "body": {
+          "model": "openai/gpt-6-astra-pro:batch",
+          "id": "gen-batch-1788973557-d499b4322a7117e2512c",
+          "created": 1788973691,
+          "system_fingerprint": null,
+          "object": "chat.completion",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "4",
+                "refusal": null,
+                "reasoning": null
+              },
+              "finish_reason": "stop",
+              "native_finish_reason": "completed",
+              "logprobs": null
+            }
+          ],
+          "service_tier": "default",
+          "usage": {
+            "prompt_tokens": 1476,
+            "completion_tokens": 25,
+            "total_tokens": 1501,
+            "prompt_tokens_details": {
+              "cached_tokens": 1236,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "provider": "OpenAI"
+        }
+      },
+      "error": null
+    },
+    {
+      "id": "batch_req_6aa193669b348190857ff5fa0c7b0a4e",
+      "custom_id": "effort_minimal_mt1024",
+      "response": {
+        "status_code": 200,
+        "request_id": "8f3c784e-007c-4847-b4cb-7e446ad5fa27",
+        "body": {
+          "model": "openai/gpt-6-astra-pro:batch",
+          "id": "gen-batch-1788973557-4884eed2304dbfd88c8b",
+          "created": 1788973691,
+          "system_fingerprint": null,
+          "object": "chat.completion",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "4",
+                "refusal": null,
+                "reasoning": null
+              },
+              "finish_reason": "stop",
+              "native_finish_reason": "completed",
+              "logprobs": null
+            }
+          ],
+          "service_tier": "default",
+          "usage": {
+            "prompt_tokens": 1476,
+            "completion_tokens": 25,
+            "total_tokens": 1501,
+            "prompt_tokens_details": {
+              "cached_tokens": 1236,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "provider": "OpenAI"
+        }
+      },
+      "error": null
+    }
+  ]
+}

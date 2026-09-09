@@ -1,0 +1,27 @@
+{
+  "captured_at": "2026-09-09T13:01:00-04:00",
+  "slug": "openai/gpt-6-astra-pro:batch",
+  "sync_chat": {
+    "http": 404,
+    "message": "This model is only available through the Batch API. Use the /api/beta/batches endpoint instead."
+  },
+  "openrouter": {
+    "name": "OpenAI: GPT-6 Astra Pro (batch)",
+    "context_length": 1050000,
+    "price_per_1m": {"prompt": 5.0, "completion": 25.0, "cache_read": 0.5},
+    "input_modalities": ["file", "image", "text"],
+    "output_modalities": ["text"],
+    "tokenizer": "GPT",
+    "created_unix": 1788552835,
+    "released_openrouter_page": "2026-09-04"
+  },
+  "thinking": {
+    "effort_none": "batch validation fail: Reasoning is mandatory and cannot be disabled",
+    "effort_low": "content '4', reasoning_tokens=0",
+    "effort_minimal": "content '4', reasoning_tokens=0",
+    "default": "content '4', reasoning_tokens=0",
+    "official_a_analogue": "reasoning.effort=low (disable forbidden)"
+  },
+  "smoke2_batch_id": "batch-1788973557-9iM5S44XgKTnTnEd1sZn",
+  "notes": "Do not add astra/gpt-6 to reasoning_indicators. Temperature is not a supported_parameter. Same-day Elsewhere one-shot is a different artifact."
+}
