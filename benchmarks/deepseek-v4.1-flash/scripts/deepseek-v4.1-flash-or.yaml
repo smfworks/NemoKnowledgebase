@@ -1,0 +1,41 @@
+# Model manifest: DeepSeek V4.1 Flash (OpenRouter)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# 1M context, text+image in, text out. Default thinks.
+# Official A thinking-off analogue: reasoning.effort=none
+# (smoke 2026-09-10: content lands, reasoning_tokens=0).
+# Do not add "v4.1" to reasoning_indicators (deepseek already matches).
+
+model_id: "deepseek-v4.1-flash-or"
+name: "DeepSeek V4.1 Flash"
+provider: "deepseek"
+served_name: "deepseek/deepseek-v4.1-flash"
+
+input_modalities:
+  - text
+  - image_in
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - vision
+  - context_long
+  - streaming
+
+context_length: 1048576
+max_output_tokens: 384000
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"
+  released: "2026-09-10"
+  hf_id: "deepseek-ai/DeepSeek-V4.1-Flash"
+  official_a_thinking: "effort=none"
+  architecture: "DeepseekV41ForCausalLM"

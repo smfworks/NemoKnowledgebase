@@ -1,0 +1,17 @@
+{
+  "model": "deepseek/deepseek-v4.1-flash",
+  "prompt": "What is 2+2?",
+  "max_tokens": 64,
+  "temperature": 0,
+  "date": "2026-09-10",
+  "variants": [
+    {"name": "default", "content": "4", "reasoning_tokens": 32, "elapsed_s": 0.86},
+    {"name": "enable_thinking_false", "content": "4", "reasoning_tokens": 37, "elapsed_s": 1.13},
+    {"name": "reasoning.effort=none", "content": "2 + 2 = 4.", "reasoning_tokens": 0, "elapsed_s": 0.69},
+    {"name": "reasoning.enabled=false", "content": "2 + 2 = 4", "reasoning_tokens": 0, "elapsed_s": 0.61},
+    {"name": "reasoning.effort=low", "content": "2+2 = 4", "reasoning_tokens": 19, "elapsed_s": 1.47},
+    {"name": "reasoning.effort=minimal", "content": "4", "reasoning_tokens": 17, "elapsed_s": 1.07},
+    {"name": "reasoning_effort=none (top-level)", "content": "2 + 2 = 4", "reasoning_tokens": 0, "elapsed_s": 1.14}
+  ],
+  "official_a_analogue": "reasoning.effort=none"
+}
