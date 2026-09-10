@@ -1,0 +1,28 @@
+{
+  "timestamp_utc": "2026-09-10T11:28:18.952527+00:00",
+  "data": {
+    "label": "sk-or-v1-533...61c",
+    "is_management_key": false,
+    "is_provisioning_key": false,
+    "limit": null,
+    "limit_reset": null,
+    "limit_remaining": null,
+    "include_byok_in_limit": false,
+    "usage": 372.467452304,
+    "usage_daily": 0.083747034,
+    "usage_weekly": 5.236644278,
+    "usage_monthly": 15.950051778,
+    "byok_usage": 0,
+    "byok_usage_daily": 0,
+    "byok_usage_weekly": 0,
+    "byok_usage_monthly": 0,
+    "is_free_tier": false,
+    "expires_at": null,
+    "creator_user_id": "user_392xHALwQHhwWfGtNVGb7TV9DU1",
+    "rate_limit": {
+      "requests": -1,
+      "interval": "10s",
+      "note": "This field is deprecated and safe to ignore."
+    }
+  }
+}
