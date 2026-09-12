@@ -1,0 +1,69 @@
+{
+  "job_id": "sol-h3-splice1d-20260912",
+  "status": "PASS",
+  "prompts": "/home/mikesai3/sol-h3-spark-runtime/outputs/splice-1clip-d.jsonl",
+  "n_rows": 1,
+  "out_dir": "/home/mikesai3/sol-h3-spark-runtime/outputs/sol-h3-splice1d-20260912",
+  "job_dir": "/home/mikesai3/sol-h3-spark-runtime/jobs/sol-h3-splice1d-20260912",
+  "submitted_unix": 1789173275.6978512,
+  "preflight": {
+    "mem_avail_gib": 116.4,
+    "gpu_temp_c": 54,
+    "gpu_util": 0,
+    "infer_running": false,
+    "missing": [],
+    "ok": true
+  },
+  "cap": 3,
+  "thermal_abort_c": 85,
+  "run_start_unix": 1789173275.7150111,
+  "aborted": null,
+  "infer_exit": 0,
+  "batch_results_status": "PASS",
+  "batch_results_error": null,
+  "clips": [
+    {
+      "case_id": "clip-d-workshop",
+      "row_status": "PASS",
+      "e2e_s": 69.441597758,
+      "qwen_s": 1.528516962,
+      "stage1_s": 20.773983991,
+      "stage2_s": 36.881196981,
+      "output": "/home/mikesai3/sol-h3-spark-runtime/outputs/sol-h3-splice1d-20260912/clip-d-workshop/stage2/refined_1344x768_121f.mp4",
+      "ffprobe": {
+        "path": "/home/mikesai3/sol-h3-spark-runtime/outputs/sol-h3-splice1d-20260912/clip-d-workshop/stage2/refined_1344x768_121f.mp4",
+        "duration": 5.042,
+        "ok": true,
+        "errors": [],
+        "ffprobe": {
+          "programs": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "codec_type": "video",
+              "width": 1344,
+              "height": 768,
+              "avg_frame_rate": "24/1",
+              "nb_frames": "121"
+            },
+            {
+              "codec_name": "aac",
+              "codec_type": "audio",
+              "sample_rate": "32000",
+              "channels": 2,
+              "avg_frame_rate": "0/0",
+              "nb_frames": "159"
+            }
+          ],
+          "format": {
+            "duration": "5.042000",
+            "size": "1371391"
+          }
+        }
+      }
+    }
+  ],
+  "n_pass_ffprobe": 1,
+  "run_end_unix": 1789173727.7603168,
+  "note": "Do not trust batch results.json status; use clips[].row_status + ffprobe.ok"
+}

@@ -1,0 +1,488 @@
+#!/usr/bin/env python3
+"""SMF Sol-H3-Spark job wrapper. Run on spark-56bc only.
+
+Hermes starts/polls this. infer.py is a child process-group so an SSH
+timeout cannot kill generation. Success is request-row PASS + ffprobe,
+never batch results.json status.
+
+Caps: JSONL max 3 rows per infer.py (4th clip in one session died
+FailOnRecompileLimitHit). Thermal abort at GPU >= 85 C.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import signal
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+RUNTIME = Path("/home/mikesai3/sol-h3-spark-runtime")
+PACKAGE = Path("/home/mikesai3/Sana/models/minimax_h3/Sol-H3-Spark")
+PATHS = RUNTIME / "paths.json"
+CACHE = RUNTIME / "prompt-cache/fixed-prompt.pt"
+JOBS = RUNTIME / "jobs"
+LOGS = RUNTIME / "logs"
+INDUCTOR = RUNTIME / "inductor-cache"
+
+MEM_FLOOR_GIB = 105.0
+TEMP_START_MAX_C = 65
+TEMP_ABORT_C = 85
+JSONL_MAX_ROWS = 3
+POLL_S = 10
+INFER_TIMEOUT_S = 3600
+
+EXPECTED = {
+    "width": 1344,
+    "height": 768,
+    "nb_frames": 121,
+    "fps": 24,
+    "duration_lo": 5.00,
+    "duration_hi": 5.10,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "sample_rate": "32000",
+    "channels": 2,
+}
+
+
+def log(msg: str) -> None:
+    print(msg, flush=True)
+
+
+def mem_avail_gib() -> float:
+    for line in Path("/proc/meminfo").read_text().splitlines():
+        if line.startswith("MemAvailable:"):
+            return int(line.split()[1]) / 1024 / 1024
+    raise RuntimeError("MemAvailable missing")
+
+
+def gpu_temp_util() -> tuple[int, int]:
+    out = subprocess.check_output(
+        [
+            "nvidia-smi",
+            "--query-gpu=temperature.gpu,utilization.gpu",
+            "--format=csv,noheader,nounits",
+        ],
+        text=True,
+    ).strip()
+    temp_s, util_s = [p.strip() for p in out.split(",")]
+    return int(temp_s), int(util_s)
+
+
+def infer_running() -> bool:
+    r = subprocess.run(["pgrep", "-f", "infer.py --paths"], stdout=subprocess.DEVNULL)
+    return r.returncode == 0
+
+
+def ffprobe(path: Path) -> dict:
+    raw = subprocess.check_output(
+        [
+            "ffprobe",
+            "-v",
+            "error",
+            "-show_entries",
+            "format=duration,size:stream=codec_name,codec_type,width,height,avg_frame_rate,nb_frames,sample_rate,channels",
+            "-of",
+            "json",
+            str(path),
+        ],
+        text=True,
+    )
+    return json.loads(raw)
+
+
+def validate_clip(path: Path) -> dict:
+    info = ffprobe(path)
+    streams = {s["codec_type"]: s for s in info.get("streams", [])}
+    v, a = streams.get("video") or {}, streams.get("audio") or {}
+    dur = float(info["format"]["duration"])
+    errors = []
+    if v.get("codec_name") != EXPECTED["v_codec"]:
+        errors.append(f"video codec {v.get('codec_name')}")
+    if int(v.get("width") or 0) != EXPECTED["width"] or int(v.get("height") or 0) != EXPECTED["height"]:
+        errors.append(f"size {v.get('width')}x{v.get('height')}")
+    if str(v.get("nb_frames")) != str(EXPECTED["nb_frames"]):
+        errors.append(f"frames {v.get('nb_frames')}")
+    if a.get("codec_name") != EXPECTED["a_codec"]:
+        errors.append(f"audio codec {a.get('codec_name')}")
+    if str(a.get("sample_rate")) != EXPECTED["sample_rate"] or int(a.get("channels") or 0) != EXPECTED["channels"]:
+        errors.append(f"audio {a.get('sample_rate')} Hz ch={a.get('channels')}")
+    if not (EXPECTED["duration_lo"] <= dur <= EXPECTED["duration_hi"]):
+        errors.append(f"duration {dur}")
+    return {"path": str(path), "duration": dur, "ok": not errors, "errors": errors, "ffprobe": info}
+
+
+def preflight() -> dict:
+    mem = mem_avail_gib()
+    temp, util = gpu_temp_util()
+    running = infer_running()
+    missing = []
+    for p, name in [
+        (PATHS, "paths.json"),
+        (CACHE, "prompt_cache"),
+        (PACKAGE / "infer.py", "infer.py"),
+        (RUNTIME / "stage1/bin/python", "stage1_python"),
+        (RUNTIME / "stage2/bin/python", "stage2_python"),
+    ]:
+        if not p.exists():
+            missing.append(name)
+    report = {
+        "mem_avail_gib": round(mem, 1),
+        "gpu_temp_c": temp,
+        "gpu_util": util,
+        "infer_running": running,
+        "missing": missing,
+        "ok": mem >= MEM_FLOOR_GIB
+        and temp < TEMP_START_MAX_C
+        and util == 0
+        and not running
+        and not missing,
+    }
+    return report
+
+
+def load_prompts(path: Path) -> list[dict]:
+    rows = []
+    for line in path.read_text().splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        row = json.loads(line)
+        if "case_id" not in row or "prompt" not in row:
+            raise ValueError(f"JSONL row missing case_id/prompt: {row!r}")
+        row.setdefault("seed", 42)
+        row.setdefault("task", "t2va")
+        rows.append(row)
+    if not rows:
+        raise ValueError("empty JSONL")
+    if len(rows) > JSONL_MAX_ROWS:
+        raise ValueError(
+            f"{len(rows)} JSONL rows; cap is {JSONL_MAX_ROWS} per infer.py "
+            "(4th clip in one session died FailOnRecompileLimitHit)"
+        )
+    return rows
+
+
+def env_for_infer() -> dict:
+    env = os.environ.copy()
+    env.update(
+        SOL_H3_SPARK_RUNTIME_ROOT=str(RUNTIME),
+        SOL_H3_SPARK_QWEN_IMAGE="sol-h3-spark-qwen",
+        SOL_H3_SPARK_QWEN_WEIGHTS_ROOT=str(PACKAGE / "checkpoints"),
+        SOL_H3_SPARK_COMFY_ROOT=str(PACKAGE / "dependencies/ComfyUI"),
+        TORCHINDUCTOR_CACHE_DIR=str(INDUCTOR),
+        PYTHONUNBUFFERED="1",
+    )
+    return env
+
+
+def write_json(path: Path, value) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(value, indent=2) + "\n")
+    tmp.replace(path)
+
+
+def cmd_preflight(_args) -> int:
+    r = preflight()
+    print(json.dumps(r, indent=2))
+    return 0 if r["ok"] else 2
+
+
+def cmd_submit(args) -> int:
+    JOBS.mkdir(parents=True, exist_ok=True)
+    LOGS.mkdir(parents=True, exist_ok=True)
+    INDUCTOR.mkdir(parents=True, exist_ok=True)
+    pf = preflight()
+    if not pf["ok"]:
+        print(json.dumps({"status": "PREFLIGHT_FAIL", "preflight": pf}, indent=2))
+        return 2
+    prompts = Path(args.prompts).resolve()
+    rows = load_prompts(prompts)
+    tag = args.tag or time.strftime("%Y%m%d-%H%M%S")
+    job_id = f"sol-h3-{tag}"
+    job_dir = JOBS / job_id
+    if job_dir.exists():
+        print(json.dumps({"status": "FAIL", "error": f"job exists {job_dir}"}))
+        return 2
+    job_dir.mkdir(parents=True)
+    out_dir = RUNTIME / "outputs" / job_id
+    # infer.py requires the output dir NOT to exist
+    if out_dir.exists():
+        print(json.dumps({"status": "FAIL", "error": f"output exists {out_dir}"}))
+        return 2
+    receipt = {
+        "job_id": job_id,
+        "status": "SUBMITTED",
+        "prompts": str(prompts),
+        "n_rows": len(rows),
+        "out_dir": str(out_dir),
+        "job_dir": str(job_dir),
+        "submitted_unix": time.time(),
+        "preflight": pf,
+        "cap": JSONL_MAX_ROWS,
+        "thermal_abort_c": TEMP_ABORT_C,
+    }
+    write_json(job_dir / "receipt.json", receipt)
+    log_path = LOGS / f"{job_id}.log"
+    child = [
+        sys.executable,
+        str(Path(__file__).resolve()),
+        "_run",
+        "--job-dir",
+        str(job_dir),
+        "--out-dir",
+        str(out_dir),
+        "--prompts",
+        str(prompts),
+    ]
+    with log_path.open("w") as logf:
+        proc = subprocess.Popen(
+            child,
+            stdout=logf,
+            stderr=subprocess.STDOUT,
+            start_new_session=True,
+            cwd=str(PACKAGE),
+            env=env_for_infer(),
+        )
+    (job_dir / "wrapper.pid").write_text(str(proc.pid) + "\n")
+    print(
+        json.dumps(
+            {
+                "status": "SUBMITTED",
+                "job_id": job_id,
+                "job_dir": str(job_dir),
+                "out_dir": str(out_dir),
+                "wrapper_pid": proc.pid,
+                "log": str(log_path),
+                "n_rows": len(rows),
+            },
+            indent=2,
+        )
+    )
+    return 0
+
+
+def kill_tree(pid: int) -> None:
+    try:
+        os.killpg(pid, signal.SIGTERM)
+    except ProcessLookupError:
+        return
+    deadline = time.time() + 15
+    while time.time() < deadline:
+        try:
+            os.killpg(pid, 0)
+        except ProcessLookupError:
+            return
+        time.sleep(0.5)
+    try:
+        os.killpg(pid, signal.SIGKILL)
+    except ProcessLookupError:
+        return
+
+
+def cmd_run(args) -> int:
+    job_dir = Path(args.job_dir)
+    out_dir = Path(args.out_dir)
+    prompts = Path(args.prompts)
+    receipt_path = job_dir / "receipt.json"
+    receipt = json.loads(receipt_path.read_text())
+    receipt["status"] = "RUNNING"
+    receipt["run_start_unix"] = time.time()
+    write_json(receipt_path, receipt)
+    cmd = [
+        sys.executable,
+        str(PACKAGE / "infer.py"),
+        "--paths",
+        str(PATHS),
+        "--prompts",
+        str(prompts),
+        "--output-dir",
+        str(out_dir),
+    ]
+    log(f"INFER_START {' '.join(cmd)}")
+    infer = subprocess.Popen(
+        cmd,
+        cwd=str(PACKAGE),
+        env=env_for_infer(),
+        start_new_session=True,
+        stdout=sys.stdout,
+        stderr=subprocess.STDOUT,
+    )
+    (job_dir / "infer.pid").write_text(str(infer.pid) + "\n")
+    aborted = None
+    deadline = time.time() + INFER_TIMEOUT_S
+    while True:
+        rc = infer.poll()
+        try:
+            temp, util = gpu_temp_util()
+        except Exception as e:
+            temp, util = -1, -1
+            log(f"nvidia-smi failed: {e}")
+        log(f"POLL temp={temp}C util={util}% infer_rc={rc}")
+        if temp >= TEMP_ABORT_C:
+            aborted = f"thermal_abort temp={temp}C"
+            log(aborted)
+            kill_tree(infer.pid)
+            infer.wait(timeout=30)
+            break
+        if rc is not None:
+            break
+        if time.time() > deadline:
+            aborted = "timeout"
+            log(aborted)
+            kill_tree(infer.pid)
+            infer.wait(timeout=30)
+            break
+        time.sleep(POLL_S)
+    rc = infer.wait()
+    results_path = out_dir / "results.json"
+    results = {}
+    if results_path.exists():
+        results = json.loads(results_path.read_text())
+    clips = []
+    for req in results.get("requests") or []:
+        mp4 = req.get("output")
+        row = {
+            "case_id": req.get("case_id"),
+            "row_status": req.get("status"),
+            "e2e_s": req.get("e2e_s"),
+            "qwen_s": req.get("qwen_s"),
+            "stage1_s": req.get("stage1_s"),
+            "stage2_s": req.get("stage2_s"),
+            "output": mp4,
+        }
+        if mp4 and Path(mp4).is_file():
+            row["ffprobe"] = validate_clip(Path(mp4))
+        else:
+            row["ffprobe"] = {"ok": False, "errors": ["missing mp4"]}
+        clips.append(row)
+    pass_rows = [
+        c
+        for c in clips
+        if c.get("row_status") == "PASS" and (c.get("ffprobe") or {}).get("ok")
+    ]
+    honest = (
+        "PASS"
+        if pass_rows and len(pass_rows) == len(load_prompts(prompts)) and not aborted
+        else "FAIL"
+    )
+    receipt.update(
+        {
+            "status": honest,
+            "aborted": aborted,
+            "infer_exit": rc,
+            "batch_results_status": results.get("status"),
+            "batch_results_error": results.get("error"),
+            "clips": clips,
+            "n_pass_ffprobe": len(pass_rows),
+            "run_end_unix": time.time(),
+            "note": "Do not trust batch results.json status; use clips[].row_status + ffprobe.ok",
+        }
+    )
+    write_json(receipt_path, receipt)
+    print(json.dumps({"status": honest, "job_dir": str(job_dir), "n_pass": len(pass_rows)}, indent=2))
+    return 0 if honest == "PASS" else 1
+
+
+def cmd_status(args) -> int:
+    job_dir = JOBS / args.job_id if not str(args.job_id).startswith("/") else Path(args.job_id)
+    receipt = job_dir / "receipt.json"
+    if not receipt.exists():
+        print(json.dumps({"status": "UNKNOWN", "error": f"no receipt {receipt}"}))
+        return 2
+    print(receipt.read_text())
+    wrapper = job_dir / "wrapper.pid"
+    if wrapper.exists():
+        pid = int(wrapper.read_text().strip())
+        running = True
+        try:
+            os.kill(pid, 0)
+        except OSError:
+            running = False
+        print(json.dumps({"wrapper_pid": pid, "wrapper_alive": running}))
+    return 0
+
+
+def cmd_concat(args) -> int:
+    mp4s = [Path(p) for p in args.mp4]
+    for p in mp4s:
+        if not p.is_file():
+            print(json.dumps({"status": "FAIL", "error": f"missing {p}"}))
+            return 2
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    lst = out.with_suffix(".concat.txt")
+    lst.write_text("".join(f"file '{p.resolve()}'\n" for p in mp4s))
+    subprocess.check_call(
+        [
+            "ffmpeg",
+            "-y",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-f",
+            "concat",
+            "-safe",
+            "0",
+            "-i",
+            str(lst),
+            "-c",
+            "copy",
+            str(out),
+        ]
+    )
+    info = ffprobe(out)
+    v = next(s for s in info["streams"] if s["codec_type"] == "video")
+    print(
+        json.dumps(
+            {
+                "status": "PASS",
+                "out": str(out),
+                "duration": float(info["format"]["duration"]),
+                "nb_frames": v.get("nb_frames"),
+                "size": int(info["format"]["size"]),
+                "n_inputs": len(mp4s),
+                "join": "hard-cut stream copy; AAC may click",
+            },
+            indent=2,
+        )
+    )
+    return 0
+
+
+def main() -> int:
+    p = argparse.ArgumentParser(description=__doc__)
+    sub = p.add_subparsers(dest="cmd", required=True)
+    sub.add_parser("preflight")
+    s = sub.add_parser("submit")
+    s.add_argument("--prompts", required=True)
+    s.add_argument("--tag")
+    st = sub.add_parser("status")
+    st.add_argument("job_id")
+    r = sub.add_parser("_run")
+    r.add_argument("--job-dir", required=True)
+    r.add_argument("--out-dir", required=True)
+    r.add_argument("--prompts", required=True)
+    c = sub.add_parser("concat")
+    c.add_argument("--mp4", nargs="+", required=True)
+    c.add_argument("--out", required=True)
+    args = p.parse_args()
+    if args.cmd == "preflight":
+        return cmd_preflight(args)
+    if args.cmd == "submit":
+        return cmd_submit(args)
+    if args.cmd == "status":
+        return cmd_status(args)
+    if args.cmd == "_run":
+        return cmd_run(args)
+    if args.cmd == "concat":
+        return cmd_concat(args)
+    return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

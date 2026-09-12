@@ -1,0 +1,149 @@
+{
+  "job_id": "sol-h3-splice3-20260912",
+  "status": "PASS",
+  "prompts": "/home/mikesai3/sol-h3-spark-runtime/outputs/splice-3clip-prompts.jsonl",
+  "n_rows": 3,
+  "out_dir": "/home/mikesai3/sol-h3-spark-runtime/outputs/sol-h3-splice3-20260912",
+  "job_dir": "/home/mikesai3/sol-h3-spark-runtime/jobs/sol-h3-splice3-20260912",
+  "submitted_unix": 1789172674.6661618,
+  "preflight": {
+    "mem_avail_gib": 116.8,
+    "gpu_temp_c": 47,
+    "gpu_util": 0,
+    "infer_running": false,
+    "missing": [],
+    "ok": true
+  },
+  "cap": 3,
+  "thermal_abort_c": 85,
+  "run_start_unix": 1789172674.7004185,
+  "aborted": null,
+  "infer_exit": 0,
+  "batch_results_status": "PASS",
+  "batch_results_error": null,
+  "clips": [
+    {
+      "case_id": "clip-a-fox",
+      "row_status": "PASS",
+      "e2e_s": 68.893495497,
+      "qwen_s": 1.552496789,
+      "stage1_s": 20.12172741,
+      "stage2_s": 38.010133207,
+      "output": "/home/mikesai3/sol-h3-spark-runtime/outputs/sol-h3-splice3-20260912/clip-a-fox/stage2/refined_1344x768_121f.mp4",
+      "ffprobe": {
+        "path": "/home/mikesai3/sol-h3-spark-runtime/outputs/sol-h3-splice3-20260912/clip-a-fox/stage2/refined_1344x768_121f.mp4",
+        "duration": 5.042,
+        "ok": true,
+        "errors": [],
+        "ffprobe": {
+          "programs": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "codec_type": "video",
+              "width": 1344,
+              "height": 768,
+              "avg_frame_rate": "24/1",
+              "nb_frames": "121"
+            },
+            {
+              "codec_name": "aac",
+              "codec_type": "audio",
+              "sample_rate": "32000",
+              "channels": 2,
+              "avg_frame_rate": "0/0",
+              "nb_frames": "159"
+            }
+          ],
+          "format": {
+            "duration": "5.042000",
+            "size": "4031610"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "clip-b-station",
+      "row_status": "PASS",
+      "e2e_s": 72.723010265,
+      "qwen_s": 1.117559569,
+      "stage1_s": 34.392211626,
+      "stage2_s": 36.373966597,
+      "output": "/home/mikesai3/sol-h3-spark-runtime/outputs/sol-h3-splice3-20260912/clip-b-station/stage2/refined_1344x768_121f.mp4",
+      "ffprobe": {
+        "path": "/home/mikesai3/sol-h3-spark-runtime/outputs/sol-h3-splice3-20260912/clip-b-station/stage2/refined_1344x768_121f.mp4",
+        "duration": 5.042,
+        "ok": true,
+        "errors": [],
+        "ffprobe": {
+          "programs": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "codec_type": "video",
+              "width": 1344,
+              "height": 768,
+              "avg_frame_rate": "24/1",
+              "nb_frames": "121"
+            },
+            {
+              "codec_name": "aac",
+              "codec_type": "audio",
+              "sample_rate": "32000",
+              "channels": 2,
+              "avg_frame_rate": "0/0",
+              "nb_frames": "159"
+            }
+          ],
+          "format": {
+            "duration": "5.042000",
+            "size": "1696084"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "clip-c-harbor",
+      "row_status": "PASS",
+      "e2e_s": 66.090291077,
+      "qwen_s": 1.589691191,
+      "stage1_s": 27.850724409,
+      "stage2_s": 35.837892293,
+      "output": "/home/mikesai3/sol-h3-spark-runtime/outputs/sol-h3-splice3-20260912/clip-c-harbor/stage2/refined_1344x768_121f.mp4",
+      "ffprobe": {
+        "path": "/home/mikesai3/sol-h3-spark-runtime/outputs/sol-h3-splice3-20260912/clip-c-harbor/stage2/refined_1344x768_121f.mp4",
+        "duration": 5.042,
+        "ok": true,
+        "errors": [],
+        "ffprobe": {
+          "programs": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "codec_type": "video",
+              "width": 1344,
+              "height": 768,
+              "avg_frame_rate": "24/1",
+              "nb_frames": "121"
+            },
+            {
+              "codec_name": "aac",
+              "codec_type": "audio",
+              "sample_rate": "32000",
+              "channels": 2,
+              "avg_frame_rate": "0/0",
+              "nb_frames": "159"
+            }
+          ],
+          "format": {
+            "duration": "5.042000",
+            "size": "1846432"
+          }
+        }
+      }
+    }
+  ],
+  "n_pass_ffprobe": 3,
+  "run_end_unix": 1789173257.1501648,
+  "note": "Do not trust batch results.json status; use clips[].row_status + ffprobe.ok"
+}

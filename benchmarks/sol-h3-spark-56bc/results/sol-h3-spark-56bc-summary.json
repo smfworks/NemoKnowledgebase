@@ -1,0 +1,64 @@
+{
+  "host": "spark-56bc",
+  "hardware": "NVIDIA DGX Spark GB10, 128 GB UMA",
+  "recipe": "Sol-H3-Spark",
+  "tree": "NVlabs/Sana sol-engine",
+  "commit": "8e0db4f",
+  "measured_utc_date": "2026-09-11/12",
+  "output_pin": {
+    "width": 1344,
+    "height": 768,
+    "frames": 121,
+    "fps": 24,
+    "duration_s": 5.04,
+    "video": "H.264",
+    "audio": "AAC LC stereo 32 kHz"
+  },
+  "isolated_t2va_warmup_excluded": [
+    {
+      "run": "t2va-smoke-20260911-185313",
+      "seed": 42,
+      "status": "PASS",
+      "e2e_s": 68.086053835,
+      "qwen_s": 1.476620835,
+      "stage1_s": 20.698432374,
+      "stage2_s": 36.61280652
+    },
+    {
+      "run": "t2va-timed-20260911-190401",
+      "seed": 7,
+      "status": "PASS",
+      "e2e_s": 68.164401672,
+      "qwen_s": 1.475377735,
+      "stage1_s": 20.093377446,
+      "stage2_s": 36.887687826
+    }
+  ],
+  "isolated_mean_e2e_s": 68.1252277535,
+  "nvidia_published_hot_e2e_s": 56.17,
+  "nvidia_published_note": "vendor page; not reproduced on this box",
+  "fl2va_baseline_5s": {
+    "source": "smf-h3-production-pins 2026-09-05",
+    "width": 768,
+    "height": 448,
+    "steps": 20,
+    "duration_requested_s": 5.0,
+    "clip_s": 5.21,
+    "frames": 124,
+    "wall_s": 423.2
+  },
+  "speedup_5s_cell": 6.21,
+  "pixel_ratio": 3.0,
+  "wrapper_3plus1": {
+    "job_3clip": "sol-h3-splice3-20260912",
+    "status": "PASS",
+    "e2e_s": [68.893495497, 72.723010265, 66.090291077],
+    "job_d": "sol-h3-splice1d-20260912",
+    "d_e2e_s": 69.441597758,
+    "concat_s": 20.2,
+    "concat_frames": 484,
+    "concat_bytes": 8941510
+  },
+  "do_not_publish_mp4s": true,
+  "licenses": ["MiniMax H3 Community License", "LTX-2.x Community License"]
+}
