@@ -1,0 +1,42 @@
+# Model manifest: Union Alpha (OpenRouter stealth)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# Released 2026-09-16. 262K context, $0/$0, text+image → text.
+# Official A ranking uses text capabilities only (apples-to-apples vs Grok/Kimi/etc.)
+# Smoke (2026-09-16): 2+2 default max_tokens=64 → content='4', reasoning_tokens=0.
+# Do NOT add union-alpha/stealth to reasoning_indicators.
+
+model_id: "union-alpha-or"
+name: "Union Alpha"
+provider: "stealth"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 262144
+max_output_tokens: 131072
+
+served_name: "stealth/union-alpha"
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"
+  reasoning_model: false
+  reasoning_mandatory: false
+  default_temperature: 1.0
+  claimed_input_modalities: ["text", "image"]
+  pricing: "0/0"
+  released: "2026-09-16"
