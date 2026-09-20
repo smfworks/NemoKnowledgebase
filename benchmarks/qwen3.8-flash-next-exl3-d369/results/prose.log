@@ -1,0 +1,32 @@
+ -- Loading /home/mikesai4/models/Qwen3.8-Flash-Next-EXL3
+
+ -- Loading /home/mikesai4/models/Qwen3.8-Flash-Next-EXL3
+
+ -- Loading tokenizer...
+ -- Total size: 84,440,817,444 bytes, 78.64 GB
+ -- Load time: 22.861 seconds
+ -- Overhead: 11.170 seconds
+ -- Bandwidth: 3.440 GB/s  /  2.311 GB/s
+ -- Deferred: 302,721 tensors in 56 passes, 303,463 chunks
+ -- Direct: 568 tensors
+
+[37;1mYou are a helpful AI assistant.[0m
+
+[34;1mAssistant: [0mThe wind didn’t just blow on Ketchikan’s northernmost spit; it screamed, a jagged, icy shriek that tore through the gaps in the lighthouse’s weathered siding. Elias, a man whose skin had turned the color of driftwood after forty years of solitude, pressed his forehead against the cold glass of the lantern room. Below, the Pacific churned into a frothing cauldron of black and white, swallowing the horizon whole.
+
+When dawn finally broke, bruised and pale, the storm had retreated, leaving behind a silence so profound it felt heavy. Elias descended the spiral stairs, his boots echoing like gunshots in the stone tower. He stepped out onto the gallery, the salt spray instantly freezing on his beard. The beach, usually a pristine ribbon of gray pebbles, was littered with the debris of the night: tangled kelp, shattered crab pots, and splintered timber.
+
+But it was the object near the tide line that stopped his breath.
+
+It wasn’t wood, nor metal, nor the usual flotsam of shipping lanes. It was a sphere, roughly the size of a basketball, composed of a material that seemed to drink the weak morning light. It was obsidian-black, yet veins of iridescent violet pulsed within it, rhythmic and slow, like a sleeping heartbeat. The sand around it was fused into glass, radiating outward in a perfect circle.
+
+Elias approached cautiously, the crunch of gravel underfoot sounding obscenely loud. He reached out, his gloved hand hovering inches from the surface. The air around the object hummed, a low-frequency vibration that rattled his teeth. He pulled off his glove. The cold was biting, but the sphere radiated a gentle, impossible warmth.
+
+As his bare fingertips brushed the smooth surface, the violet veins flared bright white. A sound erupted—not from the object, but inside his mind. It was a chorus
+
+[31;1m !! Response exceeded 400 tokens and was cut short.[0m
+
+Context: [32;1m56[0m new tokens at [32;1m101.17[0m t/s - [32;1m0[0m tokens cached - Generate: [32;1m400[0m tokens at [32;1m54.62[0m t/s - Draft: [32;1m222[0m / [32;1m445[0m accepted ([32;1m49.89[0m%)
+[32;1m
+Info: [0mExiting
+WALL 51.96 s  MAXRSS 36301036 KB

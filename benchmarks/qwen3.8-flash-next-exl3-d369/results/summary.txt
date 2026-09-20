@@ -1,0 +1,46 @@
+=== 2026-09-20T15:28:38-04:00 HEAD=329e051 ===
+torch 2.13.0+cu130 cuda 13.0 avail True
+ext /home/mikesai4/exllamav3/exllamav3_ext.cpython-312-aarch64-linux-gnu.so
+OK config.json 5081
+OK model.safetensors.index.json 32762977
+OK ngram_embedding.safetensors 32640183408
+OK tokenizer.json 12809320
+shards 7 bytes 52333199354
+pack_total_bytes 85139450508
+=== RUN code 2026-09-20T15:28:48-04:00 ===
+ -- Total size: 84,440,817,444 bytes, 78.64 GB
+ -- Load time: 23.532 seconds
+Context: [32;1m76[0m new tokens at [32;1m29.96[0m t/s - [32;1m0[0m tokens cached - Generate: [32;1m400[0m tokens at [32;1m25.99[0m t/s - Draft: [32;1m300[0m / [32;1m420[0m accepted ([32;1m71.43[0m%)
+WALL 79.16 s  MAXRSS 36397420 KB
+code tps=NO
+=== RUN devops 2026-09-20T15:30:17-04:00 ===
+ -- Total size: 84,440,817,444 bytes, 78.64 GB
+ -- Load time: 23.142 seconds
+Context: [32;1m63[0m new tokens at [32;1m85.52[0m t/s - [32;1m0[0m tokens cached - Generate: [32;1m400[0m tokens at [32;1m59.59[0m t/s - Draft: [32;1m244[0m / [32;1m427[0m accepted ([32;1m57.14[0m%)
+WALL 47.26 s  MAXRSS 36313420 KB
+devops tps=NO
+=== RUN prose 2026-09-20T15:31:13-04:00 ===
+ -- Total size: 84,440,817,444 bytes, 78.64 GB
+ -- Load time: 22.861 seconds
+Context: [32;1m56[0m new tokens at [32;1m101.17[0m t/s - [32;1m0[0m tokens cached - Generate: [32;1m400[0m tokens at [32;1m54.62[0m t/s - Draft: [32;1m222[0m / [32;1m445[0m accepted ([32;1m49.89[0m%)
+WALL 51.96 s  MAXRSS 36301036 KB
+prose tps=NO
+=== RUN math 2026-09-20T15:32:14-04:00 ===
+ -- Total size: 84,440,817,444 bytes, 78.64 GB
+ -- Load time: 23.114 seconds
+Context: [32;1m40[0m new tokens at [32;1m85.51[0m t/s - [32;1m0[0m tokens cached - Generate: [32;1m4[0m tokens at [32;1m24.68[0m t/s - Draft: [32;1m2[0m / [32;1m10[0m accepted ([32;1m20.00[0m%)
+WALL 40.19 s  MAXRSS 36270668 KB
+math tps=NO
+=== RUN fn 2026-09-20T15:33:03-04:00 ===
+ -- Total size: 84,440,817,444 bytes, 78.64 GB
+ -- Load time: 22.609 seconds
+Context: [32;1m45[0m new tokens at [32;1m91.31[0m t/s - [32;1m0[0m tokens cached - Generate: [32;1m39[0m tokens at [32;1m76.78[0m t/s - Draft: [32;1m31[0m / [32;1m40[0m accepted ([32;1m77.50[0m%)
+WALL 39.77 s  MAXRSS 36268056 KB
+fn tps=NO
+=== done 2026-09-20T15:33:43-04:00 ===
+=== RUN code-rerun 2026-09-20T15:33:55-04:00 ===
+ -- Total size: 84,440,817,444 bytes, 78.64 GB
+ -- Load time: 23.706 seconds
+Context: [32;1m76[0m new tokens at [32;1m119.88[0m t/s - [32;1m0[0m tokens cached - Generate: [32;1m400[0m tokens at [32;1m79.53[0m t/s - Draft: [32;1m300[0m / [32;1m420[0m accepted ([32;1m71.43[0m%)
+WALL 51.05 s  MAXRSS 36251036 KB
+=== rerun done 2026-09-20T15:34:46-04:00 ===

@@ -1,0 +1,20 @@
+ -- Loading /home/mikesai4/models/Qwen3.8-Flash-Next-EXL3
+
+ -- Loading /home/mikesai4/models/Qwen3.8-Flash-Next-EXL3
+
+ -- Loading tokenizer...
+ -- Total size: 84,440,817,444 bytes, 78.64 GB
+ -- Load time: 23.114 seconds
+ -- Overhead: 10.059 seconds
+ -- Bandwidth: 3.402 GB/s  /  2.371 GB/s
+ -- Deferred: 302,721 tensors in 56 passes, 303,463 chunks
+ -- Direct: 568 tensors
+
+[37;1mYou are a helpful AI assistant.[0m
+
+[34;1mAssistant: [0m323
+
+Context: [32;1m40[0m new tokens at [32;1m85.51[0m t/s - [32;1m0[0m tokens cached - Generate: [32;1m4[0m tokens at [32;1m24.68[0m t/s - Draft: [32;1m2[0m / [32;1m10[0m accepted ([32;1m20.00[0m%)
+[32;1m
+Info: [0mExiting
+WALL 40.19 s  MAXRSS 36270668 KB

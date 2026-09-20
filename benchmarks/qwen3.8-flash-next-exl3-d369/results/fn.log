@@ -1,0 +1,22 @@
+ -- Loading /home/mikesai4/models/Qwen3.8-Flash-Next-EXL3
+
+ -- Loading /home/mikesai4/models/Qwen3.8-Flash-Next-EXL3
+
+ -- Loading tokenizer...
+ -- Total size: 84,440,817,444 bytes, 78.64 GB
+ -- Load time: 22.609 seconds
+ -- Overhead: 9.848 seconds
+ -- Bandwidth: 3.478 GB/s  /  2.423 GB/s
+ -- Deferred: 302,721 tensors in 56 passes, 303,463 chunks
+ -- Direct: 568 tensors
+
+[37;1mYou are a helpful AI assistant.[0m
+
+[34;1mAssistant: [0mdef is_palindrome(s: str) -> bool:
+    cleaned = ''.join(c.lower() for c in s if c.isalnum())
+    return cleaned == cleaned[::-1]
+
+Context: [32;1m45[0m new tokens at [32;1m91.31[0m t/s - [32;1m0[0m tokens cached - Generate: [32;1m39[0m tokens at [32;1m76.78[0m t/s - Draft: [32;1m31[0m / [32;1m40[0m accepted ([32;1m77.50[0m%)
+[32;1m
+Info: [0mExiting
+WALL 39.77 s  MAXRSS 36268056 KB

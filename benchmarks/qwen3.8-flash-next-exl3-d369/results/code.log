@@ -1,0 +1,61 @@
+ -- Loading /home/mikesai4/models/Qwen3.8-Flash-Next-EXL3
+
+ -- Loading /home/mikesai4/models/Qwen3.8-Flash-Next-EXL3
+
+ -- Loading tokenizer...
+ -- Total size: 84,440,817,444 bytes, 78.64 GB
+ -- Load time: 23.532 seconds
+ -- Overhead: 31.373 seconds
+ -- Bandwidth: 3.342 GB/s  /  1.432 GB/s
+ -- Deferred: 302,721 tensors in 56 passes, 303,463 chunks
+ -- Direct: 568 tensors
+
+[37;1mYou are a helpful AI assistant.[0m
+
+[34;1mAssistant: [0m```python
+import re
+from datetime import datetime
+from typing import Dict, Optional
+
+
+def parse_nginx_log_line(line: str) -> Optional[Dict[str, object]]:
+    """
+    Parse a standard nginx combined log format line into a dictionary.
+
+    The expected format is:
+    $remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent"
+
+    Args:
+        line: A single line from an nginx access log.
+
+    Returns:
+        A dictionary with keys: ip, timestamp, method, path, status, bytes.
+        Returns None if the line does not match the expected format.
+
+    Example:
+        >>> line = '127.0.0.1 - - [10/Oct/2023:13:55:36 +0000] "GET /index.html HTTP/1.1" 200 2326 "-" "Mozilla/5.0"'
+        >>> result = parse_nginx_log_line(line)
+        >>> print(result['ip'])
+        127.0.0.1
+        >>> print(result['method'])
+        GET
+        >>> print(result['path'])
+        /index.html
+        >>> print(result['status'])
+        200
+        >>> print(result['bytes'])
+        2326
+    """
+    # Regex pattern for nginx combined log format
+    pattern = re.compile(
+        r'(?P<ip>\S+)\s+'          # IP address
+        r'\S+\s+'                  # Remote user (ignored)
+        r'\[(?P<timestamp>[^\]]+)\]\s+'  # Timestamp in brackets
+        r'"(?P<method>\S+)\s+(?P<path>\S+)[^
+
+[31;1m !! Response exceeded 400 tokens and was cut short.[0m
+
+Context: [32;1m76[0m new tokens at [32;1m29.96[0m t/s - [32;1m0[0m tokens cached - Generate: [32;1m400[0m tokens at [32;1m25.99[0m t/s - Draft: [32;1m300[0m / [32;1m420[0m accepted ([32;1m71.43[0m%)
+[32;1m
+Info: [0mExiting
+WALL 79.16 s  MAXRSS 36397420 KB
