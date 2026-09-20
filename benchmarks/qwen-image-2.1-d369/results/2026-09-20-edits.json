@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ED01_bg_sunset",
+    "ok": true,
+    "status": "success",
+    "score": {
+      "mode": "RGBA",
+      "wh": [
+        1024,
+        1024
+      ],
+      "bytes": 1930070,
+      "std": 79.4,
+      "mean": [
+        137.2,
+        107.2,
+        78.2
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "ED02_blue_shirt",
+    "ok": true,
+    "status": "success",
+    "score": {
+      "mode": "RGBA",
+      "wh": [
+        1024,
+        1024
+      ],
+      "bytes": 2195802,
+      "std": 59.0,
+      "mean": [
+        118.8,
+        101.8,
+        86.6
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "ED03_add_cat",
+    "ok": true,
+    "status": "success",
+    "score": {
+      "mode": "RGBA",
+      "wh": [
+        1024,
+        1024
+      ],
+      "bytes": 2198973,
+      "std": 64.7,
+      "mean": [
+        108.0,
+        87.1,
+        67.9
+      ]
+    },
+    "error": null
+  }
+]
