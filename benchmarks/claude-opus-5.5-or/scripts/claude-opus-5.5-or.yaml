@@ -1,0 +1,39 @@
+# Model manifest: Claude Opus 5.5 (OpenRouter)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# 1M context, $4/$20 per 1M. text+image+file → text (Official A ranking is text-only).
+# Smoke (2026-09-22): 2+2 default and enable_thinking=false, max_tokens=64
+# → content lands, reasoning_tokens=0. Do NOT add claude/opus to reasoning_indicators.
+
+model_id: "claude-opus-5.5-or"
+name: "Claude Opus 5.5"
+provider: "anthropic"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 1000000
+max_output_tokens: 128000
+
+served_name: "anthropic/claude-opus-5.5"
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"
+  reasoning_model: false
+  reasoning_mandatory: false
+  claimed_input_modalities: ["text", "image", "file"]
+  pricing: "4/20"
