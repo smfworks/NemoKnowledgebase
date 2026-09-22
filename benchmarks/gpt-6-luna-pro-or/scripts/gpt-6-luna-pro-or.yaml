@@ -1,0 +1,43 @@
+# Model manifest: GPT-6 Luna Pro (OpenRouter)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# 1.05M context, $0.10/$0.50 per 1M. text+image+file → text (Official A is text-only).
+# Smoke (2026-09-22): default and enable_thinking=false still think
+# (~37–68 reasoning tokens on 2+2). Official A analogue:
+# reasoning.effort=none (also enabled=false) → content='4', reasoning_tokens=0.
+# Do NOT add luna/gpt-6 to reasoning_indicators.
+# Do NOT copy Astra Pro's effort=low analogue — Luna allows disable.
+
+model_id: "gpt-6-luna-pro-or"
+name: "GPT-6 Luna Pro"
+provider: "openai"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 1050000
+max_output_tokens: 128000
+
+served_name: "openai/gpt-6-luna-pro"
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"
+  reasoning_model: false
+  reasoning_mandatory: false
+  official_a_thinking: "effort=none"
+  claimed_input_modalities: ["text", "image", "file"]
+  pricing: "0.10/0.50"
