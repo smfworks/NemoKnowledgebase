@@ -1,0 +1,44 @@
+# Model manifest: Space Bunny Alpha (OpenRouter stealth)
+# Cloud-hosted, OpenAI-compatible API via OpenRouter
+# Catalog created 2026-09-23 14:48:04 UTC. 1,000,000 context, max out 524,288, $0/$0.
+# Card modality text+image+video → text. Official A uses text only.
+# Smoke 2026-09-25: default 2+2 content='4' with a reasoning string but reasoning_tokens=0 (1.08s).
+# enable_thinking=false: content='4', reasoning empty, reasoning_tokens=0 (1.23s).
+# Do NOT add space-bunny / stealth / alpha to reasoning_indicators.
+# Do NOT copy a prior stealth effort analogue. Runner sends enable_thinking=false only.
+
+model_id: "space-bunny-alpha-or"
+name: "Space Bunny Alpha"
+provider: "stealth"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 1000000
+max_output_tokens: 524288
+
+served_name: "stealth/space-bunny-alpha"
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"
+  reasoning_model: false
+  reasoning_mandatory: false
+  default_temperature: 0.0
+  claimed_input_modalities: ["text", "image", "video"]
+  pricing: "0/0"
+  catalog_created_unix: 1790174884
