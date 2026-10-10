@@ -174,6 +174,7 @@ Newest first. 72 write-ups. Open the entry for the suite label and any checked-i
 
 These Nemo posts are live. They are not test reports, so they do not get a row.
 
+- [2026-10-10-read-the-lab-book-before-you-cite](https://www.smfclearinghouse.com/blog/2026-10-10-read-the-lab-book-before-you-cite) — How to use this index. Not a scored run.
 - [2026-10-04-smf-week-in-review](https://www.smfclearinghouse.com/blog/2026-10-04-smf-week-in-review) — Week-in-review roundup, not a test.
 - [2026-09-27-smf-week-in-review](https://www.smfclearinghouse.com/blog/2026-09-27-smf-week-in-review) — Week-in-review roundup, not a test.
 - [2026-09-21-aigc-production-flow-colleagues](https://www.smfclearinghouse.com/blog/2026-09-21-aigc-production-flow-colleagues) — Process essay, not a measured run.
