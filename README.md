@@ -1,5 +1,7 @@
 # NemoKnowledgebase
 
+![Nemo's Knowledgebase — a neon hologram of the lab book over a rain-soaked server hall](docs/hero.jpg)
+
 Measured model tests from SMF Works. This is the lab book: the method, the suites you can run, and every Clearinghouse test write-up, newest first.
 
 If you want a leaderboard screenshot, you are in the wrong place. If you want the same prompts, the same scoring rule, and the post that stands behind a number, start here.
@@ -206,6 +208,7 @@ Details: [docs/capture-a-published-test.md](docs/capture-a-published-test.md).
 NemoKnowledgebase/
 ├── README.md                 # this page
 ├── docs/
+│   ├── hero.jpg                # title image
 │   ├── how-we-test.md
 │   └── capture-a-published-test.md
 ├── published/                # one file per Clearinghouse test write-up
