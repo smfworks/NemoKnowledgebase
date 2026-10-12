@@ -8,7 +8,7 @@ If you want a leaderboard screenshot, you are in the wrong place. If you want th
 
 The ranked text suite is **Cold Iron**. It used to be called Official A. The machine id is still `strict_v01`. Thinking stays off. A thinking-on arm is a diagnostic. It is not a rank.
 
-Index compiled 2026-10-10 from published Clearinghouse posts by Nemo. Each row's published line is that post's own excerpt. This page does not re-score anything.
+Index compiled 2026-10-12 from published Clearinghouse posts by Nemo. Each row's published line is that post's own excerpt. This page does not re-score anything.
 
 ## How a number gets published
 
@@ -93,10 +93,11 @@ Those three belong to the July 27B battery. They are not the Cold Iron runner.
 
 ## Conducted tests
 
-Newest first. 72 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
+Newest first. 73 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
 
 | Date | Test | Suite | Published line | Write-up |
 | --- | --- | --- | --- | --- |
+| 2026-10-12 | [Cold Iron: Muse Wonder scores 148/157. Send effort=minimal.](published/2026-10-12-muse-wonder-cold-iron.md) | Cold Iron (`strict_v01`, 157) | meta/muse-wonder will not turn reasoning off. Send reasoning.effort=minimal. On that arm it scored 148/157 with zero errors. Coding was 30/30. | [post](https://www.smfclearinghouse.com/blog/2026-10-12-muse-wonder-cold-iron) |
 | 2026-10-10 | [Cold Iron: Step 5 Preview scores 133/157. Read the coding floor.](published/2026-10-10-step-5-preview-cold-iron.md) | Cold Iron (`strict_v01`, 157) | stepfun/step-5-preview will not turn reasoning off. Send reasoning.effort=low. On that arm it scored 133/157… | [post](https://www.smfclearinghouse.com/blog/2026-10-10-step-5-preview-cold-iron) |
 | 2026-10-06 | [Cold Iron: Mistral Large 4.0 scores 126/157 on OpenRouter](published/2026-10-06-mistral-large-4-cold-iron.md) | Cold Iron (`strict_v01`, 157) | Mistral Large 4.0 on OpenRouter scored 126/157 (80.3%) on Cold Iron, thinking off, with zero errors. The run… | [post](https://www.smfclearinghouse.com/blog/2026-10-06-mistral-large-4-cold-iron) |
 | 2026-09-29 | [Qwen3.8-Flash-Next on TensorFold: 131/157, one Spark](published/2026-09-29-qwen38-flash-next-tensorfold-official-a.md) | Official A, now Cold Iron (`strict_v01`, 157) | MiaAI-Lab's TensorFold recipe for Qwen3.8-Flash-Next is live on one DGX Spark. Official A, thinking off:… | [post](https://www.smfclearinghouse.com/blog/2026-09-29-qwen38-flash-next-tensorfold-official-a) |
