@@ -1,0 +1,47 @@
+# Model manifest: Meta Muse Wonder (OpenRouter)
+# Cloud-hosted. Cold Iron / Official A ranking is text-only.
+# Catalog 2026-10-12: reasoning.mandatory=true, efforts
+# max/xhigh/high/medium/low/minimal, default medium. No "none".
+# Smoke: effort=none and enabled=false are HTTP 400.
+# enable_thinking=false still thinks (61 reasoning tokens, empty content
+# at max_tokens=64). effort=minimal lands "4" with 20 reasoning tokens.
+# effort=low still finish=length at 64. Existing "muse" branch in
+# run_stage1.py sends effort=minimal. Do NOT add "muse" to
+# reasoning_indicators.
+
+model_id: "muse-wonder-or"
+name: "Muse Wonder"
+provider: "meta"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 1048576
+max_output_tokens: 943718
+
+served_name: "meta/muse-wonder"
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"
+  reasoning_model: false
+  reasoning_mandatory: true
+  thinking_off_analogue: "reasoning.effort=minimal"
+  claimed_input_modalities: ["text", "image", "video", "file", "audio"]
+  pricing_usd_per_million: "4/20"
+  released: "2026-10-12"
+  serve_recipe_id: "OpenRouter-cloud"
