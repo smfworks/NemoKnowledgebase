@@ -1,0 +1,45 @@
+# Model manifest: Google Gemini 4 Argon (OpenRouter)
+# Cloud-hosted. Cold Iron / Official A ranking is text-only.
+# Catalog 2026-10-13: reasoning.mandatory=true, efforts high/medium/low,
+# default medium. No "none". No "minimal".
+# Smoke: effort=none and enabled=false are HTTP 400.
+# Default and enable_thinking=false both land "4" with reasoning_tokens=0.
+# Do not copy Gemini 3.8's effort=low analogue. Do NOT add "gemini"
+# to reasoning_indicators.
+
+model_id: "gemini-4-argon-or"
+name: "Gemini 4 Argon"
+provider: "google"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 1048576
+max_output_tokens: 65536
+
+served_name: "google/gemini-4-argon"
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "none"
+  tool_call_parser: "native"
+  reasoning_model: false
+  reasoning_mandatory: true
+  thinking_off_analogue: "enable_thinking=false (0 reasoning tokens; effort=none is 400)"
+  claimed_input_modalities: ["text", "image", "file", "audio", "video"]
+  pricing_usd_per_million: "2/10"
+  released: "2026-10-13"
+  serve_recipe_id: "OpenRouter-cloud"
