@@ -1,0 +1,46 @@
+# Model manifest: NVIDIA Nemotron 3.5 Super VL free (OpenRouter)
+# Cloud-hosted. Cold Iron / Official A ranking is text-only.
+# Catalog 2026-10-15: reasoning.mandatory=false, no supported_efforts.
+# Smoke: default thinks (49 reasoning tokens). enable_thinking=false
+# still thinks (37). effort=none lands "4" with reasoning_tokens=0.
+# "nemotron" is already in reasoning_indicators (Lightning). Do not add
+# a broader token.
+
+model_id: "nemotron-3.5-super-vl-free-or"
+name: "Nemotron 3.5 Super VL (free)"
+provider: "nvidia"
+
+input_modalities:
+  - text
+
+output_modalities:
+  - text
+
+capabilities:
+  - reasoning
+  - coding
+  - writing
+  - tool_calling
+  - context_long
+  - streaming
+
+context_length: 1000000
+max_output_tokens: 131072
+
+served_name: "nvidia/nemotron-3.5-super-vl:free"
+
+metadata:
+  endpoint: "https://openrouter.ai/api/v1"
+  engine: "OpenRouter"
+  engine_version: "cloud"
+  quantization: "unknown"
+  tool_call_parser: "native"
+  reasoning_model: true
+  reasoning_mandatory: false
+  thinking_off_analogue: "reasoning.effort=none (0 reasoning tokens; enable_thinking=false still thinks)"
+  claimed_input_modalities: ["text", "image", "video"]
+  pricing_usd_per_million: "0/0"
+  released: "2026-10-15"
+  canonical_slug: "nvidia/nemotron-3.5-super-vl-20261015"
+  huggingface_id: "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+  serve_recipe_id: "OpenRouter-cloud"
