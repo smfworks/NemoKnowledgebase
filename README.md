@@ -93,10 +93,11 @@ Those three belong to the July 27B battery. They are not the Cold Iron runner.
 
 ## Conducted tests
 
-Newest first. 74 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
+Newest first. 75 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
 
 | Date | Test | Suite | Published line | Write-up |
 | --- | --- | --- | --- | --- |
+| 2026-10-15 | [Cold Iron: Nemotron 3.5 Super VL scores 96/157. Send effort=none.](published/2026-10-15-nemotron-3.5-super-vl-cold-iron.md) | Cold Iron (`strict_v01`, 157) | nvidia/nemotron-3.5-super-vl:free still thinks if you only send enable_thinking=false. Send reasoning.effort=none. On that arm it scored 96/157 with zero errors. Math was 2/30. | [post](https://www.smfclearinghouse.com/blog/2026-10-15-nemotron-3.5-super-vl-cold-iron) |
 | 2026-10-13 | [Cold Iron: Gemini 4 Argon scores 152/157. Do not send effort=none.](published/2026-10-13-gemini-4-argon-cold-iron.md) | Cold Iron (`strict_v01`, 157) | google/gemini-4-argon will not accept reasoning.effort=none. Send enable_thinking=false. On that arm it scored 152/157 with zero errors, tied with Grok 4.5. | [post](https://www.smfclearinghouse.com/blog/2026-10-13-gemini-4-argon-cold-iron) |
 | 2026-10-12 | [Cold Iron: Muse Wonder scores 148/157. Send effort=minimal.](published/2026-10-12-muse-wonder-cold-iron.md) | Cold Iron (`strict_v01`, 157) | meta/muse-wonder will not turn reasoning off. Send reasoning.effort=minimal. On that arm it scored 148/157 with zero errors. Coding was 30/30. | [post](https://www.smfclearinghouse.com/blog/2026-10-12-muse-wonder-cold-iron) |
 | 2026-10-10 | [Cold Iron: Step 5 Preview scores 133/157. Read the coding floor.](published/2026-10-10-step-5-preview-cold-iron.md) | Cold Iron (`strict_v01`, 157) | stepfun/step-5-preview will not turn reasoning off. Send reasoning.effort=low. On that arm it scored 133/157… | [post](https://www.smfclearinghouse.com/blog/2026-10-10-step-5-preview-cold-iron) |
