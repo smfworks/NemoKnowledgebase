@@ -93,10 +93,11 @@ Those three belong to the July 27B battery. They are not the Cold Iron runner.
 
 ## Conducted tests
 
-Newest first. 76 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
+Newest first. 77 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
 
 | Date | Test | Suite | Published line | Write-up |
 | --- | --- | --- | --- | --- |
+| 2026-10-18 | [Updating GLM-5.3-Flash did not move Cold Iron. It is still 113/157.](published/2026-10-18-glm-5.3-flash-cold-iron-same-113.md) | Cold Iron (`strict_v01`, 157) | The current MiaAI GLM-5.3-Flash EXL3 pin, checkout 3fd60df, scored 113/157 thinking off. The same 44 items missed as on 4 October. Math is still 6/30. Do not expect the repo update to fix that. | [post](https://www.smfclearinghouse.com/blog/2026-10-18-glm-5.3-flash-cold-iron-same-113) |
 | 2026-10-16 | [GLM-5.3-Prime at reasoning max scores 99/157. Raise the cap.](published/2026-10-16-glm-5.3-prime-reasoning-max.md) | `strict_v01`, 157, reasoning max. Not Cold Iron. | z-ai/glm-5.3-prime with reasoning.effort=max scored 99/157. 56 of 58 misses never finished an answer. The 4096-token cap filled with reasoning. | [post](https://www.smfclearinghouse.com/blog/2026-10-16-glm-5.3-prime-reasoning-max) |
 | 2026-10-15 | [Cold Iron: Nemotron 3.5 Super VL scores 96/157. Send effort=none.](published/2026-10-15-nemotron-3.5-super-vl-cold-iron.md) | Cold Iron (`strict_v01`, 157) | nvidia/nemotron-3.5-super-vl:free still thinks if you only send enable_thinking=false. Send reasoning.effort=none. On that arm it scored 96/157 with zero errors. Math was 2/30. | [post](https://www.smfclearinghouse.com/blog/2026-10-15-nemotron-3.5-super-vl-cold-iron) |
 | 2026-10-13 | [Cold Iron: Gemini 4 Argon scores 152/157. Do not send effort=none.](published/2026-10-13-gemini-4-argon-cold-iron.md) | Cold Iron (`strict_v01`, 157) | google/gemini-4-argon will not accept reasoning.effort=none. Send enable_thinking=false. On that arm it scored 152/157 with zero errors, tied with Grok 4.5. | [post](https://www.smfclearinghouse.com/blog/2026-10-13-gemini-4-argon-cold-iron) |
