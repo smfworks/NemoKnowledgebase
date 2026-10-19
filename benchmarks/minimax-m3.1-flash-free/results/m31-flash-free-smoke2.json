@@ -1,0 +1,90 @@
+[
+  {
+    "prompt": "identity",
+    "variant": "enable_thinking_false",
+    "http": 200,
+    "finish": "stop",
+    "elapsed": 0.95,
+    "content": "I am an AI assistant designed to help answer questions and provide information.",
+    "rtok": 18,
+    "rlen": 65,
+    "completion": 32
+  },
+  {
+    "prompt": "identity",
+    "variant": "effort_low",
+    "http": 200,
+    "finish": "stop",
+    "elapsed": 1.07,
+    "content": "I\u2019m an AI assistant created by MiniMax.",
+    "rtok": 0,
+    "rlen": 0,
+    "completion": 11
+  },
+  {
+    "prompt": "identity",
+    "variant": "both",
+    "http": 200,
+    "finish": "stop",
+    "elapsed": 1.22,
+    "content": "I am an AI assistant created by MiniMax, designed to help answer questions and assist with a wide range of tasks.",
+    "rtok": 30,
+    "rlen": 121,
+    "completion": 54
+  },
+  {
+    "prompt": "identity",
+    "variant": "thinking_mode_disabled",
+    "http": 200,
+    "finish": "stop",
+    "elapsed": 1.09,
+    "content": "I am an AI assistant designed to help you answer questions and complete tasks.",
+    "rtok": 24,
+    "rlen": 93,
+    "completion": 39
+  },
+  {
+    "prompt": "word",
+    "variant": "enable_thinking_false",
+    "http": 200,
+    "finish": "stop",
+    "elapsed": 1.41,
+    "content": "$0.05",
+    "rtok": 55,
+    "rlen": 153,
+    "completion": 59
+  },
+  {
+    "prompt": "word",
+    "variant": "effort_low",
+    "http": 200,
+    "finish": "stop",
+    "elapsed": 0.93,
+    "content": "$0.05",
+    "rtok": 0,
+    "rlen": 0,
+    "completion": 5
+  },
+  {
+    "prompt": "word",
+    "variant": "both",
+    "http": 200,
+    "finish": "stop",
+    "elapsed": 0.99,
+    "content": "$0.10",
+    "rtok": 31,
+    "rlen": 92,
+    "completion": 35
+  },
+  {
+    "prompt": "word",
+    "variant": "thinking_mode_disabled",
+    "http": 200,
+    "finish": "stop",
+    "elapsed": 1.64,
+    "content": "$0.10",
+    "rtok": 31,
+    "rlen": 95,
+    "completion": 35
+  }
+]

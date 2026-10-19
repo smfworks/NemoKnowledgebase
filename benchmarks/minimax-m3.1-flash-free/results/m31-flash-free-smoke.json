@@ -1,0 +1,207 @@
+{
+  "timestamp_utc": "2026-10-19T12:11:41.993568+00:00",
+  "model": "minimax/minimax-m3.1-flash:free",
+  "results": [
+    {
+      "name": "default",
+      "payload_extra": {},
+      "http": 200,
+      "elapsed": 0.79,
+      "finish": "stop",
+      "content": "4",
+      "reasoning": "We need answer just number. 4.",
+      "reasoning_len": 30,
+      "model": "minimax/minimax-m3.1-flash:free",
+      "usage": {
+        "prompt_tokens": 215,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cost": 0
+      },
+      "usage_keys": [
+        "prompt_tokens",
+        "completion_tokens",
+        "total_tokens",
+        "cost",
+        "is_byok",
+        "prompt_tokens_details",
+        "cost_details",
+        "completion_tokens_details"
+      ],
+      "completion_details": {
+        "reasoning_tokens": 11,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    {
+      "name": "enable_thinking_false",
+      "payload_extra": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "http": 200,
+      "elapsed": 0.58,
+      "finish": "stop",
+      "content": "4",
+      "reasoning": "",
+      "reasoning_len": 0,
+      "model": "minimax/minimax-m3.1-flash:free",
+      "usage": {
+        "prompt_tokens": 215,
+        "completion_tokens": 2,
+        "reasoning_tokens": 0,
+        "cost": 0
+      },
+      "usage_keys": [
+        "prompt_tokens",
+        "completion_tokens",
+        "total_tokens",
+        "cost",
+        "is_byok",
+        "prompt_tokens_details",
+        "cost_details",
+        "completion_tokens_details"
+      ],
+      "completion_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    {
+      "name": "thinking_mode_disabled",
+      "payload_extra": {
+        "chat_template_kwargs": {
+          "thinking_mode": "disabled"
+        }
+      },
+      "http": 200,
+      "elapsed": 0.58,
+      "finish": "stop",
+      "content": "4",
+      "reasoning": "",
+      "reasoning_len": 0,
+      "model": "minimax/minimax-m3.1-flash:free",
+      "usage": {
+        "prompt_tokens": 215,
+        "completion_tokens": 2,
+        "reasoning_tokens": 0,
+        "cost": 0
+      },
+      "usage_keys": [
+        "prompt_tokens",
+        "completion_tokens",
+        "total_tokens",
+        "cost",
+        "is_byok",
+        "prompt_tokens_details",
+        "cost_details",
+        "completion_tokens_details"
+      ],
+      "completion_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    {
+      "name": "effort_none",
+      "payload_extra": {
+        "reasoning": {
+          "effort": "none"
+        }
+      },
+      "http": 400,
+      "error": "{\"error\":{\"message\":\"Reasoning is mandatory for this endpoint and cannot be disabled.\",\"code\":400,\"metadata\":{\"provider_name\":null}}}",
+      "elapsed": 0.1
+    },
+    {
+      "name": "enabled_false",
+      "payload_extra": {
+        "reasoning": {
+          "enabled": false
+        }
+      },
+      "http": 400,
+      "error": "{\"error\":{\"message\":\"Reasoning is mandatory for this endpoint and cannot be disabled.\",\"code\":400,\"metadata\":{\"provider_name\":null}}}",
+      "elapsed": 0.1
+    },
+    {
+      "name": "effort_low",
+      "payload_extra": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "http": 200,
+      "elapsed": 0.75,
+      "finish": "stop",
+      "content": "4",
+      "reasoning": "",
+      "reasoning_len": 0,
+      "model": "minimax/minimax-m3.1-flash:free",
+      "usage": {
+        "prompt_tokens": 215,
+        "completion_tokens": 2,
+        "reasoning_tokens": 0,
+        "cost": 0
+      },
+      "usage_keys": [
+        "prompt_tokens",
+        "completion_tokens",
+        "total_tokens",
+        "cost",
+        "is_byok",
+        "prompt_tokens_details",
+        "cost_details",
+        "completion_tokens_details"
+      ],
+      "completion_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    {
+      "name": "runner_plus_low",
+      "payload_extra": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "http": 200,
+      "elapsed": 0.79,
+      "finish": "stop",
+      "content": "4",
+      "reasoning": "",
+      "reasoning_len": 0,
+      "model": "minimax/minimax-m3.1-flash:free",
+      "usage": {
+        "prompt_tokens": 215,
+        "completion_tokens": 2,
+        "reasoning_tokens": 0,
+        "cost": 0
+      },
+      "usage_keys": [
+        "prompt_tokens",
+        "completion_tokens",
+        "total_tokens",
+        "cost",
+        "is_byok",
+        "prompt_tokens_details",
+        "cost_details",
+        "completion_tokens_details"
+      ],
+      "completion_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  ]
+}

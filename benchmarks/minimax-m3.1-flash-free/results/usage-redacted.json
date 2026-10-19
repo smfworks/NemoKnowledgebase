@@ -1,0 +1,14 @@
+{
+  "note": "Redacted. Key label, user id, and workspace id omitted.",
+  "before": {
+    "timestamp_utc": "2026-10-19T12:21:00.262262+00:00",
+    "usage": 407.580328088,
+    "free_model_daily_requests": {"used": 58, "limit": 1000, "remaining": 942}
+  },
+  "after": {
+    "timestamp_utc": "2026-10-19T12:45:47.296094+00:00",
+    "usage": 407.580328088,
+    "free_model_daily_requests": {"used": 214, "limit": 1000, "remaining": 786}
+  },
+  "row_cost_sum": 0
+}
