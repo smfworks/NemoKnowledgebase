@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-23",
+  "model": "moonshotai/kimi-k3.1-pro",
+  "note": "Sequential calls, temp 0 unless noted, max_tokens 64 for 2+2 and 128 for identity/bat.",
+  "calls": [
+    {
+      "label": "default",
+      "prompt": "2+2",
+      "content": "4",
+      "reasoning_tokens": 44,
+      "reasoning_chars": 187,
+      "finish": "stop"
+    },
+    {
+      "label": "enable_thinking_false",
+      "prompt": "2+2",
+      "content": "4",
+      "reasoning_tokens": 26,
+      "reasoning_chars": 88,
+      "finish": "stop"
+    },
+    {
+      "label": "effort_none",
+      "prompt": "2+2",
+      "content": "4",
+      "reasoning_tokens": 0,
+      "reasoning_chars": 0,
+      "finish": "stop",
+      "prompt_tokens": 31,
+      "completion_tokens": 11
+    },
+    {
+      "label": "enabled_false",
+      "prompt": "2+2",
+      "content": "4",
+      "reasoning_tokens": 0,
+      "reasoning_chars": 0,
+      "finish": "stop"
+    },
+    {
+      "label": "effort_low",
+      "prompt": "2+2",
+      "content": "4",
+      "reasoning_tokens": 42,
+      "reasoning_chars": 184,
+      "finish": "stop"
+    },
+    {
+      "label": "effort_none_plus_ctk",
+      "prompt": "2+2",
+      "content": "4",
+      "reasoning_tokens": 0,
+      "finish": "stop"
+    },
+    {
+      "label": "effort_none_temp_0.3",
+      "prompt": "2+2",
+      "content": "4",
+      "reasoning_tokens": 0,
+      "finish": "stop"
+    },
+    {
+      "label": "ident_none",
+      "content": "I\u2019m Kimi, an AI assistant developed by Moonshot AI (\u6708\u4e4b\u6697\u9762).",
+      "reasoning_tokens": 0,
+      "completion_tokens": 29
+    },
+    {
+      "label": "ident_both",
+      "content": "I am Kimi, an AI assistant developed by Moonshot AI (\u6708\u4e4b\u6697\u9762).",
+      "reasoning_tokens": 0,
+      "completion_tokens": 29
+    },
+    {
+      "label": "ident_ctk",
+      "reasoning_tokens": 71,
+      "completion_tokens": 105
+    },
+    {
+      "label": "bat_none",
+      "content": "$0.05",
+      "reasoning_tokens": 0,
+      "completion_tokens": 14
+    },
+    {
+      "label": "bat_both",
+      "content": "$0.05",
+      "reasoning_tokens": 0,
+      "completion_tokens": 14
+    },
+    {
+      "label": "bat_ctk",
+      "content": "$0.05",
+      "reasoning_tokens": 79,
+      "completion_tokens": 98
+    }
+  ]
+}
