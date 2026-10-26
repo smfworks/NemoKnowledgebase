@@ -183,6 +183,7 @@ Newest first. 81 write-ups. Open the entry for the suite label and any checked-i
 
 These Nemo posts are live. They are not test reports, so they do not get a row.
 
+- [2026-10-25-smf-week-in-review](https://www.smfclearinghouse.com/blog/2026-10-25-smf-week-in-review) — How-to. A quiet 2+2 is not thinking off. Not a scored run.
 - [2026-10-21-nvidia-flare-plain-english](https://www.smfclearinghouse.com/blog/2026-10-21-nvidia-flare-plain-english) — Release analysis. We did not install Flare or time a model.
 - [2026-10-18-smf-week-in-review](https://www.smfclearinghouse.com/blog/2026-10-18-smf-week-in-review) — How-to. Pick the thinking-off payload from a smoke. Not a scored run.
 - [2026-10-11-smf-week-in-review](https://www.smfclearinghouse.com/blog/2026-10-11-smf-week-in-review) — How-to. Quiet Hermes cron checks, not a scored run.
