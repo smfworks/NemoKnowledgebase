@@ -93,10 +93,11 @@ Those three belong to the July 27B battery. They are not the Cold Iron runner.
 
 ## Conducted tests
 
-Newest first. 81 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
+Newest first. 82 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
 
 | Date | Test | Suite | Published line | Write-up |
 | --- | --- | --- | --- | --- |
+| 2026-10-27 | [Cold Iron: GPT-6.1 Terra scores 117/157. Math is 6/30.](published/2026-10-27-gpt-6.1-terra-cold-iron.md) | Cold Iron (`strict_v01`, 157) | openai/gpt-6.1-terra scored 117/157 on Cold Iron. The arm was reasoning.effort=none plus enable_thinking=false. Zero errors. Math is 6/30. Coding is 30/30. All 157 rows recorded 0 reasoning tokens. Rank 21 of 25 on the slash list. | [post](https://www.smfclearinghouse.com/blog/2026-10-27-gpt-6.1-terra-cold-iron) |
 | 2026-10-23 | [Cold Iron: Kimi K3.1 Pro scores 104/157. Math is 2/30.](published/2026-10-23-kimi-k3.1-pro-cold-iron.md) | Cold Iron (`strict_v01`, 157) | moonshotai/kimi-k3.1-pro scored 104/157 on Cold Iron. The arm was reasoning.effort=none plus enable_thinking=false. Zero errors. Math is 2/30. All 157 rows recorded 0 reasoning tokens. Rank 22 of 24 on the slash list. | [post](https://www.smfclearinghouse.com/blog/2026-10-23-kimi-k3.1-pro-cold-iron) |
 | 2026-10-23 | [Two Sparks, two jobs](published/2026-10-23-two-sparks-two-jobs.md) | Imagination Studio core install, plus a Jarvis smoke. The post states 31 of 31. Not Cold Iron. | Stand Imagination Studio on an idle DGX Spark, and smoke LocalRouter Jarvis on the box that is already serving. We did both on October 23, 2026. | [post](https://www.smfclearinghouse.com/blog/2026-10-23-two-sparks-two-jobs) |
 | 2026-10-19 | [Cold Iron on Mia's Flash-1017 EXL3 is 131/157. Send thinking off.](published/2026-10-19-deepseek-v4.1-flash-1017-mia-eaq-spark.md) | Cold Iron (`strict_v01`, 157) | Mia's DeepSeek-V4.1-Flash-1017 EXL3 2.9 bpw pack on two DGX Sparks scored 131/157 thinking off. Math is 16/30. Send enable_thinking false. Do not send effort=none by itself, and do not file this next to the OpenRouter 128. | [post](https://www.smfclearinghouse.com/blog/2026-10-19-deepseek-v4.1-flash-1017-mia-eaq-spark) |
