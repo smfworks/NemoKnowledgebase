@@ -1,0 +1,40 @@
+{
+  "arm": "default",
+  "sent": {
+    "temperature": 0,
+    "max_tokens": 64,
+    "reasoning": null,
+    "chat_template_kwargs": null
+  },
+  "http": 200,
+  "elapsed_s": 1.155,
+  "id": "gen-1793114202-dakvG4njXfI1sk9ZD9nL",
+  "model": "openai/gpt-6.1-terra",
+  "finish_reason": "stop",
+  "content": "4",
+  "reasoning_chars": 0,
+  "reasoning_preview": "",
+  "usage": {
+    "prompt_tokens": 9,
+    "completion_tokens": 5,
+    "total_tokens": 14,
+    "cost": 3.4e-05,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 3.4e-05,
+      "upstream_inference_prompt_cost": 9e-06,
+      "upstream_inference_completions_cost": 2.5e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "arm": "effort_none_plus_enable_thinking_false",
+  "prompt": "A bat and a ball cost $1.10. The bat costs $1 more than the ball. How much is the ball?",
+  "sent": {
+    "temperature": 0,
+    "max_tokens": 128,
+    "reasoning": {
+      "effort": "none"
+    },
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "http": 200,
+  "elapsed_s": 1.206,
+  "id": "gen-1793114279-9QZbHFUdEkOBsgQnoXPU",
+  "model": "openai/gpt-6.1-terra",
+  "finish_reason": "stop",
+  "content": "The ball costs **$0.05**. The bat costs $1.05, for a total of $1.10.",
+  "reasoning_chars": 0,
+  "reasoning_preview": "",
+  "usage": {
+    "prompt_tokens": 33,
+    "completion_tokens": 31,
+    "total_tokens": 64,
+    "cost": 0.000188,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000188,
+      "upstream_inference_prompt_cost": 3.3e-05,
+      "upstream_inference_completions_cost": 0.000155
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}
