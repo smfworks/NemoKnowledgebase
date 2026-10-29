@@ -1,0 +1,88 @@
+{
+  "text_plate": [
+    "exact string SMF FORGE is readable",
+    "no other readable text",
+    "one nameplate is the subject"
+  ],
+  "label_lines": [
+    "NORTH DOCK is readable",
+    "BATCH 1847 is readable",
+    "12 FL OZ is readable",
+    "no extra words on the label"
+  ],
+  "count_seven": [
+    "yellow pencil count is 7",
+    "pencils form one row",
+    "no other objects"
+  ],
+  "spatial_trio": [
+    "red mug is on the left",
+    "green apple is in the center",
+    "blue book is on the right",
+    "no text",
+    "no extra objects"
+  ],
+  "empty_bench": [
+    "a bench is present",
+    "no people",
+    "no animals",
+    "no bags or umbrellas",
+    "no text"
+  ],
+  "aspect_5x4": [
+    "one orange",
+    "no text",
+    "width greater than height"
+  ],
+  "aspect_4x5": [
+    "one lemon",
+    "no text",
+    "height greater than width"
+  ],
+  "wide_2k": [
+    "a pier",
+    "one yellow bollard on the left third",
+    "no people",
+    "no text"
+  ],
+  "cube_4k": [
+    "one red cube",
+    "white background",
+    "no text"
+  ],
+  "mouse_alpha": [
+    "a mouse is the subject",
+    "corner pixels are transparent",
+    "no text"
+  ],
+  "format_webp": [
+    "one blue bowl",
+    "file magic is webp"
+  ],
+  "format_jpeg": [
+    "one green bowl",
+    "file magic is jpeg"
+  ],
+  "ten_swatches": [
+    "ten squares",
+    "order matches the ten reference colors",
+    "no text"
+  ],
+  "edit_mug": [
+    "mug is yellow",
+    "apple still green and present",
+    "book still blue and present",
+    "no new text"
+  ],
+  "edit_remove": [
+    "apple is gone",
+    "red mug still on the left",
+    "blue book still on the right",
+    "no new text"
+  ],
+  "multi_compose": [
+    "nameplate present",
+    "SMF FORGE still readable",
+    "mug apple and book still present"
+  ]
+}

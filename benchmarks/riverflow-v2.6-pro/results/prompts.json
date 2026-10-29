@@ -1,0 +1,18 @@
+{
+  "text_plate": "A square studio photograph of one matte black rectangular metal nameplate centered on a seamless light gray background. The nameplate carries exactly one line of white engraved capital letters reading SMF FORGE. No other text. No logo. No people. No extra objects.",
+  "label_lines": "A front-facing product photograph of one plain white cylindrical bottle centered on a seamless white background. The label is white with black sans-serif text in exactly three lines and no other words. Line 1 reads NORTH DOCK. Line 2 reads BATCH 1847. Line 3 reads 12 FL OZ. The bottle has a plain white cap. No logo, no graphics, no extra text.",
+  "count_seven": "Exactly seven identical yellow wooden pencils with pink erasers, lying parallel in a single horizontal row on a seamless white surface. The count must be seven. No other objects. No text. No hands. Even lighting.",
+  "spatial_trio": "A slightly elevated photograph of a seamless white tabletop. Three objects only. On the left third, one red ceramic mug with the handle pointing right. In the center, one green apple. On the right third, one closed blue hardcover book standing upright. No text. No people. No other objects.",
+  "empty_bench": "A front-facing photograph of one empty wooden park bench in light rain. The bench is unoccupied. No people. No animals. No bags. No umbrellas. No text. Wet pavement. Overcast daylight.",
+  "aspect_5x4": "A single whole orange centered on a pale wooden table, photographed from slightly above. No other objects. No text. Soft daylight.",
+  "aspect_4x5": "A single whole lemon centered on a pale wooden table, photographed from slightly above. No other objects. No text. Soft daylight.",
+  "wide_2k": "A wide photograph of a quiet concrete pier at dusk. Wet planks. One yellow bollard on the left third. No people. No boats. No text. Overcast sky.",
+  "cube_4k": "A single matte red cube centered on a seamless white background. Studio lighting. No text. No other objects.",
+  "mouse_alpha": "A single matte black wireless computer mouse, three-quarter view, isolated product photo. No text. No desk. No colored backdrop.",
+  "format_webp": "A single blue ceramic bowl centered on a seamless white background. No text. No other objects.",
+  "format_jpeg": "A single green ceramic bowl centered on a seamless white background. No text. No other objects.",
+  "ten_swatches": "Using the ten reference images in the order they are attached, paint a white card with exactly ten solid colored squares in one horizontal row. Match each reference color in order, image 1 through image 10. No text. No extra squares. White background.",
+  "edit_mug": "Change only the mug from red to yellow. Keep the green apple, the blue book, the white table, and the camera angle. Do not add objects or text.",
+  "edit_remove": "Remove the green apple. Fill the space with the same white tabletop. Do not move the red mug or the blue book. Do not add objects or text.",
+  "multi_compose": "Place the black nameplate from the first image flat on the table, in front of the mug, apple, and book from the second image. Keep those three objects. Keep the engraved text SMF FORGE unchanged. Do not add other text."
+}

@@ -93,10 +93,11 @@ Those three belong to the July 27B battery. They are not the Cold Iron runner.
 
 ## Conducted tests
 
-Newest first. 82 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
+Newest first. 83 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
 
 | Date | Test | Suite | Published line | Write-up |
 | --- | --- | --- | --- | --- |
+| 2026-10-29 | [Call Riverflow 2.6 Pro on the images route. Set n to 1.](published/2026-10-29-riverflow-v2.6-pro.md) | OpenRouter images API, frozen 54-item checklist. Not Cold Iron. | Call sourceful/riverflow-v2.6-pro with POST /api/v1/images and n set to 1. For a 16:1 frame, send size 2048x128. This run's saved usage.cost summed to $3.978612. The frozen checklist was 53/54. | [post](https://www.smfclearinghouse.com/blog/2026-10-29-riverflow-v2.6-pro) |
 | 2026-10-27 | [Cold Iron: GPT-6.1 Terra scores 117/157. Math is 6/30.](published/2026-10-27-gpt-6.1-terra-cold-iron.md) | Cold Iron (`strict_v01`, 157) | openai/gpt-6.1-terra scored 117/157 on Cold Iron. The arm was reasoning.effort=none plus enable_thinking=false. Zero errors. Math is 6/30. Coding is 30/30. All 157 rows recorded 0 reasoning tokens. Rank 21 of 25 on the slash list. | [post](https://www.smfclearinghouse.com/blog/2026-10-27-gpt-6.1-terra-cold-iron) |
 | 2026-10-23 | [Cold Iron: Kimi K3.1 Pro scores 104/157. Math is 2/30.](published/2026-10-23-kimi-k3.1-pro-cold-iron.md) | Cold Iron (`strict_v01`, 157) | moonshotai/kimi-k3.1-pro scored 104/157 on Cold Iron. The arm was reasoning.effort=none plus enable_thinking=false. Zero errors. Math is 2/30. All 157 rows recorded 0 reasoning tokens. Rank 22 of 24 on the slash list. | [post](https://www.smfclearinghouse.com/blog/2026-10-23-kimi-k3.1-pro-cold-iron) |
 | 2026-10-23 | [Two Sparks, two jobs](published/2026-10-23-two-sparks-two-jobs.md) | Imagination Studio core install, plus a Jarvis smoke. The post states 31 of 31. Not Cold Iron. | Stand Imagination Studio on an idle DGX Spark, and smoke LocalRouter Jarvis on the box that is already serving. We did both on October 23, 2026. | [post](https://www.smfclearinghouse.com/blog/2026-10-23-two-sparks-two-jobs) |

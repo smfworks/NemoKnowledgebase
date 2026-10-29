@@ -1,0 +1,18 @@
+{
+  "frozen_items": 54,
+  "passed": 53,
+  "misses": [
+    {
+      "id": "count_seven",
+      "item": "yellow pencil count is 7",
+      "seen": 9
+    }
+  ],
+  "xhigh_not_in_frozen_54": {
+    "count": 7,
+    "one_row": false,
+    "note": "seven pencils in a vertical stack, not a horizontal row",
+    "no_other_objects": true
+  },
+  "scored_by": "opened each scored frame on 2026-10-29"
+}
