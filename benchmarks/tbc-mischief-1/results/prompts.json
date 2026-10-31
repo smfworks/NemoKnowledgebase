@@ -1,0 +1,81 @@
+{
+  "suite": "mischief-variant-board",
+  "frozen": "2026-10-31",
+  "model": "tbc/mischief-1",
+  "scored_params": {
+    "duration": 5,
+    "resolution": "480p",
+    "aspect_ratio": "16:9",
+    "seed": 42
+  },
+  "stills": [
+    {
+      "id": "mug",
+      "seed": 101,
+      "prompt": "Photoreal still life, a handmade speckled cream ceramic mug of black coffee and one whole yellow lemon on a worn oak table, morning window light from the left, shallow depth of field, 85mm lens, no text, no logo, no people, no watermark"
+    },
+    {
+      "id": "rain",
+      "seed": 105,
+      "prompt": "Photoreal completely empty wet city street at night, no vehicles, no cars, no motorcycles, no headlights, no people, wet asphalt mirroring soft amber and teal neon, no readable signs, no letters, cinematic 35mm, no text, no logo, no watermark"
+    },
+    {
+      "id": "door",
+      "seed": 103,
+      "prompt": "Photoreal sunlit hallway in an old house, a pale oak door slightly ajar, dust in a shaft of warm light, worn wood floor, no people, no text, no logo, no watermark"
+    },
+    {
+      "id": "fox",
+      "seed": 104,
+      "prompt": "Photoreal red fox sitting on a mossy fallen log in a soft morning forest, three-quarter side view, mist between trees, detailed fur, no people, no text, no logo, no watermark"
+    }
+  ],
+  "variants": [
+    {
+      "id": "mug-steam",
+      "still": "mug",
+      "prompt": "The camera holds still. A thin ribbon of steam rises from the coffee. The lemon and the mug stay where they are."
+    },
+    {
+      "id": "mug-roll",
+      "still": "mug",
+      "prompt": "The camera holds still. The lemon rolls slowly toward the near edge of the table. The mug stays put."
+    },
+    {
+      "id": "rain-push",
+      "still": "rain",
+      "prompt": "Slow camera push forward down the wet street. The neon reflections shimmer on the asphalt. No new objects enter the frame."
+    },
+    {
+      "id": "rain-car",
+      "still": "rain",
+      "prompt": "The camera holds still. A dark car passes from left to right through the midground and kicks up a low spray. The street itself stays the same."
+    },
+    {
+      "id": "door-open",
+      "still": "door",
+      "prompt": "The camera holds still. The wooden door swings open toward the camera, revealing a brighter room beyond. The hallway stays the same."
+    },
+    {
+      "id": "door-truck",
+      "still": "door",
+      "prompt": "The camera trucks slowly to the right, past the door, keeping the same height. The door stays ajar."
+    },
+    {
+      "id": "fox-turn",
+      "still": "fox",
+      "prompt": "The camera holds still. The fox turns its head toward the camera. The log and the forest stay put."
+    },
+    {
+      "id": "fox-wind",
+      "still": "fox",
+      "prompt": "The camera holds still. A light wind moves the fox's fur and the leaves beside the log. The fox stays seated."
+    }
+  ],
+  "repeat": {
+    "id": "mug-steam",
+    "n": 3,
+    "seed": 42,
+    "note": "Runs 2 and 3 are extra. Run 1 is the board clip."
+  }
+}

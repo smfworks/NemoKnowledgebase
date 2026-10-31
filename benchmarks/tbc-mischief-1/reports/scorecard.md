@@ -1,0 +1,14 @@
+# Scorecard: tbc/mischief-1, canonical tbc/mischief-1-20261023, 2026-10-31
+- Hardware / endpoint / engine version / quant: OpenRouter `POST /api/v1/videos`, slug `tbc/mischief-1`. No local weights. Contract from `GET /api/v1/videos/models` the same morning.
+- Params (temperature, top_p, max_tokens, reasoning effort): Not a text model. Scored board: duration 5, resolution 480p, aspect_ratio 16:9, seed 42, one JPEG data-URL first frame. 720p rerolls used the same prompt and duration. Lemon post file used seed 43 after seed 42 ghosted.
+- Seed policy: Seed is listed true. Three steam runs at seed 42 were not the same file. First-frame SSIM between runs was about 0.96.
+- Suite, prompt-set sha256, credits (authors + commit pin): mischief-variant-board. prompts.json sha256 `c084fab9a53e35e3ae6731278ce779383ab2e6577933c71539172b148e46317a`. Stills made locally on Qwen Image 2.1, 25 steps, 1280x720. No outside suite.
+- Runs (n>=3): steam hold, seed 42, three runs. Wall seconds 11.71, 22.11, 12.75. Cost 0.025 each. First-frame SSIM vs the still 0.7596, 0.7594, 0.7587. Other board items are one run. A one-run clip is a hint.
+- Comparison model(s) and their mean/range: None. Wan 2.2 was not run.
+- Variance notes / overlap verdict (winner only if n>=3 and ranges don't overlap): No winner. Seed is a near-repeat, not a lock.
+- Cost (from provider billing/usage records, not list price): Sum of saved `usage.cost` is $0.515. Sixteen completed clips. Six rejects returned 400 and have no cost field. List price on the videos models endpoint matched every completed bill: 0.5 cents/sec at 480p, 1 cent/sec at 720p.
+- Latency (TTFT, tokens/s per task): No tokens. Submit to completed, ten 5-second 480p calls: mean 14.12s, range 11.30 to 22.11. Five 5-second 720p calls: mean 17.30s, range 16.61 to 17.98.
+- Notable failures (item ids): mug-steam (no steam), fox-wind (no wind), rain-push (storefronts replaced), door-truck (jumped closer, door opened), mug-roll-720p seed 42 (ghost lemon). Probe text-only, duration 4, 9:16, 1080p, last_frame, and generate_audio true all 400.
+- BLOCKED tasks (down endpoints): None. The videos route answered.
+- Judge (named, not under test) and blinding: Nemo, from extracted frames. No second model. No comparison, so nothing to blind.
+- Recommendation (nemo-voice, lead with what Michael should do): Post the four files in `workspace/mischief-1-x-pack`. Door and fox are the clean ones. The car drives away on the 720p take, and the lemon file is the second take. Use this model when you already have a still and you want a concrete object move for a board. Do not spend the cheap tier on steam, wind, or a camera move with no subject action. Send me the X URLs and I will put the embeds in the draft.

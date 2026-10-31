@@ -1,0 +1,431 @@
+[
+  {
+    "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/clips/door-open-480p-r1.mp4",
+    "bytes": 722181,
+    "duration": 5.0625,
+    "width": 832,
+    "height": 480,
+    "fps": "16/1",
+    "vcodec": "h264",
+    "audio_streams": 0,
+    "first_frame_ssim": 0.665207,
+    "ssim_0_vs_2s": 0.786757,
+    "ssim_0_vs_last": 0.487561,
+    "frames": [
+      {
+        "t": "0",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-open-480p-r1/t0.png"
+      },
+      {
+        "t": "1",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-open-480p-r1/t1.png"
+      },
+      {
+        "t": "2",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-open-480p-r1/t2.png"
+      },
+      {
+        "t": "3",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-open-480p-r1/t3.png"
+      },
+      {
+        "t": "4",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-open-480p-r1/t4.png"
+      },
+      {
+        "t": "4.982",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-open-480p-r1/t4_982.png"
+      }
+    ]
+  },
+  {
+    "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/clips/door-truck-480p-r1.mp4",
+    "bytes": 1154046,
+    "duration": 5.0625,
+    "width": 832,
+    "height": 480,
+    "fps": "16/1",
+    "vcodec": "h264",
+    "audio_streams": 0,
+    "first_frame_ssim": 0.662446,
+    "ssim_0_vs_2s": 0.46133,
+    "ssim_0_vs_last": 0.312146,
+    "frames": [
+      {
+        "t": "0",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-truck-480p-r1/t0.png"
+      },
+      {
+        "t": "1",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-truck-480p-r1/t1.png"
+      },
+      {
+        "t": "2",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-truck-480p-r1/t2.png"
+      },
+      {
+        "t": "3",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-truck-480p-r1/t3.png"
+      },
+      {
+        "t": "4",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-truck-480p-r1/t4.png"
+      },
+      {
+        "t": "4.982",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/door-truck-480p-r1/t4_982.png"
+      }
+    ]
+  },
+  {
+    "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/clips/fox-turn-480p-r1.mp4",
+    "bytes": 1671270,
+    "duration": 5.0625,
+    "width": 832,
+    "height": 480,
+    "fps": "16/1",
+    "vcodec": "h264",
+    "audio_streams": 0,
+    "first_frame_ssim": 0.724647,
+    "ssim_0_vs_2s": 0.861154,
+    "ssim_0_vs_last": 0.846795,
+    "frames": [
+      {
+        "t": "0",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-turn-480p-r1/t0.png"
+      },
+      {
+        "t": "1",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-turn-480p-r1/t1.png"
+      },
+      {
+        "t": "2",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-turn-480p-r1/t2.png"
+      },
+      {
+        "t": "3",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-turn-480p-r1/t3.png"
+      },
+      {
+        "t": "4",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-turn-480p-r1/t4.png"
+      },
+      {
+        "t": "4.982",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-turn-480p-r1/t4_982.png"
+      }
+    ]
+  },
+  {
+    "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/clips/fox-wind-480p-r1.mp4",
+    "bytes": 1700463,
+    "duration": 5.0625,
+    "width": 832,
+    "height": 480,
+    "fps": "16/1",
+    "vcodec": "h264",
+    "audio_streams": 0,
+    "first_frame_ssim": 0.724124,
+    "ssim_0_vs_2s": 0.885696,
+    "ssim_0_vs_last": 0.877386,
+    "frames": [
+      {
+        "t": "0",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-wind-480p-r1/t0.png"
+      },
+      {
+        "t": "1",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-wind-480p-r1/t1.png"
+      },
+      {
+        "t": "2",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-wind-480p-r1/t2.png"
+      },
+      {
+        "t": "3",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-wind-480p-r1/t3.png"
+      },
+      {
+        "t": "4",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-wind-480p-r1/t4.png"
+      },
+      {
+        "t": "4.982",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/fox-wind-480p-r1/t4_982.png"
+      }
+    ]
+  },
+  {
+    "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/clips/mug-roll-480p-r1.mp4",
+    "bytes": 927073,
+    "duration": 5.0625,
+    "width": 832,
+    "height": 480,
+    "fps": "16/1",
+    "vcodec": "h264",
+    "audio_streams": 0,
+    "first_frame_ssim": 0.759144,
+    "ssim_0_vs_2s": 0.829283,
+    "ssim_0_vs_last": 0.814881,
+    "frames": [
+      {
+        "t": "0",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-roll-480p-r1/t0.png"
+      },
+      {
+        "t": "1",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-roll-480p-r1/t1.png"
+      },
+      {
+        "t": "2",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-roll-480p-r1/t2.png"
+      },
+      {
+        "t": "3",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-roll-480p-r1/t3.png"
+      },
+      {
+        "t": "4",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-roll-480p-r1/t4.png"
+      },
+      {
+        "t": "4.982",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-roll-480p-r1/t4_982.png"
+      }
+    ]
+  },
+  {
+    "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/clips/mug-steam-480p-r1.mp4",
+    "bytes": 821029,
+    "duration": 5.0625,
+    "width": 832,
+    "height": 480,
+    "fps": "16/1",
+    "vcodec": "h264",
+    "audio_streams": 0,
+    "first_frame_ssim": 0.75956,
+    "ssim_0_vs_2s": 0.938887,
+    "ssim_0_vs_last": 0.91125,
+    "frames": [
+      {
+        "t": "0",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r1/t0.png"
+      },
+      {
+        "t": "1",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r1/t1.png"
+      },
+      {
+        "t": "2",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r1/t2.png"
+      },
+      {
+        "t": "3",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r1/t3.png"
+      },
+      {
+        "t": "4",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r1/t4.png"
+      },
+      {
+        "t": "4.982",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r1/t4_982.png"
+      }
+    ]
+  },
+  {
+    "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/clips/mug-steam-480p-r2.mp4",
+    "bytes": 834217,
+    "duration": 5.0625,
+    "width": 832,
+    "height": 480,
+    "fps": "16/1",
+    "vcodec": "h264",
+    "audio_streams": 0,
+    "first_frame_ssim": 0.759377,
+    "ssim_0_vs_2s": 0.938174,
+    "ssim_0_vs_last": 0.920113,
+    "frames": [
+      {
+        "t": "0",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r2/t0.png"
+      },
+      {
+        "t": "1",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r2/t1.png"
+      },
+      {
+        "t": "2",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r2/t2.png"
+      },
+      {
+        "t": "3",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r2/t3.png"
+      },
+      {
+        "t": "4",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r2/t4.png"
+      },
+      {
+        "t": "4.982",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r2/t4_982.png"
+      }
+    ]
+  },
+  {
+    "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/clips/mug-steam-480p-r3.mp4",
+    "bytes": 814915,
+    "duration": 5.0625,
+    "width": 832,
+    "height": 480,
+    "fps": "16/1",
+    "vcodec": "h264",
+    "audio_streams": 0,
+    "first_frame_ssim": 0.758719,
+    "ssim_0_vs_2s": 0.937605,
+    "ssim_0_vs_last": 0.909224,
+    "frames": [
+      {
+        "t": "0",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r3/t0.png"
+      },
+      {
+        "t": "1",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r3/t1.png"
+      },
+      {
+        "t": "2",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r3/t2.png"
+      },
+      {
+        "t": "3",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r3/t3.png"
+      },
+      {
+        "t": "4",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r3/t4.png"
+      },
+      {
+        "t": "4.982",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/mug-steam-480p-r3/t4_982.png"
+      }
+    ]
+  },
+  {
+    "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/clips/probe-data-url-3s.mp4",
+    "bytes": 577207,
+    "duration": 3.0625,
+    "width": 832,
+    "height": 480,
+    "fps": "16/1",
+    "vcodec": "h264",
+    "audio_streams": 0,
+    "first_frame_ssim": null,
+    "ssim_0_vs_2s": null,
+    "ssim_0_vs_last": null,
+    "frames": [
+      {
+        "t": "0",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/probe-data-url-3s/t0.png"
+      },
+      {
+        "t": "1",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/probe-data-url-3s/t1.png"
+      },
+      {
+        "t": "2",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/probe-data-url-3s/t2.png"
+      },
+      {
+        "t": "3",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/probe-data-url-3s/t3.png"
+      },
+      {
+        "t": "4",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/probe-data-url-3s/t4.png"
+      },
+      {
+        "t": "2.982",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/probe-data-url-3s/t2_982.png"
+      }
+    ]
+  },
+  {
+    "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/clips/rain-car-480p-r1.mp4",
+    "bytes": 2090198,
+    "duration": 5.0625,
+    "width": 832,
+    "height": 480,
+    "fps": "16/1",
+    "vcodec": "h264",
+    "audio_streams": 0,
+    "first_frame_ssim": 0.539055,
+    "ssim_0_vs_2s": 0.760949,
+    "ssim_0_vs_last": 0.560243,
+    "frames": [
+      {
+        "t": "0",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-car-480p-r1/t0.png"
+      },
+      {
+        "t": "1",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-car-480p-r1/t1.png"
+      },
+      {
+        "t": "2",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-car-480p-r1/t2.png"
+      },
+      {
+        "t": "3",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-car-480p-r1/t3.png"
+      },
+      {
+        "t": "4",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-car-480p-r1/t4.png"
+      },
+      {
+        "t": "4.982",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-car-480p-r1/t4_982.png"
+      }
+    ]
+  },
+  {
+    "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/clips/rain-push-480p-r1.mp4",
+    "bytes": 3036310,
+    "duration": 5.0625,
+    "width": 832,
+    "height": 480,
+    "fps": "16/1",
+    "vcodec": "h264",
+    "audio_streams": 0,
+    "first_frame_ssim": 0.545374,
+    "ssim_0_vs_2s": 0.465431,
+    "ssim_0_vs_last": 0.408723,
+    "frames": [
+      {
+        "t": "0",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-push-480p-r1/t0.png"
+      },
+      {
+        "t": "1",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-push-480p-r1/t1.png"
+      },
+      {
+        "t": "2",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-push-480p-r1/t2.png"
+      },
+      {
+        "t": "3",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-push-480p-r1/t3.png"
+      },
+      {
+        "t": "4",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-push-480p-r1/t4.png"
+      },
+      {
+        "t": "4.982",
+        "file": "/home/mikesai1/NemoVault/evals/mischief-variant-board/frames/rain-push-480p-r1/t4_982.png"
+      }
+    ]
+  }
+]

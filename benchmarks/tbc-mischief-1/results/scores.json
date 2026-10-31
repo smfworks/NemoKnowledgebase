@@ -1,0 +1,17 @@
+{
+  "judge": "Nemo",
+  "suite": "mischief-variant-board",
+  "tier": "480p duration 5 seed 42",
+  "scored_before_720p": true,
+  "items": {
+    "mug-steam": {"motion_asked": 0, "identity": 2, "artifacts": 2, "board_keep": 0, "note": "Camera held. Lemon and mug stayed. No steam in the frames I opened."},
+    "mug-roll": {"motion_asked": 2, "identity": 2, "artifacts": 2, "board_keep": 2, "note": "Lemon rolled toward the near edge and rotated. Mug stayed."},
+    "rain-push": {"motion_asked": 1, "identity": 1, "artifacts": 1, "board_keep": 1, "note": "Street type held. Specific storefronts and the left awning were replaced. Not a clean push."},
+    "rain-car": {"motion_asked": 2, "identity": 2, "artifacts": 1, "board_keep": 2, "note": "A dark car entered from the left and crossed the midground. Street held. Spray was not clear."},
+    "door-open": {"motion_asked": 2, "identity": 2, "artifacts": 2, "board_keep": 2, "note": "The same door swung open and showed a brighter room beyond."},
+    "door-truck": {"motion_asked": 1, "identity": 1, "artifacts": 1, "board_keep": 1, "note": "The view jumped closer and the door opened. Not a rightward truck."},
+    "fox-turn": {"motion_asked": 2, "identity": 2, "artifacts": 2, "board_keep": 2, "note": "The same fox turned its head more toward the camera. Log stayed."},
+    "fox-wind": {"motion_asked": 0, "identity": 2, "artifacts": 2, "board_keep": 0, "note": "Fox stayed seated. No visible wind in fur or leaves."}
+  },
+  "probe_note": "The 3s steam probe drew a thin liquid pour into the cup, not steam. It is not a board score."
+}
