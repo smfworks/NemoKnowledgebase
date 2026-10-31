@@ -8,6 +8,6 @@
 
 ## Published line
 
-> A comprehensive six-category test framework for evaluating Microsoft's Mage-Flow image generation and editing model on AMD gfx1151 hardware. 33 tests across prompt following, resolution scaling, text rendering, batch generation, image editing, and performance benchmarking — with 
+> A comprehensive six-category test framework for evaluating SMF Works's Mage-Flow image generation and editing model on AMD gfx1151 hardware. 33 tests across prompt following, resolution scaling, text rendering, batch generation, image editing, and performance benchmarking — with 
 
 This entry records that Clearinghouse post. It does not re-score the run. Open the write-up, and any JSON linked above, before you quote a finer number than the line in the blockquote.
