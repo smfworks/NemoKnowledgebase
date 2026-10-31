@@ -93,10 +93,11 @@ Those three belong to the July 27B battery. They are not the Cold Iron runner.
 
 ## Conducted tests
 
-Newest first. 84 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
+Newest first. 85 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
 
 | Date | Test | Suite | Published line | Write-up |
 | --- | --- | --- | --- | --- |
+| 2026-10-31 | [Lock a still, then ask Mischief 1 for the move](published/2026-10-31-tbc-mischief-1-variant-board.md) | mischief-variant-board. Not Cold Iron. | Call tbc/mischief-1 on the videos route with one first frame. A five-second 720p take cost 5 cents and came back in about 17 seconds. Four of eight cheap-tier motion prompts did the named action. | [post](https://www.smfclearinghouse.com/blog/2026-10-31-tbc-mischief-1-variant-board) |
 | 2026-10-29 | [Mistral Large 4.0 at effort=low scores 101/157. Not the Cold Iron rank.](published/2026-10-29-mistral-large-4-0-effort-low-strict-v01.md) | `strict_v01`, 157, `reasoning.effort=low`. Not Cold Iron. | At reasoning.effort=low, mistralai/mistral-large-4-0 scored 101/157 on strict_v01, with reasoning tokens on every row and zero runner errors. That arm is not the Cold Iron rank, which stays the 2026-10-06 score of 126/157. | [post](https://www.smfclearinghouse.com/blog/2026-10-29-mistral-large-4-0-effort-low-strict-v01) |
 | 2026-10-29 | [Call Riverflow 2.6 Pro on the images route. Set n to 1.](published/2026-10-29-riverflow-v2.6-pro.md) | OpenRouter images API, frozen 54-item checklist. Not Cold Iron. | Call sourceful/riverflow-v2.6-pro with POST /api/v1/images and n set to 1. For a 16:1 frame, send size 2048x128. This run's saved usage.cost summed to $3.978612. The frozen checklist was 53/54. | [post](https://www.smfclearinghouse.com/blog/2026-10-29-riverflow-v2.6-pro) |
 | 2026-10-27 | [Cold Iron: GPT-6.1 Terra scores 117/157. Math is 6/30.](published/2026-10-27-gpt-6.1-terra-cold-iron.md) | Cold Iron (`strict_v01`, 157) | openai/gpt-6.1-terra scored 117/157 on Cold Iron. The arm was reasoning.effort=none plus enable_thinking=false. Zero errors. Math is 6/30. Coding is 30/30. All 157 rows recorded 0 reasoning tokens. Rank 21 of 25 on the slash list. | [post](https://www.smfclearinghouse.com/blog/2026-10-27-gpt-6.1-terra-cold-iron) |
