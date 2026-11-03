@@ -1,0 +1,561 @@
+I'll build a playable piano with Web Audio synthesis — no samples needed, so every note is generated locally with correct equal-temperament frequencies. For the recording feature, I'll capture note events (not audio), which lets me offer playback with a visual "ghost player" showing which keys are being hit.
+
+**Design direction:** I want this to feel like a real instrument, not a web widget. Dark stage-like backdrop, a warm wooden cabinet framing the keys, keys with real depth and press animation. A serif display face (Fraunces) for character, and a small event log strip that types out note names as you play — the page should feel alive while you play.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parlor — A Small Piano</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14100d;
+    --cabinet: #2a1f16;
+    --cabinet-hi: #3a2c1e;
+    --felt: #7a2e2a;
+    --wood: #b98a52;
+    --cream: #f2ead8;
+    --ink: #1a1512;
+    --amber: #e8a33d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse 80% 60% at 50% 0%, #241b13 0%, var(--bg) 70%);
+    color: var(--cream);
+    font-family: 'Fraunces', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  header { text-align: center; margin-top: 34px; }
+  header h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--cream);
+  }
+  header h1 em { font-style: italic; color: var(--wood); }
+  header p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8a7a63;
+    margin-top: 8px;
+  }
+
+  /* ---------- Transport ---------- */
+  .transport {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 26px 0 18px;
+    padding: 10px 14px;
+    background: #1d1712;
+    border: 1px solid #33281d;
+    border-radius: 10px;
+  }
+  .tbtn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    padding: 9px 16px;
+    border-radius: 6px;
+    border: 1px solid #3d3122;
+    background: #262019;
+    color: var(--cream);
+    cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s, transform .05s;
+  }
+  .tbtn:hover:not(:disabled) { background: #322a20; border-color: #55452e; }
+  .tbtn:active:not(:disabled) { transform: translateY(1px); }
+  .tbtn:disabled { opacity: .35; cursor: not-allowed; }
+  .tbtn.recording {
+    background: #4a1d18; border-color: #8a3a30; color: #ffb4a8;
+    animation: pulse 1.1s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 4px rgba(180, 60, 45, .18); } }
+  .tbtn .dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: #e05545; margin-right: 7px; vertical-align: 1px;
+  }
+  .tbtn.recording .dot { animation: blink 1s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: .25; } }
+
+  .clock {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--amber);
+    min-width: 64px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+  .transport .sep { width: 1px; height: 22px; background: #33281d; }
+
+  /* ---------- Piano ---------- */
+  .piano-shell {
+    background: linear-gradient(180deg, var(--cabinet-hi), var(--cabinet) 30%);
+    border: 1px solid #4a3a26;
+    border-radius: 14px 14px 8px 8px;
+    padding: 14px 16px 0;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.06);
+    max-width: 920px;
+    width: calc(100% - 32px);
+  }
+  .nameboard {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 2px 6px 12px;
+  }
+  .nameboard .brand {
+    font-size: 15px; font-weight: 600; font-style: italic; color: var(--wood);
+    letter-spacing: .04em;
+  }
+  .nameboard .model {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    letter-spacing: .2em; color: #6b5a44; text-transform: uppercase;
+  }
+
+  .felt-line { height: 7px; background: var(--felt); border-radius: 3px 3px 0 0;
+    box-shadow: inset 0 -3px 5px rgba(0,0,0,.35); }
+
+  .keyboard {
+    position: relative;
+    display: flex;
+    height: 210px;
+    background: #0c0a08;
+    padding: 0 2px 2px;
+    border-radius: 0 0 8px 8px;
+    touch-action: none;
+  }
+  .key {
+    position: relative;
+    border-radius: 0 0 5px 5px;
+    cursor: pointer;
+  }
+  .key.white {
+    flex: 1;
+    background: linear-gradient(180deg, #fbf6ea 0%, #efe7d4 82%, #d9cfb8 100%);
+    border: 1px solid #b8ad94;
+    border-top: none;
+    margin-right: 1px;
+    box-shadow: inset 0 -6px 8px -4px rgba(0,0,0,.18), 0 3px 2px rgba(0,0,0,.4);
+    transform-origin: top;
+    transition: transform .04s, box-shadow .04s, background .1s;
+  }
+  .key.white.down {
+    transform: translateY(2px) rotateX(1.5deg);
+    background: linear-gradient(180deg, #e9dfc8 0%, #ddd2b6 100%);
+    box-shadow: inset 0 -2px 5px -2px rgba(0,0,0,.3), 0 1px 1px rgba(0,0,0,.4);
+  }
+  .key.white .label {
+    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #a2957a;
+  }
+  .key.black {
+    position: absolute;
+    top: 0;
+    width: calc(100% / 21 * 0.62);
+    height: 62%;
+    background: linear-gradient(180deg, #2e2a26 0%, #171412 70%, #000 100%);
+    border: 1px solid #000;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 5px rgba(0,0,0,.6), inset 0 -3px 4px rgba(255,255,255,.06);
+    z-index: 2;
+    transition: transform .04s, box-shadow .04s;
+  }
+  .key.black.down {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,.6), inset 0 -1px 3px rgba(255,255,255,.04);
+  }
+  .key .ghost {
+    position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    opacity: 0; transition: opacity .12s;
+  }
+  .key.white .ghost { background: linear-gradient(180deg, rgba(232,163,61,.0), rgba(232,163,61,.45)); }
+  .key.black .ghost { background: linear-gradient(180deg, rgba(232,163,61,.15), rgba(232,163,61,.6)); }
+  .key.ghosted .ghost { opacity: 1; }
+
+  /* ---------- Log strip ---------- */
+  .log-strip {
+    width: calc(100% - 32px); max-width: 920px;
+    margin: 18px 0 30px;
+    height: 44px;
+    display: flex; align-items: center;
+    padding: 0 16px;
+    background: #1d1712;
+    border: 1px solid #33281d;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .log-strip .tag {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .18em;
+    color: #6b5a44; text-transform: uppercase; margin-right: 14px; flex-shrink: 0;
+  }
+  #log {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #c9b892;
+    white-space: nowrap; overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+  #log .n { margin-right: 14px; }
+  #log .n b { color: var(--amber); font-weight: 500; }
+  #log .n span { color: #7d6f58; }
+
+  footer {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em;
+    color: #5c5040; text-transform: uppercase; margin-bottom: 26px; text-align: center;
+    padding: 0 20px;
+  }
+  footer kbd {
+    border: 1px solid #3d3122; border-radius: 4px; padding: 1px 5px;
+    background: #262019; color: #a2957a; font-family: inherit;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>The <em>Parlor</em> Piano</h1>
+  <p>Twenty-one keys · tuned to A440</p>
+</header>
+
+<div class="transport">
+  <button class="tbtn" id="recBtn"><span class="dot"></span>Record</button>
+  <button class="tbtn" id="playBtn" disabled>Play</button>
+  <button class="tbtn" id="stopBtn" disabled>Stop</button>
+  <div class="sep"></div>
+  <div class="clock" id="clock">0:00.0</div>
+</div>
+
+<div class="piano-shell">
+  <div class="nameboard">
+    <span class="brand">Parlor &amp; Sons</span>
+    <span class="model">No. 21 · Upright</span>
+  </div>
+  <div class="felt-line"></div>
+  <div class="keyboard" id="keyboard"></div>
+</div>
+
+<div class="log-strip">
+  <span class="tag">Now playing</span>
+  <div id="log"></div>
+</div>
+
+<footer>Play with your keyboard: <kbd>A</kbd>–<kbd>K</kbd> white keys · <kbd>W</kbd><kbd>E</kbd> <kbd>T</kbd><kbd>Y</kbd><kbd>U</kbd> black keys · Z / X shift octave</footer>
+
+<script>
+(() => {
+  'use strict';
+
+  /* ================= Audio engine ================= */
+  let ctx = null;
+  const master = { gain: null };
+  function ensureAudio() {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master.gain = ctx.createGain();
+      master.gain.gain.value = 0.5;
+      // gentle warmth
+      const comp = ctx.createDynamicsCompressor();
+      master.gain.connect(comp).connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+  }
+
+  // Equal temperament: f = 440 * 2^((midi-69)/12)
+  const freqOf = midi => 440 * Math.pow(2, (midi - 69) / 12);
+
+  const NAMES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+  const nameOf = midi => NAMES[midi % 12] + (Math.floor(midi / 12) - 1);
+
+  function playNote(midi, vel = 1) {
+    ensureAudio();
+    const t = ctx.currentTime;
+    const f = freqOf(midi);
+    const out = ctx.createGain();
+    out.connect(master.gain);
+
+    // Piano-ish tone: fundamental + a few harmonics with independent decay
+    const partials = [
+      { m: 1,    g: 1.0,  d: 1.0 },
+      { m: 2,    g: 0.42, d: 0.72 },
+      { m: 3,    g: 0.20, d: 0.55 },
+      { m: 4.01, g: 0.10, d: 0.42 },  // slightly inharmonic
+      { m: 5.02, g: 0.05, d: 0.30 },
+    ];
+    const dur = 2.6 + (108 - midi) * 0.012; // bass rings longer
+    partials.forEach(p => {
+      const o = ctx.createOscillator();
+      o.type = 'sine';
+      o.frequency.value = f * p.m;
+      const g = ctx.createGain();
+      const peak = p.g * vel * 0.32;
+      g.gain.setValueAtTime(0, t);
+      g.gain.linearRampToValueAtTime(peak, t + 0.006);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur * p.d);
+      o.connect(g).connect(out);
+      o.start(t);
+      o.stop(t + dur * p.d + 0.1);
+    });
+
+    // Hammer thump: filtered noise burst
+    const nb = ctx.createBuffer(1, ctx.sampleRate * 0.05, ctx.sampleRate);
+    const nd = nb.getChannelData(0);
+    for (let i = 0; i < nd.length; i++) nd[i] = (Math.random() * 2 - 1) * (1 - i / nd.length);
+    const ns = ctx.createBufferSource();
+    ns.buffer = nb;
+    const nf = ctx.createBiquadFilter();
+    nf.type = 'bandpass'; nf.frequency.value = f * 2.2; nf.Q.value = 0.8;
+    const ng = ctx.createGain();
+    ng.gain.setValueAtTime(0.18 * vel, t);
+    ng.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
+    ns.connect(nf).connect(ng).connect(out);
+    ns.start(t);
+  }
+
+  /* ================= Keyboard build ================= */
+  // C3 .. B4 = 21 keys (midi 48..68)
+  const LOW = 48, HIGH = 68;
+  const BLACK = [1, 3, 6, 8, 10];
+  const keyboard = document.getElementById('keyboard');
+  const keyEls = new Map();
+  const whiteOrder = [];
+
+  for (let m = LOW; m <= HIGH; m++) {
+    if (!BLACK.includes(m % 12)) whiteOrder.push(m);
+  }
+  // white keys first (flex), black keys absolutely positioned
+  whiteOrder.forEach(m => {
+    const el = document.createElement('div');
+    el.className = 'key white';
+    el.dataset.midi = m;
+    if ([0, 4].includes(m % 12)) {
+      const l = document.createElement('span');
+      l.className = 'label';
+      l.textContent = nameOf(m);
+      el.appendChild(l);
+    }
+    el.appendChild(Object.assign(document.createElement('div'), { className: 'ghost' }));
+    keyboard.appendChild(el);
+    keyEls.set(m, el);
+  });
+  whiteOrder.forEach((m, i) => {
+    if (BLACK.includes((m + 1) % 12) && m + 1 <= HIGH) {
+      const el = document.createElement('div');
+      el.className = 'key black';
+      el.dataset.midi = m + 1;
+      const w = 100 / whiteOrder.length;
+      el.style.left = `calc(${(i + 1) * w}% - ${(w * 0.62) / 2}% + 2px)`;
+      el.appendChild(Object.assign(document.createElement('div'), { className: 'ghost' }));
+      keyboard.appendChild(el);
+      keyEls.set(m + 1, el);
+    }
+  });
+
+  /* ================= Log strip ================= */
+  const log = document.getElementById('log');
+  function logNote(midi) {
+    const s = document.createElement('span');
+    s.className = 'n';
+    s.innerHTML = `<b>${nameOf(midi)}</b><span> ·</span>`;
+    log.appendChild(s);
+    while (log.children.length > 40) log.removeChild(log.firstChild);
+    log.scrollLeft = log.scrollWidth;
+  }
+
+  /* ================= Note on/off ================= */
+  const active = new Map(); // midi -> {el, timer}
+  function noteOn(midi, vel = 1, fromPlayback = false) {
+    if (active.has(midi)) return;
+    playNote(midi, vel);
+    logNote(midi);
+    const el = keyEls.get(midi);
+    if (el) {
+      el.classList.add('down');
+      if (fromPlayback) el.classList.add('ghosted');
+      active.set(midi, { el, fromPlayback });
+    } else {
+      active.set(midi, { el: null, fromPlayback });
+    }
+  }
+  function noteOff(midi) {
+    const a = active.get(midi);
+    if (!a) return;
+    if (a.el) {
+      a.el.classList.remove('down');
+      if (a.fromPlayback) {
+        setTimeout(() => a.el.classList.remove('ghosted'), 150);
+      }
+    }
+    active.delete(midi);
+  }
+
+  /* Pointer input — supports glissando across keys */
+  let pointerDown = false;
+  let lastPointerMidi = null;
+  keyboard.addEventListener('pointerdown', e => {
+    const el = e.target.closest('.key');
+    if (!el) return;
+    ensureAudio();
+    pointerDown = true;
+    keyboard.setPointerCapture(e.pointerId);
+    const m = +el.dataset.midi;
+    lastPointerMidi = m;
+    noteOn(m);
+  });
+  keyboard.addEventListener('pointermove', e => {
+    if (!pointerDown) return;
+    const el = document.elementFromPoint(e.clientX, e.clientY)?.closest('.key');
+    if (!el) return;
+    const m = +el.dataset.midi;
+    if (m !== lastPointerMidi) {
+      if (lastPointerMidi !== null) noteOff(lastPointerMidi);
+      lastPointerMidi = m;
+      noteOn(m);
+    }
+  });
+  const endPointer = () => {
+    if (lastPointerMidi !== null) noteOff(lastPointerMidi);
+    pointerDown = false;
+    lastPointerMidi = null;
+  };
+  keyboard.addEventListener('pointerup', endPointer);
+  keyboard.addEventListener('pointercancel', endPointer);
+
+  /* ================= Computer keyboard ================= */
+  const KEYMAP = { a:0, w:1, s:2, e:3, d:4, f:5, t:6, g:7, y:8, h:9, u:10, j:11, k:12, o:13, l:14, p:15 };
+  let octaveShift = 0;
+  const heldKeys = new Set();
+  document.addEventListener('keydown', e => {
+    if (e.repeat) return;
+    const k = e.key.toLowerCase();
+    if (k === 'z') { octaveShift = Math.max(-2, octaveShift - 1); return; }
+    if (k === 'x') { octaveShift = Math.min(1, octaveShift + 1); return; }
+    if (k === ' ') { e.preventDefault(); return; }
+    if (!(k in KEYMAP) || heldKeys.has(k)) return;
+    const m = LOW + octaveShift * 12 + KEYMAP[k];
+    if (m < LOW || m > HIGH) return;
+    heldKeys.add(k);
+    ensureAudio();
+    noteOn(m);
+  });
+  document.addEventListener('keyup', e => {
+    const k = e.key.toLowerCase();
+    if (!heldKeys.has(k)) return;
+    heldKeys.delete(k);
+    noteOff(LOW + octaveShift * 12 + KEYMAP[k]);
+  });
+
+  /* ================= Recorder ================= */
+  const recBtn = document.getElementById('recBtn');
+  const playBtn = document.getElementById('playBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const clock = document.getElementById('clock');
+
+  let recording = false, playing = false;
+  let recStart = 0, events = [], playTimers = [];
+  let clockRAF = 0;
+
+  function fmt(ms) {
+    const s = ms / 1000;
+    return `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}.${Math.floor((s % 1) * 10)}`;
+  }
+  function tickClock(base) {
+    cancelAnimationFrame(clockRAF);
+    const loop = () => { clock.textContent = fmt(performance.now() - base); clockRAF = requestAnimationFrame(loop); };
+    clockRAF = requestAnimationFrame(loop);
+  }
+
+  recBtn.addEventListener('click', () => {
+    if (playing) stopPlayback();
+    recording = true;
+    events = [];
+    recStart = performance.now();
+    recBtn.classList.add('recording');
+    recBtn.innerHTML = '<span class="dot"></span>Recording';
+    playBtn.disabled = true;
+    stopBtn.disabled = false;
+    tickClock(recStart);
+  });
+
+  function stopRecording() {
+    recording = false;
+    recBtn.classList.remove('recording');
+    recBtn.innerHTML = '<span class="dot"></span>Record';
+    stopBtn.disabled = true;
+    playBtn.disabled = events.length === 0;
+    cancelAnimationFrame(clockRAF);
+    clock.textContent = fmt(events.length ? events[events.length - 1].t : 0);
+  }
+
+  function stopPlayback() {
+    playing = false;
+    playTimers.forEach(clearTimeout);
+    playTimers = [];
+    active.forEach((_, m) => noteOff(m));
+    stopBtn.disabled = true;
+    playBtn.disabled = events.length === 0;
+    cancelAnimationFrame(clockRAF);
+    clock.textContent = '0:00.0';
+  }
+
+  playBtn.addEventListener('click', () => {
+    if (recording) stopRecording();
+    if (!events.length) return;
+    ensureAudio();
+    playing = true;
+    playBtn.disabled = true;
+    recBtn.disabled = true;
+    stopBtn.disabled = false;
+    const base = performance.now();
+    tickClock(base);
+    events.forEach(ev => {
+      playTimers.push(setTimeout(() => {
+        if (!playing) return;
+        if (ev.type === 'on') noteOn(ev.midi, ev.vel, true);
+        else noteOff(ev.midi);
+      }, ev.t));
+    });
+    const total = events[events.length - 1].t + 800;
+    playTimers.push(setTimeout(() => { if (playing) stopPlayback(); }, total));
+  });
+
+  stopBtn.addEventListener('click', () => {
+    if (recording) stopRecording();
+    else if (playing) stopPlayback();
+  });
+
+  // Hook note events into the recorder
+  const _on = noteOn, _off = noteOff;
+  noteOn = function(midi, vel = 1, fromPlayback = false) {
+    if (recording && !fromPlayback) events.push({ type: 'on', midi, vel, t: performance.now() - recStart });
+    _on(midi, vel, fromPlayback);
+  };
+  noteOff = function(midi) {
+    if (recording) events.push({ type: 'off', midi, t: performance.now() - recStart });
+    _off(midi);
+  };
+})();
+</script>
+</body>
+</html>
+```
+
+**How it works:**
+
+- **Sound** — Each note is synthesized live: five sine partials (with slight inharmonicity on the upper ones, like real strings) plus a short band-passed noise burst for the hammer strike. Frequencies use exact equal temperament: `440 × 2^((midi−69)/12)`. Bass notes ring longer than treble, and a compressor keeps chords from clipping.
+
+- **Recording** — I record *events* (note-on/off with timestamps and velocity), not audio. This keeps the file tiny and enables the **ghost playback**: during playback, the keys physically press down and glow amber as if a ghost pianist is playing your take. The transport bar has Record / Play / Stop with a live tenth-of-a-second clock.
+
+- **Playing** — Mouse/touch with glissando (drag across keys), plus computer keyboard mapping (A–K row for whites, W/E/T/Y/U for blacks, Z/X to shift octave). A "Now playing" strip types out note names as you perform.
+
+- **Design** — A dark stage with a warm wooden cabinet, felt-red strip above the keys, ivory keys with real press depth, and Fraunces serif for the "Parlor & Sons" nameboard — it should read as an instrument, not a UI.

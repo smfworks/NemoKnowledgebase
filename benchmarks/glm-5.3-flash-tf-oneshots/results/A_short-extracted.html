@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightbulb Toggle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a2e;
+            transition: background-color 0.5s ease;
+        }
+
+        body.lights-on {
+            background-color: #f5f5dc;
+        }
+
+        .bulb-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .glow {
+            position: absolute;
+            top: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 220, 100, 0.6) 0%, rgba(255, 220, 100, 0) 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        body.lights-on .glow {
+            opacity: 1;
+        }
+
+        .bulb {
+            width: 100px;
+            height: 100px;
+            border-radius: 50% 50% 45% 45%;
+            background-color: #3a3a4a;
+            border: 4px solid #555;
+            position: relative;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        body.lights-on .bulb {
+            background-color: #ffe97d;
+            border-color: #d4b106;
+            box-shadow: 0 0 40px 10px rgba(255, 230, 120, 0.5);
+        }
+
+        .bulb-base {
+            width: 50px;
+            height: 35px;
+            background: linear-gradient(to bottom, #888, #666);
+            border-radius: 0 0 8px 8px;
+            position: relative;
+        }
+
+        .bulb-base::before,
+        .bulb-base::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #555;
+        }
+
+        .bulb-base::before { top: 8px; }
+        .bulb-base::after { top: 18px; }
+
+        .filament {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 20px;
+            border: 2px solid #555;
+            border-top: none;
+            border-radius: 0 0 15px 15px;
+            transition: border-color 0.4s ease;
+        }
+
+        body.lights-on .filament {
+            border-color: #ff8c00;
+        }
+
+        .toggle-btn {
+            padding: 14px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            background-color: #4a4a6a;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        .toggle-btn:hover {
+            background-color: #5a5a7a;
+        }
+
+        .toggle-btn:active {
+            transform: scale(0.97);
+        }
+
+        body.lights-on .toggle-btn {
+            background-color: #d4a017;
+        }
+
+        body.lights-on .toggle-btn:hover {
+            background-color: #c49510;
+        }
+
+        .status {
+            font-size: 16px;
+            color: #888;
+            transition: color 0.4s ease;
+        }
+
+        body.lights-on .status {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="bulb-container">
+        <div class="glow"></div>
+        <div class="bulb">
+            <div class="filament"></div>
+        </div>
+        <div class="bulb-base"></div>
+    </div>
+
+    <button class="toggle-btn" id="toggleBtn">Turn On</button>
+    <p class="status" id="status">The light is off</p>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleBtn');
+        const status = document.getElementById('status');
+        const body = document.body;
+
+        toggleBtn.addEventListener('click', () => {
+            const isOn = body.classList.toggle('lights-on');
+
+            if (isOn) {
+                toggleBtn.textContent = 'Turn Off';
+                status.textContent = 'The light is on';
+            } else {
+                toggleBtn.textContent = 'Turn On';
+                status.textContent = 'The light is off';
+            }
+        });
+    </script>
+</body>
+</html>

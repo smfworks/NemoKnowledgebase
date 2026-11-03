@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar System</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  #space {
+    position: relative;
+    width: 100vmin;
+    height: 100vmin;
+  }
+  .orbit {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .planet-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+  }
+  .planet {
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 11px;
+    pointer-events: none;
+    white-space: nowrap;
+    text-shadow: 0 0 4px #000;
+  }
+  #sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #fff7ae, #ffd54f 40%, #ff9800 70%, #e65100);
+    box-shadow: 0 0 40px 15px rgba(255, 160, 0, 0.6),
+                0 0 100px 40px rgba(255, 100, 0, 0.3);
+  }
+  /* Planet colors */
+  .mercury { background: radial-gradient(circle at 30% 30%, #c9c4bb, #8d8a84 60%, #5c5a56); }
+  .venus   { background: radial-gradient(circle at 30% 30%, #f5deb3, #e8c07a 60%, #b8860b); }
+  .earth   { background: radial-gradient(circle at 30% 30%, #7ec8e3, #2e7dd1 50%, #1a4d8f); }
+  .mars    { background: radial-gradient(circle at 30% 30%, #ff8a65, #d84315 60%, #8d2f0e); }
+  .jupiter { background: radial-gradient(circle at 30% 30%, #e8d0a9, #c49a6c 60%, #8b5e34); }
+  .saturn  { background: radial-gradient(circle at 30% 30%, #f4e4bc, #d9b380 60%, #a67c3d); }
+  .uranus  { background: radial-gradient(circle at 30% 30%, #b2f0ef, #6fd1d1 60%, #3a9a9a); }
+  .neptune { background: radial-gradient(circle at 30% 30%, #8ab4f8, #3f6fd8 60%, #26418f); }
+</style>
+</head>
+<body>
+<div id="space">
+  <div id="sun"></div>
+  <div id="orbits"></div>
+  <div id="planets"></div>
+</div>
+
+<script>
+const planets = [
+  { name: 'Mercury', color: 'mercury', size: 6,  orbit: 55,  speed: 4.15 },
+  { name: 'Venus',   color: 'venus',   size: 9,  orbit: 75,  speed: 1.62 },
+  { name: 'Earth',   color: 'earth',   size: 10, orbit: 95,  speed: 1.0  },
+  { name: 'Mars',    color: 'mars',    size: 8,  orbit: 115, speed: 0.53 },
+  { name: 'Jupiter', color: 'jupiter', size: 22, orbit: 150, speed: 0.084 },
+  { Jupiter: 0 },
+  { name: 'Saturn',  color: 'saturn',  size: 19, orbit: 185, speed: 0.034 },
+  { name: 'Uranus',  color: 'uranus',  size: 14, orbit: 215, speed: 0.012 },
+  { name: 'Neptune', color: 'neptune', size: 14, orbit: 240, speed: 0.006 }
+];
+
+const space = document.getElementById('space');
+const orbitsEl = document.getElementById('orbits');
+const planetsEl = document.getElementById('planets');
+
+planets.forEach(p => {
+  if (!p.name) return;
+  // Orbit ring
+  const orbit = document.createElement('div');
+  orbit.className = 'orbit';
+  orbit.style.width = orbit.style.height = (p.orbit * 2) + 'px';
+  orbitsEl.appendChild(orbit);
+
+  // Planet container (rotates)
+  const container = document.createElement('div');
+  container.className = 'planet-container';
+  container.style.width = container.style.height = (p.orbit * 2) + div;
+  planetsEl.appendChild(container);
+
+  // Planet sphere
+  const planet = document.createElement('div');
+  planet.className = 'planet ' + p.color;
+  planet.style.width = planet.style.height = p.size + 'px';
+  container.appendChild(planet);
+
+  // Label
+  const label = document.createElement('div');
+  label.className = 'label';
+  label.textContent = p.name;
+  label.style.marginTop = -(p.size / 2 + 14) + 'px';
+  label.style.transform = 'translate(-50%, -50%)';
+  container.appendChild(label);
+});
+
+// Animate orbits
+let lastTime = performance.now();
+const angles = planets.map(() => Math.random() * 360);
+
+function animate(now) {
+  const dt = (now - lastTime) / 1000;
+  lastTime = now;
+  planets.forEach((p, i) => {
+    if (!p.name) return;
+    angles[i] += p.speed * dt * 60;
+    const containers = planetsEl.children;
+    containers[i].style.transform = `rotate(${angles[i]}deg)`;
+  });
+  requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
+</script>
+</body>
+</html>

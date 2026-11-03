@@ -1,0 +1,22 @@
+{
+  "A_short": {
+    "at_50pct_context": [],
+    "tag_balance": "PASS",
+    "js_syntax": "PASS",
+    "unresolved_ids": "none"
+  },
+  "B_medium": {
+    "at_50pct_context": [],
+    "tag_balance": "PASS",
+    "js_syntax": "PASS",
+    "unresolved_ids": "none"
+  },
+  "C_long": {
+    "at_50pct_context": [
+      "    background-image: radial-gradient(ellipse 80% 60% at 50% 0%, #241b13 0%, var(--bg) 70%);"
+    ],
+    "tag_balance": "PASS",
+    "js_syntax": "PASS",
+    "unresolved_ids": "none"
+  }
+}
