@@ -93,10 +93,11 @@ Those three belong to the July 27B battery. They are not the Cold Iron runner.
 
 ## Conducted tests
 
-Newest first. 86 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
+Newest first. 87 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
 
 | Date | Test | Suite | Published line | Write-up |
 | --- | --- | --- | --- | --- |
+| 2026-11-04 | [Cold Iron: Hy4 scores 131/157. One point over the preview. Math is still the hole.](published/2026-11-04-hy4-cold-iron.md) | `strict_v01`, 157, `reasoning.effort=none` true off | tencent/hy4 scored 131/157 on Cold Iron, thinking genuinely off (all 157 rows at 0 reasoning tokens). One point over hy4-preview, math +4, writing −2, 35% faster, half the price. Six math/reasoning fails are 4096-cap budget misses. | [post](https://www.smfclearinghouse.com/blog/2026-11-04-hy4-cold-iron) |
 | 2026-11-03 | [Cold Iron: Crouton Alpha scores 140/157 with effort=minimal. Math is 19/30.](published/2026-11-03-crouton-alpha-cold-iron.md) | `strict_v01`, 157, `reasoning.effort=minimal` analogue. Not true thinking-off. | stealth/crouton-alpha scored 140/157 on Cold Iron — but as an effort=minimal analogue, not true thinking-off. The model mandates reasoning and its catalog has no none. Zero errors. Math 19/30, coding 30/30. Rank 10 of 26 on the OpenRouter board. | [post](https://www.smfclearinghouse.com/blog/2026-11-03-crouton-alpha-cold-iron) |
 | 2026-11-03 | GLM-5.3-Flash one-shots — dog/violin stage + length sweep | ad-hoc one-shot + fault sweep | One prompt, no iteration: GLM-5.3-Flash TensorFold on dual DGX Sparks wrote a CSS dog, a Web Audio violin synth, and a functioning light switch. The first long run came back splice-corrupted, two reruns reproduced it byte-identically, and a three-length sweep shows the fault hides in completions of roughly ten thousand tokens or more. | [Write-up](https://www.smfclearinghouse.com/blog/2026-11-03-glm-5-3-flash-dog-violin-stage-one-shot) |
 | 2026-10-31 | [Lock a still, then ask Mischief 1 for the move](published/2026-10-31-tbc-mischief-1-variant-board.md) | mischief-variant-board. Not Cold Iron. | Call tbc/mischief-1 on the videos route with one first frame. A five-second 720p take cost 5 cents and came back in about 17 seconds. Four of eight cheap-tier motion prompts did the named action. | [post](https://www.smfclearinghouse.com/blog/2026-10-31-tbc-mischief-1-variant-board) |
