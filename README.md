@@ -93,10 +93,11 @@ Those three belong to the July 27B battery. They are not the Cold Iron runner.
 
 ## Conducted tests
 
-Newest first. 89 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
+Newest first. 91 write-ups. Open the entry for the suite label and any checked-in artifacts. Open the post before you cite a number past the published line.
 
 | Date | Test | Suite | Published line | Write-up |
 | --- | --- | --- | --- | --- |
+| 2026-11-04 | [The 1104 GLM serve scored 77/157 on Cold Iron. File it apart from the October 113.](published/2026-11-04-glm-5.3-flash-1104-cold-iron.md) | Cold Iron (`strict_v01`, 157, thinking off) | GLM-5.3-Flash on the 1104 Zig boot scored 77/157 thinking off, zero errors, and 0 reasoning tokens on every row. That number belongs to this boot. The October 113/157 file is the older MTP pin on port 8888. | [post](https://www.smfclearinghouse.com/blog/2026-11-04-glm-5.3-flash-1104-cold-iron) |
 | 2026-11-04 | [Cold Iron: Ripple-65B scores 93/157 — and the fail anatomy matters more than the score](published/2026-11-04-ripple-cold-iron.md) | `strict_v01`, 157, thinking off (no reasoning params) | ricursiveai/ripple-65b-preview scored 93/157, rank 28 of 28. 12 of 64 fails are provider timeouts, 49 are 4096-cap misses, 3 are real. The agentic-coding-SOTA claim is not reproduced: Beam-1.0-501b scores 148/157 on our board. | [post](https://www.smfclearinghouse.com/blog/2026-11-04-ripple-cold-iron) |
 | 2026-11-04 | [Crouton Alpha and Hy4, all up: 27 models, 5 Cold Iron runs, 2 one-shots](published/2026-11-04-crouton-hy4-all-up.md) | Compilation of the week's 4 posts + recomputed 27-model board | One board, one ranking rule. Crouton Alpha rank 10 as an effort=minimal analogue (n=1); Hy4 shown at both its filed run (131, rank 14) and n=3 spread (131/136/136). Side-by-side scorecards and the +5.7 math recovery from thinking. | [post](https://www.smfclearinghouse.com/blog/2026-11-04-crouton-hy4-all-up) |
 | 2026-11-04 | [Cold Iron: Hy4 scores 131/157. One point over the preview. Math is still the hole.](published/2026-11-04-hy4-cold-iron.md) | `strict_v01`, 157, `reasoning.effort=none` true off | tencent/hy4 scored 131/157 on Cold Iron, thinking genuinely off (all 157 rows at 0 reasoning tokens). One point over hy4-preview, math +4, writing −2, 35% faster, half the price. Six math/reasoning fails are 4096-cap budget misses. | [post](https://www.smfclearinghouse.com/blog/2026-11-04-hy4-cold-iron) |
