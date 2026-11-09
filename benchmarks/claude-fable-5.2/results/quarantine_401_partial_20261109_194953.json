@@ -1,0 +1,1315 @@
+{
+  "tag": "cal-fable-52-or-strict-v01",
+  "endpoint": "https://openrouter.ai/api/v1",
+  "model": "anthropic/claude-fable-5.2",
+  "timestamp": "20261109_195002",
+  "reasoning_model": false,
+  "standard_version": "v0.1.1",
+  "core_profile": "strict_v01",
+  "thinking": "off",
+  "reasoning_effort": null,
+  "serve_recipe_id": "OpenRouter-cloud",
+  "wall_time_seconds": 8.7,
+  "summary": {
+    "total": 157,
+    "passed": 0,
+    "failed": 0,
+    "error": 157,
+    "pass_rate": 0.0
+  },
+  "by_category": {
+    "math": {
+      "pass": 0,
+      "fail": 0,
+      "error": 30
+    },
+    "coding": {
+      "pass": 0,
+      "fail": 0,
+      "error": 30
+    },
+    "reasoning": {
+      "pass": 0,
+      "fail": 0,
+      "error": 30
+    },
+    "instruction": {
+      "pass": 0,
+      "fail": 0,
+      "error": 30
+    },
+    "prose": {
+      "pass": 0,
+      "fail": 0,
+      "error": 30
+    },
+    "writing": {
+      "pass": 0,
+      "fail": 0,
+      "error": 5
+    },
+    "tool_calling": {
+      "pass": 0,
+      "fail": 0,
+      "error": 2
+    }
+  },
+  "tests": [
+    {
+      "test_id": "v3.math.easy.01",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03177674091421068
+    },
+    {
+      "test_id": "v3.math.easy.02",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03033783007413149
+    },
+    {
+      "test_id": "v3.math.medium.01",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02986982197035104
+    },
+    {
+      "test_id": "v3.math.medium.02",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.036544068017974496
+    },
+    {
+      "test_id": "v3.math.medium.03",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03517948591616005
+    },
+    {
+      "test_id": "v3.math.hard.01",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03968645993154496
+    },
+    {
+      "test_id": "v3.math.hard.02",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.025981727056205273
+    },
+    {
+      "test_id": "v3.math.hard.03",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.029848171048797667
+    },
+    {
+      "test_id": "v3.math.hard.04",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02823094103951007
+    },
+    {
+      "test_id": "v3.math.hard.05",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.030615696916356683
+    },
+    {
+      "test_id": "v3.math.expert.01",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.029910176992416382
+    },
+    {
+      "test_id": "v3.math.expert.02",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02657867397647351
+    },
+    {
+      "test_id": "v3.math.expert.03",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02997958497144282
+    },
+    {
+      "test_id": "v3.math.expert.04",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.036132694920524955
+    },
+    {
+      "test_id": "v3.math.expert.05",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.030364820966497064
+    },
+    {
+      "test_id": "v3.math.expert.06",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.034119768999516964
+    },
+    {
+      "test_id": "v3.math.expert.07",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.04326690500602126
+    },
+    {
+      "test_id": "v3.math.expert.08",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.028080470976419747
+    },
+    {
+      "test_id": "v3.math.frontier.01",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.025286716991104186
+    },
+    {
+      "test_id": "v3.math.frontier.02",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.04782292898744345
+    },
+    {
+      "test_id": "v3.math.frontier.03",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03519918292295188
+    },
+    {
+      "test_id": "v3.math.frontier.04",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.0318279949715361
+    },
+    {
+      "test_id": "v3.math.frontier.05",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.04371065809391439
+    },
+    {
+      "test_id": "v3.math.frontier.06",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03917379805352539
+    },
+    {
+      "test_id": "v3.math.frontier.07",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03703329595737159
+    },
+    {
+      "test_id": "v3.math.frontier.08",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.030024809995666146
+    },
+    {
+      "test_id": "v3.math.frontier.09",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.07405854703392833
+    },
+    {
+      "test_id": "v3.math.frontier.10",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03214363206643611
+    },
+    {
+      "test_id": "v3.math.frontier.11",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03697322402149439
+    },
+    {
+      "test_id": "v3.math.frontier.12",
+      "category": "math",
+      "suite": "math",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03055934200529009
+    },
+    {
+      "test_id": "v3.coding.easy.01",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.039616208989173174
+    },
+    {
+      "test_id": "v3.coding.easy.02",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.038790788035839796
+    },
+    {
+      "test_id": "v3.coding.medium.01",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03140003199223429
+    },
+    {
+      "test_id": "v3.coding.medium.02",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.035596890025772154
+    },
+    {
+      "test_id": "v3.coding.medium.03",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.0347419329918921
+    },
+    {
+      "test_id": "v3.coding.hard.01",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.026229566079564393
+    },
+    {
+      "test_id": "v3.coding.hard.02",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03475967701524496
+    },
+    {
+      "test_id": "v3.coding.hard.03",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02967515110503882
+    },
+    {
+      "test_id": "v3.coding.hard.04",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02784338197670877
+    },
+    {
+      "test_id": "v3.coding.hard.05",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03499146597459912
+    },
+    {
+      "test_id": "v3.coding.expert.01",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.029075889033265412
+    },
+    {
+      "test_id": "v3.coding.expert.02",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03130757994949818
+    },
+    {
+      "test_id": "v3.coding.expert.03",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.027629053918644786
+    },
+    {
+      "test_id": "v3.coding.expert.04",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.026710299076512456
+    },
+    {
+      "test_id": "v3.coding.expert.05",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.08296818099915981
+    },
+    {
+      "test_id": "v3.coding.expert.06",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03258475998882204
+    },
+    {
+      "test_id": "v3.coding.expert.07",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02974511100910604
+    },
+    {
+      "test_id": "v3.coding.expert.08",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.028190425946377218
+    },
+    {
+      "test_id": "v3.coding.frontier.01",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02998450503218919
+    },
+    {
+      "test_id": "v3.coding.frontier.02",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.026942508993670344
+    },
+    {
+      "test_id": "v3.coding.frontier.03",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03635288402438164
+    },
+    {
+      "test_id": "v3.coding.frontier.04",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.027444301056675613
+    },
+    {
+      "test_id": "v3.coding.frontier.05",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.027574592968448997
+    },
+    {
+      "test_id": "v3.coding.frontier.06",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.034110212000086904
+    },
+    {
+      "test_id": "v3.coding.frontier.07",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02882315998431295
+    },
+    {
+      "test_id": "v3.coding.frontier.08",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.023994278046302497
+    },
+    {
+      "test_id": "v3.coding.frontier.09",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.027993029914796352
+    },
+    {
+      "test_id": "v3.coding.frontier.10",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02843599091283977
+    },
+    {
+      "test_id": "v3.coding.frontier.11",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.07757758791558444
+    },
+    {
+      "test_id": "v3.coding.frontier.12",
+      "category": "coding",
+      "suite": "coding",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03332268004305661
+    },
+    {
+      "test_id": "v3.reasoning.easy.01",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03074870305135846
+    },
+    {
+      "test_id": "v3.reasoning.easy.02",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.030514930025674403
+    },
+    {
+      "test_id": "v3.reasoning.medium.01",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.039567407919093966
+    },
+    {
+      "test_id": "v3.reasoning.medium.02",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.05384453397709876
+    },
+    {
+      "test_id": "v3.reasoning.medium.03",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03410117491148412
+    },
+    {
+      "test_id": "v3.reasoning.hard.01",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.027774875052273273
+    },
+    {
+      "test_id": "v3.reasoning.hard.02",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02943056693766266
+    },
+    {
+      "test_id": "v3.reasoning.hard.03",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03297890198882669
+    },
+    {
+      "test_id": "v3.reasoning.hard.04",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03583940991666168
+    },
+    {
+      "test_id": "v3.reasoning.hard.05",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03107931709382683
+    },
+    {
+      "test_id": "v3.reasoning.expert.01",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.044523396994918585
+    },
+    {
+      "test_id": "v3.reasoning.expert.02",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.06929903489071876
+    },
+    {
+      "test_id": "v3.reasoning.expert.03",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.028873343020677567
+    },
+    {
+      "test_id": "v3.reasoning.expert.04",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02853397303260863
+    },
+    {
+      "test_id": "v3.reasoning.expert.05",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.036775168031454086
+    },
+    {
+      "test_id": "v3.reasoning.expert.06",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 2.1022297349991277
+    },
+    {
+      "test_id": "v3.reasoning.expert.07",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.033666096976958215
+    },
+    {
+      "test_id": "v3.reasoning.expert.08",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03141534992028028
+    },
+    {
+      "test_id": "v3.reasoning.frontier.01",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03349741396959871
+    },
+    {
+      "test_id": "v3.reasoning.frontier.02",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.036263938061892986
+    },
+    {
+      "test_id": "v3.reasoning.frontier.03",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.030377013026736677
+    },
+    {
+      "test_id": "v3.reasoning.frontier.04",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03010250406805426
+    },
+    {
+      "test_id": "v3.reasoning.frontier.05",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.0325240179663524
+    },
+    {
+      "test_id": "v3.reasoning.frontier.06",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.025981527054682374
+    },
+    {
+      "test_id": "v3.reasoning.frontier.07",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.24550497508607805
+    },
+    {
+      "test_id": "v3.reasoning.frontier.08",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03451491298619658
+    },
+    {
+      "test_id": "v3.reasoning.frontier.09",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.0341596829239279
+    },
+    {
+      "test_id": "v3.reasoning.frontier.10",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.027101425104774535
+    },
+    {
+      "test_id": "v3.reasoning.frontier.11",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03123722900636494
+    },
+    {
+      "test_id": "v3.reasoning.frontier.12",
+      "category": "reasoning",
+      "suite": "reasoning_tier0",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.04167787602636963
+    },
+    {
+      "test_id": "v3.instruction.easy.01",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03001055307686329
+    },
+    {
+      "test_id": "v3.instruction.easy.02",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.032112263957969844
+    },
+    {
+      "test_id": "v3.instruction.medium.01",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03460540995001793
+    },
+    {
+      "test_id": "v3.instruction.medium.02",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.037912708008661866
+    },
+    {
+      "test_id": "v3.instruction.medium.03",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.029768003965727985
+    },
+    {
+      "test_id": "v3.instruction.hard.01",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.030434400076046586
+    },
+    {
+      "test_id": "v3.instruction.hard.02",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02977398398797959
+    },
+    {
+      "test_id": "v3.instruction.hard.03",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.028985821991227567
+    },
+    {
+      "test_id": "v3.instruction.hard.04",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03573898400645703
+    },
+    {
+      "test_id": "v3.instruction.hard.05",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.029855105094611645
+    },
+    {
+      "test_id": "v3.instruction.expert.01",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.034463015967048705
+    },
+    {
+      "test_id": "v3.instruction.expert.02",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.04000861803069711
+    },
+    {
+      "test_id": "v3.instruction.expert.03",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.032330689020454884
+    },
+    {
+      "test_id": "v3.instruction.expert.04",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.05033970903605223
+    },
+    {
+      "test_id": "v3.instruction.expert.05",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.034193846047855914
+    },
+    {
+      "test_id": "v3.instruction.expert.06",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.029406983056105673
+    },
+    {
+      "test_id": "v3.instruction.expert.07",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03190363699104637
+    },
+    {
+      "test_id": "v3.instruction.expert.08",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03387794003356248
+    },
+    {
+      "test_id": "v3.instruction.frontier.01",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.028252832009457052
+    },
+    {
+      "test_id": "v3.instruction.frontier.02",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.028500751010142267
+    },
+    {
+      "test_id": "v3.instruction.frontier.03",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02847489295527339
+    },
+    {
+      "test_id": "v3.instruction.frontier.04",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.030622649006545544
+    },
+    {
+      "test_id": "v3.instruction.frontier.05",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02767404797486961
+    },
+    {
+      "test_id": "v3.instruction.frontier.06",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03688045195303857
+    },
+    {
+      "test_id": "v3.instruction.frontier.07",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.029503572965040803
+    },
+    {
+      "test_id": "v3.instruction.frontier.08",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.026970640989020467
+    },
+    {
+      "test_id": "v3.instruction.frontier.09",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03001929901074618
+    },
+    {
+      "test_id": "v3.instruction.frontier.10",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02706683101132512
+    },
+    {
+      "test_id": "v3.instruction.frontier.11",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02951381099410355
+    },
+    {
+      "test_id": "v3.instruction.frontier.12",
+      "category": "instruction",
+      "suite": "instruction",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.02809809392783791
+    },
+    {
+      "test_id": "v3.prose.easy.01",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.5832111070631072
+    },
+    {
+      "test_id": "v3.prose.easy.02",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03192525706253946
+    },
+    {
+      "test_id": "v3.prose.medium.01",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.024898627074435353
+    },
+    {
+      "test_id": "v3.prose.medium.02",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03576888993848115
+    },
+    {
+      "test_id": "v3.prose.medium.03",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.06266896100714803
+    },
+    {
+      "test_id": "v3.prose.hard.01",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.042822971008718014
+    },
+    {
+      "test_id": "v3.prose.hard.02",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.16200529702473432
+    },
+    {
+      "test_id": "v3.prose.hard.03",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.06481735804118216
+    },
+    {
+      "test_id": "v3.prose.hard.04",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.20342554501257837
+    },
+    {
+      "test_id": "v3.prose.hard.05",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.04874831694178283
+    },
+    {
+      "test_id": "v3.prose.expert.01",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03588173899333924
+    },
+    {
+      "test_id": "v3.prose.expert.02",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.04924988804850727
+    },
+    {
+      "test_id": "v3.prose.expert.03",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.042205353965982795
+    },
+    {
+      "test_id": "v3.prose.expert.04",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.025690486072562635
+    },
+    {
+      "test_id": "v3.prose.expert.05",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.029409877955913544
+    },
+    {
+      "test_id": "v3.prose.expert.06",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.036227840930223465
+    },
+    {
+      "test_id": "v3.prose.expert.07",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.036637071054428816
+    },
+    {
+      "test_id": "v3.prose.expert.08",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.028637946001254022
+    },
+    {
+      "test_id": "v3.prose.frontier.01",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03805415995884687
+    },
+    {
+      "test_id": "v3.prose.frontier.02",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03252514998894185
+    },
+    {
+      "test_id": "v3.prose.frontier.03",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.046989461989142
+    },
+    {
+      "test_id": "v3.prose.frontier.04",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.08177851396612823
+    },
+    {
+      "test_id": "v3.prose.frontier.05",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.04303494398482144
+    },
+    {
+      "test_id": "v3.prose.frontier.06",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03234672895632684
+    },
+    {
+      "test_id": "v3.prose.frontier.07",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03727667697239667
+    },
+    {
+      "test_id": "v3.prose.frontier.08",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.033391947974450886
+    },
+    {
+      "test_id": "v3.prose.frontier.09",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03838709893170744
+    },
+    {
+      "test_id": "v3.prose.frontier.10",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.044228469021618366
+    },
+    {
+      "test_id": "v3.prose.frontier.11",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.0327975059626624
+    },
+    {
+      "test_id": "v3.prose.frontier.12",
+      "category": "prose",
+      "suite": "prose",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03124733897857368
+    },
+    {
+      "test_id": "writing_article",
+      "category": "writing",
+      "suite": "writing",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.04779074992984533
+    },
+    {
+      "test_id": "writing_summary",
+      "category": "writing",
+      "suite": "writing",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.030245398986153305
+    },
+    {
+      "test_id": "writing_creative",
+      "category": "writing",
+      "suite": "writing",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03707257902715355
+    },
+    {
+      "test_id": "writing_technical",
+      "category": "writing",
+      "suite": "writing",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03243767702952027
+    },
+    {
+      "test_id": "writing_format",
+      "category": "writing",
+      "suite": "writing",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03913453500717878
+    },
+    {
+      "test_id": "tool_call_weather",
+      "category": "tool_calling",
+      "suite": "tool_calling",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.03309483698103577
+    },
+    {
+      "test_id": "tool_call_calculator",
+      "category": "tool_calling",
+      "suite": "tool_calling",
+      "status": "error",
+      "error": "HTTP 401: {\"error\":{\"message\":\"Failed to authenticate request with Clerk\",\"code\":401}}",
+      "elapsed": 0.041141058900393546
+    }
+  ]
+}
