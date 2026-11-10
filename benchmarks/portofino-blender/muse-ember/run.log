@@ -1,0 +1,37 @@
+{
+  "model_requested": "meta/muse-ember",
+  "http_status": 200,
+  "elapsed_s": 6.005853998940438,
+  "error": null,
+  "usage": {
+    "prompt_tokens": 501,
+    "completion_tokens": 2923,
+    "total_tokens": 3424,
+    "cost": 0.0015116,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0015116,
+      "upstream_inference_prompt_cost": 5.01e-05,
+      "upstream_inference_completions_cost": 0.0014615
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 120,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "id": "gen-1794315831-pVJzhX0j9p3nOpCLf7hW",
+  "model_returned": "meta/muse-ember",
+  "finish_reason": "stop",
+  "content_chars": 8687,
+  "reasoning_chars": 0,
+  "stream": true,
+  "reasoning_effort": "minimal"
+}
+exit: 0

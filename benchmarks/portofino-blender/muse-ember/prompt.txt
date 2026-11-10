@@ -1,0 +1,15 @@
+Create a single, continuous, highly cinematic 20–30 second video of Portofino, Italy. 
+
+Build a photorealistic 3D scene in Blender (Cycles renderer preferred for quality). Model the iconic horseshoe harbor with tightly packed, tall pastel-colored Ligurian houses (ochre yellow, coral pink, sage green, brick red, cream, and warm orange façades with green shutters, terracotta roofs, and flower boxes). Include the Piazzetta with outdoor cafés and umbrellas, numerous luxury yachts and smaller boats moored in the turquoise water, the Church of San Giorgio, and Castello Brown perched on the green hillside above with its distinctive stone walls, round tower, and the famous twin pines.
+
+Surround the village with steep, lush Mediterranean hills covered in dense pines, cypresses, olive trees, and scrub, with scattered villas. The sea should be clear Ligurian turquoise near shore transitioning to deep blue, with realistic water caustics, gentle ripples, and strong reflections of the colored buildings and golden light.
+
+Lighting: golden hour, late afternoon sun coming from the west, warm side-lighting that makes the façades glow, long soft shadows, and beautiful rim light on the hills and castle. Include subtle atmospheric haze and volumetric light.
+
+Camera: one continuous, smooth, sweeping cinematic move. Start low over the open sea approaching the harbor, slowly rise and arc around the colorful waterfront and yachts, then climb toward Castello Brown while revealing the full horseshoe bay and hills, ending with a high, elegant panoramic view looking back over the village and the Gulf of Tigullio. Use gentle, professional drone-like motion with natural easing — no jerky cuts.
+
+Make the scene extremely detailed and beautiful: realistic PBR materials on buildings and stone, proper vegetation scattering, high-quality water, accurate scale and composition that captures the classic Portofino postcard view from the water and from the castle height. 
+
+Render a high-quality video (at least 1080p, preferably 4K if feasible) with the full camera path. Add subtle ambient sound of gentle waves and distant seabirds if possible. Deliver the final rendered video along with the .blend file and a brief summary of the camera path and lighting choices you used.
+
+Prioritize beauty, accuracy to the real Portofino look, and a fluid sweeping feel over complexity.

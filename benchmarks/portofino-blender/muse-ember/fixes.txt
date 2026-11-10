@@ -1,0 +1,2 @@
+primitive_cone_add: radius -> radius1 (Blender 2.8+ API)
+camera frame-1 start moved from y=-280 to y=-298: start point sat inside a hill mesh (Sphere.007 spans y[-270,-90]); path intent "low over open sea" preserved
