@@ -1,0 +1,36 @@
+{
+  "model_requested": "nex-agi/nex-n2.6",
+  "http_status": 200,
+  "elapsed_s": 553.3957410509465,
+  "error": null,
+  "usage": {
+    "prompt_tokens": 26,
+    "completion_tokens": 63270,
+    "total_tokens": 63296,
+    "cost": 0.02531112,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02531112,
+      "upstream_inference_prompt_cost": 3.12e-06,
+      "upstream_inference_completions_cost": 0.025308
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 47398,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "id": "gen-1794484001-LMUdx04yHgL1fZMqq1Da",
+  "model_returned": "nex-agi/nex-n2.6",
+  "finish_reason": "stop",
+  "content_chars": 47209,
+  "reasoning_chars": 159248,
+  "stream": true,
+  "reasoning_effort": null
+}

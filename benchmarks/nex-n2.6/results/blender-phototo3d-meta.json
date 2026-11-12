@@ -1,0 +1,40 @@
+{
+  "model_requested": "nex-agi/nex-n2.6",
+  "http_status": 200,
+  "elapsed_s": 293.1969124029856,
+  "error": null,
+  "usage": {
+    "prompt_tokens": 2049,
+    "completion_tokens": 31077,
+    "total_tokens": 33126,
+    "cost": 0.01267668,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01267668,
+      "upstream_inference_prompt_cost": 0.00024588,
+      "upstream_inference_completions_cost": 0.0124308
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 26868,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "id": "gen-1794484381-U2mnwlCQ5ocYfAVayymM",
+  "model_returned": "nex-agi/nex-n2.6",
+  "finish_reason": "stop",
+  "content_chars": 14286,
+  "reasoning_chars": 94241,
+  "stream": true,
+  "image": "/home/mikesai1/workspace/zimage-capability/cap02_product_00001_.png",
+  "image_sha256": "808752169fb54336efd3ef53ff760d15301350114470c25b15a60c1cd5f691d8",
+  "reasoning_effort": null,
+  "temperature": 0.7,
+  "max_tokens": 65536
+}

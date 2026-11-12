@@ -1,0 +1,12 @@
+Mechanical repair log (documented per protocol):
+1. Lines 169-172 (Cyclorama cap removal): the script used
+   `wall.data.polygons.remove(p.index)` — bpy_prop_collection has no
+   `remove` attribute in Blender 4.5 (both index and object forms fail).
+   Minimal mechanical fix: rewrote the block to delete faces with normal.z
+   > 0.9 via bmesh.ops.delete. Same intent (open-topped cyclorama), 8 lines
+   swapped for 8 lines, no scene changes.
+   Applied 2026-11-12. Everything else runs unmodified.
+2. Line 349: `scene.render.file_format = 'FFMPEG'` ->
+   `scene.render.image_settings.file_format = 'FFMPEG'` (the 4.x location;
+   the old name was removed). Same one-liner intent.
+   Applied 2026-11-12.

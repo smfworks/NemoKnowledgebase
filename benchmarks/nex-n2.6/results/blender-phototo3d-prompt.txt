@@ -1,0 +1,25 @@
+You are given one reference photo of a product (attached). Your job is to turn it into a 3D model in Blender and produce an animated product showcase video — entirely via a single Python script that runs headless.
+
+Write ONE complete, self-contained Python script that will be executed with: `blender -b -P your_script.py`
+
+The script must do ALL of the following, in order:
+
+1. BUILD THE 3D MODEL from scratch (bpy.ops.mesh primitives, modifiers, transformations — no external asset imports, no downloading files). Match the product in the photo as closely as you can: its silhouette, proportions, and every component you can identify (body, cap, label surfaces, etc.). Get the proportions right by estimating from the photo.
+
+2. MATCH ITS MATERIALS. Recreate the materials you see: colors, roughness, metalness, transparency/transmission, any visible texture. Use Blender's Principled BSDF and node editor (bpy.data.materials, node_tree). The goal is that a side-by-side of the photo and your render reads as the same product.
+
+3. SET THE LIGHTING. Three-point studio product lighting (or a tasteful variant: key, fill, rim) plus a backdrop/floor so the product sits in a clean studio scene. Use lights (area lights recommended), not just emission planes.
+
+4. RENDER AN ANIMATED PRODUCT SHOWCASE. The camera should do a smooth, slow, continuous 360-degree turntable orbit around the product (one full revolution), with a gentle rise at the start or end — no cuts, no jerky motion. Set up the animation with keyframes or a driver. Render settings: Cycles engine, CPU device, 24 fps, and render frames 1 through 240 (10 seconds) to an H.264 MP4 at `render/showcase.mp4` inside the script's own output directory (create it if needed).
+
+5. DELIVERABLES. Save the .blend file as `product.blend` in the same output directory, and print a short summary (the objects you built, the material list, and the camera path description).
+
+Requirements and constraints:
+- The script must run headless without any user interaction and without network access. Everything is built procedurally in code.
+- Blender version: 4.5 (use the modern 4.x API; note `radius1`/`radius2` on cone primitives, `bpy.ops.mesh.primitive_*`, `scene.render.file_format = 'FFMPEG'`).
+- Do NOT set resolution below 1280x720; set exactly 1280x720, resolution_percentage 100.
+- Keep total scene-build time under 120 seconds (no expensive simulation). The renderer will run the full frame range afterward.
+- The photo shows the product at a three-quarter angle; estimate true proportions from it. Single angle means you must invent the back and sides — keep them consistent with the visible design.
+- Use `math` and `mathutils` freely. Set a fixed random seed if you add any procedural variation.
+
+Deliver exactly one fenced python code block containing the complete script, preceded by a one-paragraph description of the product you identified in the photo and the choices you made.
