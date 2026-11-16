@@ -1,0 +1,36 @@
+{
+  "model_requested": "qwen/qwen4-max",
+  "http_status": 200,
+  "elapsed_s": 333.17843713308685,
+  "error": null,
+  "usage": {
+    "prompt_tokens": 36,
+    "completion_tokens": 21835,
+    "total_tokens": 21871,
+    "cost": 0.0983115,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0983115,
+      "upstream_inference_prompt_cost": 5.4e-05,
+      "upstream_inference_completions_cost": 0.0982575
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 5601,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "id": "gen-1794827560-5G4tiKIgwGa4jLIGjXEP",
+  "model_returned": "qwen/qwen4-max",
+  "finish_reason": "stop",
+  "content_chars": 46213,
+  "reasoning_chars": 16799,
+  "stream": true,
+  "reasoning_effort": null
+}
