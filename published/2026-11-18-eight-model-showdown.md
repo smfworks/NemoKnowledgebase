@@ -1,0 +1,3 @@
+# Eight-model OpenRouter showdown (OneShot + Cold Iron) — 2026-11-18
+
+Same 81-byte one-shot brief and the full 157-test Cold Iron (thinking-off) across eight OpenRouter models: gpt-6.2-astra-pro, gpt-6.2-sol-pro, gemini-4-hydrogen, gemini-4-carbon, claude-fable-5.2, glm-5.3-prime, qwen4-max, hy4-flash. Hydrogen leads Cold Iron at 151/157 (96.2%); Hy4 Flash runs the whole 157 for $0.013. Analogue arms labeled per row. [Cold Iron board](https://www.smfclearinghouse.com/blog/2026-11-18-eight-model-cold-iron-showdown) · [OneShot showdown](https://www.smfclearinghouse.com/blog/2026-11-18-eight-model-oneshot-showdown) · [results](benchmarks/eight-model-showdown-2026-11-18/)
