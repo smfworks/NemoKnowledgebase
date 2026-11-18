@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-18",
+  "board": [
+    {"rank": 1, "model": "google/gemini-4-hydrogen", "n": 1, "passes": [151], "mean_pct": 96.2, "arm": "ctk off + effort=low (analogue)", "wall_s": 1393.4, "cost": 1.6162, "by_cat": {"math": 27, "coding": 30, "reasoning": 29, "instruction": 30, "prose": 29, "writing": 4, "tool_calling": 2}},
+    {"rank": 2, "model": "openai/gpt-6.2-astra-pro", "n": 1, "passes": [150], "mean_pct": 95.5, "arm": "effort=low (analogue)", "wall_s": 1081.3, "cost": 4.9429, "by_cat": {"math": 28, "coding": 30, "reasoning": 30, "instruction": 29, "prose": 29, "writing": 2, "tool_calling": 2}},
+    {"rank": 3, "model": "openai/gpt-6.2-sol-pro", "n": 1, "passes": [149], "mean_pct": 94.9, "arm": "effort=low (analogue)", "wall_s": 773.2, "cost": 1.2459, "by_cat": {"math": 28, "coding": 30, "reasoning": 29, "instruction": 30, "prose": 28, "writing": 3, "tool_calling": 1}},
+    {"rank": 4, "model": "google/gemini-4-carbon", "n": 1, "passes": [147], "mean_pct": 93.6, "arm": "effort=low (0 rt on 2+2)", "wall_s": 2615.4, "cost": 0.7925, "by_cat": {"math": 23, "coding": 30, "reasoning": 29, "instruction": 30, "prose": 29, "writing": 4, "tool_calling": 2}},
+    {"rank": 5, "model": "anthropic/claude-fable-5.2", "n": 3, "passes": [145, 142, 141], "mean_pct": 90.9, "arm": "effort=low (analogue)", "wall_s": [1093.8, 1089.7, 1069.8], "cost": [3.292, 3.45, 3.317], "by_cat_run1": {"math": null, "coding": 30, "reasoning": null, "instruction": null, "prose": null, "writing": 3, "tool_calling": null}},
+    {"rank": 6, "model": "z-ai/glm-5.3-prime", "n": 1, "passes": [135], "mean_pct": 86.0, "arm": "effort=low (analogue)", "wall_s": 831.5, "cost": 0.5241, "by_cat": {"math": 18, "coding": 26, "reasoning": 27, "instruction": 29, "prose": 29, "writing": 4, "tool_calling": 2}},
+    {"rank": 7, "model": "qwen/qwen4-max", "n": 3, "passes": [132, 123, 126], "mean_pct": 80.9, "arm": "effort=none (true off)", "wall_s": [1576.1, 1570.6, 1543.2], "cost": [0.351, 0.342, 0.364]},
+    {"rank": 8, "model": "tencent/hy4-flash", "n": 1, "passes": [127], "mean_pct": 80.9, "arm": "effort=none (true off)", "wall_s": 565.9, "cost": 0.0132, "by_cat": {"math": 11, "coding": 27, "reasoning": 26, "instruction": 28, "prose": 30, "writing": 3, "tool_calling": 2}}
+  ],
+  "oneshots": [
+    {"model": "openai/gpt-6.2-astra-pro", "id": "gen-1795029528-Z94V4uyWGGzu2i2C6Ba0", "wall_s": 55.9, "completion": 10209, "reasoning_toks": 227, "html_bytes": 14535, "cost": 0.502536, "title": "Otherworlds — A Celestial Field Atlas", "finish": "stop", "demo": "/demos/gpt-6.2-astra-pro-otherworlds"},
+    {"model": "openai/gpt-6.2-sol-pro", "id": "gen-1795029584-NhiW7QnWWB1RA8X7sN61", "wall_s": 89.6, "completion": 12885, "reasoning_toks": 539, "html_bytes": 21072, "cost": 0.157566, "title": "Noctiluca — An Atlas of the Unseen", "finish": "stop", "demo": "/demos/gpt-6.2-sol-pro-noctiluca"},
+    {"model": "google/gemini-4-hydrogen", "id": "gen-1795029674-tzfyMfk7Oe80KhgL8GdX", "wall_s": 117.1, "completion": 18967, "reasoning_toks": 529, "html_bytes": 53648, "cost": 0.1423185, "title": "AETHERIA — Celestial Harmonic Observatory", "finish": "stop", "demo": "/demos/gemini-4-hydrogen-aetheria"},
+    {"model": "google/gemini-4-carbon", "id": "gen-1795029791-r4UkL3VazmKyQdgF1yKP", "wall_s": 214.2, "completion": 18335, "reasoning_toks": 1197, "html_bytes": 46943, "cost": 0.183438, "title": "AETHERIA — Symphony of Light & Form", "finish": "stop", "demo": "/demos/gemini-4-carbon-aetheria"},
+    {"model": "z-ai/glm-5.3-prime", "id": "gen-1792202331-ur07F07d2MtlL9GpnBLH", "wall_s": 705.3, "completion": 60769, "reasoning_toks": 43244, "html_bytes": 48268, "cost": 0.53484, "title": "Where Light Ends — a descent in 6,000 metres", "finish": "stop", "demo": "/demos/glm-5.3-prime-where-light-ends", "note": "published 2026-10-16; reused (duplicate check)"},
+    {"model": "anthropic/claude-fable-5.2", "id": "gen-1794255412-KA6uGmj65XYEGQZQOOn4", "wall_s": 753.3, "completion": 75134, "reasoning_toks": 57984, "html_bytes": 31878, "cost": 3.0056, "title": "Aurora — a night sky imagined in real time", "finish": "stop", "demo": "/demos/fable-5.2-aurora-night-sky", "note": "published 2026-11-09; reused"},
+    {"model": "qwen/qwen4-max", "id": "gen-1794827560-5G4tiKIgwGa4jLIGjXEP", "wall_s": 333.2, "completion": 21835, "reasoning_toks": 5601, "html_bytes": 46506, "cost": 0.0983115, "title": "AURORA — The sky, remembering how to breathe", "finish": "stop", "demo": "/demos/qwen4-max-aurora", "note": "published 2026-11-16; reused"},
+    {"model": "tencent/hy4-flash", "id": "gen-1794874831-gkRzDBv4iLKp7urHZXTj", "wall_s": 109.4, "completion": 27131, "reasoning_toks": 13698, "html_bytes": 42096, "cost": 0.0038, "title": "Aether — A Single-File Universe", "finish": "stop", "demo": "/demos/hy4-aether", "note": "published 2026-11-16; reused"}
+  ],
+  "key_usage": {"start_2026-11-18": 432.043700203, "after_oneshots": 433.029558703, "after_astra_sol": 439.218312703, "after_geminis": 441.627091203, "final": 442.151212083, "total_session_delta": 10.10751188},
+  "notes": [
+    "All 8 Cold Iron runs 0 errors, summary.total==157.",
+    "GLM Cold Iron $0.5241 == key delta exactly; astra+sol 6.1888 == 4.9429+1.2459; geminis 2.4088 == 1.6162+0.7925.",
+    "gpt-6.2 family prompt-token billing quirk: ~11.7k-14.4k prompt tokens billed on the 81-byte one-shot prompt.",
+    "fable-5.2 one-shot html 31878 bytes but demo file 31878; table uses measured file sizes.",
+    "hy4-flash one-shot demo is hy4-aether (published 2026-11-16)."
+  ]
+}
