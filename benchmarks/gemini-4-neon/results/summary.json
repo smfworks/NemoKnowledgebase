@@ -1,0 +1,83 @@
+{
+ "model": "google/gemini-4-neon",
+ "date": "2026-11-19",
+ "canonical": "gemini-4-neon-20261118 (created 2026-11-18)",
+ "catalog": {
+  "ctx": 1048576,
+  "max_completion": 943718,
+  "price_in": 3.0,
+  "price_out": 15.0,
+  "reasoning_mandatory": true,
+  "efforts": [
+   "xhigh",
+   "high",
+   "medium",
+   "low"
+  ],
+  "default_effort": "medium"
+ },
+ "oneshot": {
+  "id": "gen-1795101002-EJJOFCPtgGWCV4hWpnRP",
+  "wall_s": 168.58,
+  "prompt_tokens": 44,
+  "completion_tokens": 20226,
+  "reasoning_tokens": 1151,
+  "reasoning_chars": 1536,
+  "html_bytes": 53898,
+  "html_kb": 52.6,
+  "cost": 0.303522,
+  "finish": "stop",
+  "node_check": "PASS",
+  "splice_check": 0,
+  "title": "AETHERIUM \u2014 Interactive Celestial Light Sculpture",
+  "demo": "/demos/gemini-4-neon-aetherium",
+  "arm": "defaults (no effort named, temp 0.7, MAX_TOKENS=943718 cap per mandatory rule)"
+ },
+ "cold_iron": {
+  "tag": "cal-gemini-4-neon-or-strict-v01",
+  "arm": "defaults (no reasoning key, ctk popped)",
+  "passes": 105,
+  "of": 157,
+  "pct": 66.9,
+  "errors": 0,
+  "wall_s": 3996.7,
+  "cost": 6.439653,
+  "reasoning_tokens_total": 397739,
+  "by_cat": {
+   "math": [
+    7,
+    30
+   ],
+   "coding": [
+    15,
+    30
+   ],
+   "reasoning": [
+    28,
+    30
+   ],
+   "instruction": [
+    29,
+    30
+   ],
+   "prose": [
+    21,
+    30
+   ],
+   "writing": [
+    3,
+    5
+   ],
+   "tool_calling": [
+    2,
+    2
+   ]
+  }
+ },
+ "key_delta": {
+  "start": 442.154440083,
+  "end": 448.876804083,
+  "delta": 6.722364,
+  "measured_sum": 6.743175
+ }
+}

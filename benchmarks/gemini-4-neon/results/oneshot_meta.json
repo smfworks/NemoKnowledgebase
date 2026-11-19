@@ -1,0 +1,36 @@
+{
+  "model_requested": "google/gemini-4-neon",
+  "http_status": 200,
+  "elapsed_s": 168.57956283492967,
+  "error": null,
+  "usage": {
+    "prompt_tokens": 44,
+    "completion_tokens": 20226,
+    "total_tokens": 20270,
+    "cost": 0.303522,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.303522,
+      "upstream_inference_prompt_cost": 0.000132,
+      "upstream_inference_completions_cost": 0.30339
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1151,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "id": "gen-1795101002-EJJOFCPtgGWCV4hWpnRP",
+  "model_returned": "google/gemini-4-neon",
+  "finish_reason": "stop",
+  "content_chars": 55519,
+  "reasoning_chars": 1536,
+  "stream": true,
+  "reasoning_effort": null
+}
