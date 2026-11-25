@@ -1,0 +1,17 @@
+{
+  "model": "inkling-2-mini:latest",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Build a simple sailing game as one self-contained HTML file. No external files, fonts, images, or network requests. No libraries. One canvas and plain JavaScript only.\n\nTop-down view of a small bay. Draw water, one sailboat, and the marks. The player steers that one boat. Wind blows from the north. Show the wind as short marks on the water that drift south. Boat speed comes only from the wind: fastest on a reach, slow when headed north, and no forward speed when pointed straight into the wind. There is no engine and no throttle.\n\nControls: left and right arrow keys turn the boat. That is the only control.\n\nCourse: a start mark and three numbered buoys. Pass buoy 1, buoy 2, buoy 3, then the start mark, in that order. Show which mark is next, a running timer in seconds, and a short on-screen hint when the boat is in irons.\n\nThe page has a one-line title and the controls written in text. Opening the file in a browser starts the game. Use requestAnimationFrame. Reply with the HTML file only.\n"
+    }
+  ],
+  "stream": true,
+  "think": false,
+  "keep_alive": "45m",
+  "options": {
+    "temperature": 0.7,
+    "seed": 20261126,
+    "num_predict": 32768
+  }
+}

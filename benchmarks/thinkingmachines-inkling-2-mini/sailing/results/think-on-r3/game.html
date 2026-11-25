@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bay Sailing</title>
+<style>
+  body {
+    margin: 0;
+    background: #0d2b3a;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #eaf4f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 12px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    letter-spacing: 0.5px;
+  }
+  .controls {
+    font-size: 13px;
+    opacity: 0.85;
+    margin: 0 0 12px;
+    text-align: center;
+  }
+  canvas {
+    background: #1b6f8f;
+    border: 2px solid #0a2230;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+<h1>Bay Sailing</h1>
+<p class="controls">Controls: ← and → arrow keys turn the boat. No engine — speed comes only from the wind (blowing from the north).</p>
+<canvas id="game" width="960" height="640"></canvas>
+<script>
+(function () {
+  const canvas = document.getElementById('game');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width;
+  const H = canvas.height;
+
+  const water = { x: 80, y: 80, w: W - 160, h: H - 160 };
+
+  const MAX_SPEED = 150;
+  const TURN_RATE = 1.25;
+  const DRIFT = 8;
+  const WIND_ANG = Math.PI / 2; // wind vector points south (wind comes from the north)
+
+  const marks = {
+    start: { x: 480, y: 470, label: 'Start',  color: '#ffd34d', n: '' },
+    buoy1: { x: 250, y: 350, label: 'Buoy 1', color: '#ff8a3c', n: '1' },
+    buoy2: { x: 710, y: 350, label: 'Buoy 2', color: '#ff8a3c', n: '2' },
+    buoy3: { x: 480, y: 165, label: 'Buoy 3', color: '#ff8a3c', n: '3' }
+  };
+  const seq = ['buoy1', 'buoy2', 'buoy3', 'start'];
+
+  const boat = { x: 480, y: 520, h: -0.4, speed: 0 };
+
+  const keys = { left: false, right: false };
+  let seqIndex = 0;
+  let finished = false;
+  let finalTime = 0;
+  let raceStart = performance.now();
+  let time = 0;
+
+  // --- scenery ---
+  const treeSpots = [
+    [150, 45], [300, 38], [430, 50], [560, 40], [700, 48], [830, 42],
+    [140, 600], [330, 605], [520, 598], [690, 604], [830, 600],
+    [40, 180], [42, 330], [40, 470],
+    [920, 200], [918, 380], [920, 480]
+  ];
+  const trees = treeSpots.map((s, i) => ({ x: s[0], y: s[1], r: 9 + (i % 4) * 2.5 }));
+
+  const windMarks = [];
+  for (let i = 0; i < 42; i++) {
+    windMarks.push({
+      x: water.x + 20 + Math.random() * (water.w - 40),
+      y: water.y + Math.random() * (water.h - 20),
+      len: 10 + Math.random() * 10,
+      speed: 34 + Math.random() * 22,
+      phase: Math.random() * Math.PI * 2
+    });
+  }
+
+  const shimmers = [];
+  for (let i = 0; i < 16; i++) {
+    shimmers.push({
+      x: water.x + 30 + Math.random() * (water.w - 60),
+      y: water.y + 30 + Math.random() * (water.h - 60),
+      len: 24 + Math.random() * 30,
+      phase: Math.random() * Math.PI * 2
+    });
+  }
+
+  function normAngle(a) {
+    while (a > Math.PI) a -= 2 * Math.PI;
+    while (a < -Math.PI) a += 2 * Math.PI;
+    return a;
+  }
+
+  // Speed polar curve: beta = angle between heading and downwind direction.
+  function polar(beta) {
+    if (beta <= Math.PI / 2) return 0.62 + 0.38 * Math.sin(beta);
+    const t = (beta - Math.PI / 2) / (Math.PI / 2);
+    return Math.pow(Math.cos(t * Math.PI / 2), 1.4);
+  }
+
+  function resetRace() {
+    boat.x = 480; boat.y = 520; boat.h = -0.4; boat.speed = 0;
+    seqIndex = 0;
+    finished = false;
+    finalTime = 0;
+    raceStart = performance.now();
+  }
+
+  function elapsed() {
+    return finished ? finalTime : (performance.now() - raceStart) / 1000;
+  }
+
+  function update(dt) {
+    // wind marks always drift south
+    for (const w of windMarks) {
+      w.y += w.speed * dt;
+      w.x += Math.sin(time * 1.3 + w.phase) * 6 * dt;
+      if (w.y > water.y + water.h - 6) {
+        w.y = water.y + 6;
+        w.x = water.x + 20 + Math.random() * (water.w - 40);
+      }
+    }
+
+    if (finished) return;
+
+    const turnScale = 0.55 + 0.45 * (boat.speed / MAX_SPEED);
+    if (keys.left) boat.h -= TURN_RATE * turnScale * dt;
+    if (keys.right) boat.h += TURN_RATE * turnScale * dt;
+
+    const beta = Math.abs(normAngle(boat.h - WIND_ANG));
+    const target = MAX_SPEED * polar(beta);
+    boat.speed += (target - boat.speed) * Math.min(1, dt * 1.4);
+
+    boat.x += Math.cos(boat.h) * boat.speed * dt;
+    boat.y += Math.sin(boat.h) * boat.speed * dt + DRIFT * dt;
+
+    const m = 24;
+    boat.x = Math.max(water.x + m, Math.min(water.x + water.w - m, boat.x));
+    boat.y = Math.max(water.y + m, Math.min(water.y + water.h - m, boat.y));
+
+    const nm = marks[seq[seqIndex]];
+    if (Math.hypot(boat.x - nm.x, boat.y - nm.y) < 30) {
+      seqIndex++;
+      if (seqIndex >= seq.length) {
+        finished = true;
+        finalTime = (performance.now() - raceStart) / 1000;
+      }
+    }
+  }
+
+  function roundRectPath(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  function panel(x, y, w, h) {
+    roundRectPath(x, y, w, h, 10);
+    ctx.fillStyle = 'rgba(8,28,38,0.55)';
+    ctx.fill();
+  }
+
+  function drawTree(t) {
+    ctx.fillStyle = 'rgba(0,0,0,0.25)';
+    ctx.beginPath();
+    ctx.ellipse(t.x + 2, t.y + 3, t.r, t.r * 0.7, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#2c5a2e';
+    ctx.beginPath();
+    ctx.arc(t.x, t.y, t.r, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#3d7a3c';
+    ctx.beginPath();
+    ctx.arc(t.x - t.r * 0.25, t.y - t.r * 0.25, t.r * 0.6, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function draw() {
+    // land
+    const lg = ctx.createLinearGradient(0, 0, 0, H);
+    lg.addColorStop(0, '#4a7a44');
+    lg.addColorStop(1, '#3c6a3c');
+    ctx.fillStyle = lg;
+    ctx.fillRect(0, 0, W, H);
+
+    for (const t of trees) drawTree(t);
+
+    // water
+    roundRectPath(water.x, water.y, water.w, water.h, 30);
+    const wg = ctx.createLinearGradient(0, water.y, 0, water.y + water.h);
+    wg.addColorStop(0, '#2f86a8');
+    wg.addColorStop(1, '#1a5f7e');
+    ctx.fillStyle = wg;
+    ctx.fill();
+
+    // shoreline
+    roundRectPath(water.x, water.y, water.w, water.h, 30);
+    ctx.strokeStyle = '#e7d9a8';
+    ctx.lineWidth = 9;
+    ctx.stroke();
+    roundRectPath(water.x, water.y, water.w, water.h, 30);
+    ctx.strokeStyle = 'rgba(20,50,60,0.5)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // clipped water details
+    ctx.save();
+    roundRectPath(water.x, water.y, water.w, water.h, 30);
+    ctx.clip();
+
+    for (const s of shimmers) {
+      const a = 0.05 + 0.05 * Math.sin(time * 1.4 + s.phase);
+      ctx.strokeStyle = 'rgba(255,255,255,' + a.toFixed(3) + ')';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(s.x, s.y);
+      ctx.lineTo(s.x + s.len, s.y);
+      ctx.stroke();
+    }
+
+    // wind marks drifting south
+    for (const w of windMarks) {
+      const sway = Math.sin(time * 1.6 + w.phase) * 3;
+      ctx.strokeStyle = 'rgba(255,255,255,0.5)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(w.x, w.y);
+      ctx.lineTo(w.x + sway, w.y + w.len);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // dashed line to next mark
+    if (!finished) {
+      const nm = marks[seq[seqIndex]];
+      ctx.setLineDash([6, 9]);
+      ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(boat.x, boat.y);
+      ctx.lineTo(nm.x, nm.y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    // marks
+    const keys3 = ['start', 'buoy1', 'buoy2', 'buoy3'];
+    for (const key of keys3) {
+      const mk = marks[key];
+      const isNext = !finished && seq[seqIndex] === key;
+      if (isNext) {
+        const r = 17 + 3 * Math.sin(time * 5);
+        ctx.strokeStyle = 'rgba(255,240,150,0.9)';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(mk.x, mk.y, r, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.fillStyle = mk.color;
+      ctx.beginPath();
+      ctx.arc(mk.x, mk.y, 11, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(0,0,0,0.4)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      if (key === 'start') {
+        ctx.strokeStyle = '#222';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(mk.x, mk.y - 8);
+        ctx.lineTo(mk.x, mk.y - 24);
+        ctx.stroke();
+        ctx.fillStyle = '#ffd34d';
+        ctx.beginPath();
+        ctx.moveTo(mk.x, mk.y - 24);
+        ctx.lineTo(mk.x + 12, mk.y - 20);
+        ctx.lineTo(mk.x, mk.y - 16);
+        ctx.closePath();
+        ctx.fill();
+        ctx.fillStyle = '#222';
+        ctx.font = 'bold 8px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('S', mk.x, mk.y + 1);
+      } else {
+        ctx.fillStyle = '#222';
+        ctx.font = 'bold 11px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(mk.n, mk.x, mk.y + 1);
+      }
+    }
+
+    // boat
+    ctx.save();
+    ctx.translate(boat.x, boat.y);
+    ctx.rotate(boat.h);
+    ctx.fillStyle = 'rgba(0,0,0,0.22)';
+    ctx.beginPath();
+    ctx.ellipse(2, 4, 20, 7, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(22, 0);
+    ctx.quadraticCurveTo(12, -8, -12, -6);
+    ctx.quadraticCurveTo(-17, 0, -12, 6);
+    ctx.quadraticCurveTo(12, 8, 22, 0);
+    ctx.closePath();
+    ctx.fillStyle = '#f7f3e8';
+    ctx.fill();
+    ctx.strokeStyle = '#28424f';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    const side = Math.sign(Math.sin(WIND_ANG - boat.h)) || 1;
+    ctx.beginPath();
+    ctx.moveTo(6, 0);
+    ctx.lineTo(-13, 0);
+    ctx.lineTo(6, side * 11);
+    ctx.closePath();
+    ctx.fillStyle = '#ffffff';
+    ctx.fill();
+    ctx.strokeStyle = '#28424f';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.fillStyle = '#28424f';
+    ctx.beginPath();
+    ctx.arc(6, 0, 2.2, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    // HUD panel
+    panel(water.x + 12, water.y + 12, 210, 58);
+    ctx.fillStyle = '#eaf6fb';
+    ctx.font = 'bold 15px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    const nextLabel = finished ? 'Finished' : 'Next: ' + marks[seq[seqIndex]].label;
+    ctx.fillText(nextLabel, water.x + 26, water.y + 32);
+    ctx.font = '15px sans-serif';
+    ctx.fillText('Time: ' + elapsed().toFixed(1) + ' s', water.x + 26, water.y + 56);
+
+    // wind indicator
+    const cx = water.x + water.w - 46;
+    const cy = water.y + 46;
+    ctx.strokeStyle = 'rgba(255,255,255,0.7)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 22, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fillStyle = '#eaf6fb';
+    ctx.font = 'bold 10px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('N', cx, cy - 13);
+    ctx.strokeStyle = '#ffd34d';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - 6);
+    ctx.lineTo(cx, cy + 12);
+    ctx.stroke();
+    ctx.fillStyle = '#ffd34d';
+    ctx.beginPath();
+    ctx.moveTo(cx - 5, cy + 7);
+    ctx.lineTo(cx + 5, cy + 7);
+    ctx.lineTo(cx, cy + 14);
+    ctx.closePath();
+    ctx.fill();
+
+    // in-irons hint
+    const beta = Math.abs(normAngle(boat.h - WIND_ANG));
+    if (!finished && beta > 2.9 && boat.speed < 25) {
+      const text = 'In irons — turn away from the wind (← / →)';
+      ctx.font = 'bold 15px sans-serif';
+      const tw = ctx.measureText(text).width;
+      const hx = W / 2 - tw / 2 - 18;
+      const hy = water.y + water.h - 52;
+      panel(hx, hy, tw + 36, 34);
+      ctx.fillStyle = '#ffe9a8';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(text, W / 2, hy + 18);
+    }
+
+    // finish banner
+    if (finished) {
+      const bw = 380, bh = 96;
+      const bx = W / 2 - bw / 2, by = H / 2 - bh / 2;
+      panel(bx, by, bw, bh);
+      ctx.fillStyle = '#ffe9a8';
+      ctx.font = 'bold 26px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('Finished in ' + finalTime.toFixed(1) + ' s', W / 2, by + 34);
+      ctx.fillStyle = '#eaf6fb';
+      ctx.font = '15px sans-serif';
+      ctx.fillText('Press ← or → to sail again', W / 2, by + 68);
+    }
+  }
+
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      e.preventDefault();
+      if (finished) resetRace();
+      if (e.key === 'ArrowLeft') keys.left = true;
+      else keys.right = true;
+    }
+  });
+  window.addEventListener('keyup', function (e) {
+    if (e.key === 'ArrowLeft') keys.left = false;
+    else if (e.key === 'ArrowRight') keys.right = false;
+  });
+  window.addEventListener('blur', function () {
+    keys.left = false;
+    keys.right = false;
+  });
+
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min(0.05, (now - last) / 1000);
+    last = now;
+    time += dt;
+    update(dt);
+    draw();
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

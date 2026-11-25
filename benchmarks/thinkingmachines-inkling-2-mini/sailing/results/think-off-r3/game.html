@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bay Sail</title>
+<style>
+  body { margin: 0; background: #10222e; color: #eaf2f6; font-family: Georgia, serif; display: flex; flex-direction: column; align-items: center; }
+  h1 { font-size: 20px; margin: 12px 0 4px; letter-spacing: 1px; }
+  .controls { margin: 0 0 8px; font-size: 13px; color: #b9cdd8; font-family: monospace; }
+  #hud { display: flex; gap: 24px; align-items: center; background: #16303f; border: 1px solid #2c4a5e; border-radius: 8px; padding: 6px 14px; margin-bottom: 8px; font-family: monospace; font-size: 14px; min-height: 20px; }
+  #timer { color: #ffd97a; }
+  #hint { color: #ff9d7a; font-weight: bold; }
+  canvas { border: 2px solid #2c4a5e; border-radius: 10px; background: #1d4e6b; }
+</style>
+</head>
+<body>
+<h1>Bay Sail</h1>
+<p class="controls">Controls: &#8592; &#8594; arrow keys turn the boat. No engine — speed comes only from the wind. Wind blows from the north.</p>
+<div id="hud">
+  <span id="next">Next: Buoy 1</span>
+  <span id="timer">Time: 0.0 s</span>
+  <span id="hint"></span>
+</div>
+<canvas id="game" width="900" height="620"></canvas>
+<script>
+(function () {
+  const canvas = document.getElementById('game');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+
+  const COAST_BOTTOM = 46;
+
+  // Heading convention: 0 = north (up), clockwise positive.
+  const marks = [
+    { x: W / 2,   y: H - 78, label: 'START', type: 'start' },
+    { x: 150,     y: 320,    label: '1',     type: 'buoy'  },
+    { x: W - 150, y: 320,    label: '2',     type: 'buoy'  },
+    { x: W / 2,   y: 130,    label: '3',     type: 'buoy'  }
+  ];
+  const course = [1, 2, 3, 0]; // mark indices to pass, in order
+
+  const boat = { x: W / 2, y: H - 26, heading: -0.85, speed: 0 };
+  const MAX_SPEED = 135;
+  const TURN_RATE = 1.9;
+
+  let nextCourseIdx = 0;
+  let finished = false;
+  let finalTime = 0;
+  let startTime = performance.now();
+  let finishedAt = 0;
+
+  const keys = { left: false, right: false };
+  window.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  { keys.left = true;  e.preventDefault(); }
+    if (e.key === 'ArrowRight') { keys.right = true; e.preventDefault(); }
+  });
+  window.addEventListener('keyup', e => {
+    if (e.key === 'ArrowLeft')  { keys.left = false;  e.preventDefault(); }
+    if (e.key === 'ArrowRight') { keys.right = false; e.preventDefault(); }
+  });
+
+  // Wind streaks (short marks drifting south)
+  const streaks = [];
+  for (let i = 0; i < 48; i++) {
+    streaks.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      len: 12 + Math.random() * 16,
+      speed: 55 + Math.random() * 30
+    });
+  }
+
+  // Static subtle wave dashes
+  const waves = [];
+  for (let i = 0; i < 40; i++) {
+    waves.push({
+      x: Math.random() * W,
+      y: COAST_BOTTOM + 20 + Math.random() * (H - COAST_BOTTOM - 40),
+      len: 14 + Math.random() * 22
+    });
+  }
+
+  function normalizeBeta(h) {
+    let b = Math.abs(h) % (2 * Math.PI);
+    if (b > Math.PI) b = 2 * Math.PI - b;
+    return b; // 0 = pointing into the wind (north), PI = pointing downwind (south)
+  }
+
+  // Simple polar: 0 in irons, 1 on a reach, ~0.65 dead downwind
+  function polar(beta) {
+    const pts = [
+      [0.00, 0.00],
+      [0.52, 0.00],
+      [0.79, 0.55],
+      [1.57, 1.00],
+      [2.36, 0.85],
+      [Math.PI, 0.65]
+    ];
+    for (let i = 0; i < pts.length - 1; i++) {
+      const x0 = pts[i][0], y0 = pts[i][1], x1 = pts[i + 1][0], y1 = pts[i + 1][1];
+      if (beta >= x0 && beta <= x1) {
+        const t = (beta - x0) / (x1 - x0);
+        return y0 + (y1 - y0) * t;
+      }
+    }
+    return 0.65;
+  }
+
+  function reset() {
+    boat.x = W / 2;
+    boat.y = H - 26;
+    boat.heading = -0.85;
+    boat.speed = 0;
+    nextCourseIdx = 0;
+    finished = false;
+    finalTime = 0;
+    startTime = performance.now();
+  }
+
+  function nextMark() {
+    return marks[course[nextCourseIdx]];
+  }
+
+  function elapsed() {
+    if (finished) return finalTime;
+    return (performance.now() - startTime) / 1000;
+  }
+
+  function update(dt) {
+    if (finished) {
+      if (performance.now() - finishedAt > 4000) reset();
+      return;
+    }
+
+    const turn = (keys.right ? 1 : 0) - (keys.left ? 1 : 0);
+    boat.heading += turn * TURN_RATE * dt;
+
+    const beta = normalizeBeta(boat.heading);
+    const target = MAX_SPEED * polar(beta);
+    boat.speed += (target - boat.speed) * Math.min(1, dt * 1.6);
+
+    boat.x += Math.sin(boat.heading) * boat.speed * dt;
+    boat.y -= Math.cos(boat.heading) * boat.speed * dt;
+
+    // Keep the boat in the bay
+    boat.x = Math.max(14, Math.min(W - 14, boat.x));
+    boat.y = Math.max(COAST_BOTTOM + 14, Math.min(H - 14, boat.y));
+
+    // Wind streaks drift south
+    for (const s of streaks) {
+      s.y += s.speed * dt;
+      if (s.y - s.len > H) {
+        s.y = -20;
+        s.x = Math.random() * W;
+      }
+    }
+
+    // Mark passing
+    const m = nextMark();
+    const dx = boat.x - m.x, dy = boat.y - m.y;
+    if (dx * dx + dy * dy < 28 * 28) {
+      nextCourseIdx++;
+      if (nextCourseIdx >= course.length) {
+        finished = true;
+        finalTime = (performance.now() - startTime) / 1000;
+        finishedAt = performance.now();
+      }
+    }
+  }
+
+  function drawWater() {
+    const g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#2f7191');
+    g.addColorStop(1, '#1c4c69');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.strokeStyle = 'rgba(255,255,255,0.10)';
+    ctx.lineWidth = 2;
+    for (const w of waves) {
+      ctx.beginPath();
+      ctx.moveTo(w.x, w.y);
+      ctx.lineTo(w.x + w.len, w.y);
+      ctx.stroke();
+    }
+
+    // Wind streaks
+    ctx.strokeStyle = 'rgba(255,255,255,0.45)';
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    for (const s of streaks) {
+      ctx.beginPath();
+      ctx.moveTo(s.x, s.y - s.len);
+      ctx.lineTo(s.x, s.y);
+      ctx.stroke();
+    }
+  }
+
+  function drawCoast() {
+    ctx.fillStyle = '#3f7d4e';
+    ctx.fillRect(0, 0, W, 30);
+    ctx.fillStyle = '#e6d29a';
+    ctx.beginPath();
+    ctx.moveTo(0, 28);
+    for (let x = 0; x <= W; x += 16) {
+      ctx.lineTo(x, 38 + Math.sin(x * 0.045) * 5 + Math.sin(x * 0.013) * 3);
+    }
+    ctx.lineTo(W, 28);
+    ctx.closePath();
+    ctx.fill();
+
+    // North marker
+    ctx.fillStyle = '#eaf2f6';
+    ctx.font = 'bold 13px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('N', W / 2, 18);
+
+    // Wind arrow (pointing south, showing wind direction)
+    ctx.strokeStyle = 'rgba(255,255,255,0.85)';
+    ctx.fillStyle = 'rgba(255,255,255,0.85)';
+    ctx.lineWidth = 2;
+    const ax = 40, ay = 12;
+    ctx.beginPath();
+    ctx.moveTo(ax, ay);
+    ctx.lineTo(ax, ay + 26);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(ax - 5, ay + 20);
+    ctx.lineTo(ax + 5, ay + 20);
+    ctx.lineTo(ax, ay + 30);
+    ctx.closePath();
+    ctx.fill();
+    ctx.font = '10px monospace';
+    ctx.textAlign = 'left';
+    ctx.fillText('wind', ax + 9, ay + 18);
+  }
+
+  function drawMark(m, isNext, t) {
+    if (isNext) {
+      const r = 26 + Math.sin(t * 4) * 4;
+      ctx.strokeStyle = 'rgba(255,220,120,0.9)';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(m.x, m.y, r, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    if (m.type === 'start') {
+      ctx.fillStyle = '#f4f4f4';
+      ctx.strokeStyle = '#c0392b';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(m.x, m.y, 16, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = '#c0392b';
+      ctx.font = 'bold 9px monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('START', m.x, m.y);
+    } else {
+      ctx.fillStyle = '#e67e22';
+      ctx.strokeStyle = '#7d3c0e';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(m.x, m.y, 14, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 13px monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(m.label, m.x, m.y + 1);
+    }
+    ctx.textBaseline = 'alphabetic';
+  }
+
+  function drawBoat() {
+    ctx.save();
+    ctx.translate(boat.x, boat.y);
+    ctx.rotate(boat.heading);
+
+    // Hull
+    ctx.fillStyle = '#f5f0e6';
+    ctx.strokeStyle = '#243746';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(0, -18);
+    ctx.quadraticCurveTo(7, -4, 5, 10);
+    ctx.quadraticCurveTo(0, 15, -5, 10);
+    ctx.quadraticCurveTo(-7, -4, 0, -18);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    // Sail (triangle off the mast, toward leeward)
+    ctx.fillStyle = '#ffffff';
+    ctx.strokeStyle = '#243746';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(0, -12);
+    ctx.lineTo(0, 12);
+    ctx.lineTo(11, 9);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  function draw(t) {
+    drawWater();
+    drawCoast();
+
+    // Dashed guide line to the next mark
+    if (!finished) {
+      const m = nextMark();
+      ctx.strokeStyle = 'rgba(255,255,255,0.35)';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([6, 9]);
+      ctx.beginPath();
+      ctx.moveTo(boat.x, boat.y);
+      ctx.lineTo(m.x, m.y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    for (let i = 0; i < marks.length; i++) {
+      const isNext = !finished && course[nextCourseIdx] === i;
+      drawMark(marks[i], isNext, t);
+    }
+
+    drawBoat();
+
+    if (finished) {
+      ctx.fillStyle = 'rgba(10,25,35,0.72)';
+      ctx.fillRect(W / 2 - 190, H / 2 - 46, 380, 92);
+      ctx.strokeStyle = '#ffd97a';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(W / 2 - 190, H / 2 - 46, 380, 92);
+      ctx.fillStyle = '#ffd97a';
+      ctx.font = 'bold 24px Georgia';
+      ctx.textAlign = 'center';
+      ctx.fillText('Finished!', W / 2, H / 2 - 8);
+      ctx.fillStyle = '#eaf2f6';
+      ctx.font = '16px monospace';
+      ctx.fillText('Time: ' + finalTime.toFixed(1) + ' s', W / 2, H / 2 + 24);
+    }
+  }
+
+  const nextEl = document.getElementById('next');
+  const timerEl = document.getElementById('timer');
+  const hintEl = document.getElementById('hint');
+
+  function updateHud() {
+    if (finished) {
+      nextEl.textContent = 'Course complete';
+      hintEl.textContent = '';
+    } else {
+      const m = nextMark();
+      nextEl.textContent = m.type === 'start' ? 'Next: Start mark' : 'Next: Buoy ' + m.label;
+      const beta = normalizeBeta(boat.heading);
+      if (beta < 0.52) {
+        hintEl.textContent = 'In irons — turn away from the wind!';
+      } else {
+        hintEl.textContent = '';
+      }
+    }
+    timerEl.textContent = 'Time: ' + elapsed().toFixed(1) + ' s';
+  }
+
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min(0.05, (now - last) / 1000);
+    last = now;
+    update(dt);
+    draw(now / 1000);
+    updateHud();
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

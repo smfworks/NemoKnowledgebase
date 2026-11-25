@@ -1,0 +1,134 @@
+[
+  {
+    "arm": "think-off-r2",
+    "port": 39329,
+    "errors": [
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "before": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 187188417,
+      "text": "Bay Sailing\n\nControls: ← and → arrow keys turn the boat. Wind blows from the north. No engine."
+    },
+    "mid": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 187166129,
+      "text": "Bay Sailing\n\nControls: ← and → arrow keys turn the boat. Wind blows from the north. No engine."
+    },
+    "after": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 185815751,
+      "text": "Bay Sailing\n\nControls: ← and → arrow keys turn the boat. Wind blows from the north. No engine."
+    },
+    "pixel_change_idle": true,
+    "pixel_change_right": true
+  },
+  {
+    "arm": "think-on-r2",
+    "port": 40689,
+    "errors": [
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "before": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 229160437,
+      "text": "Bay Sailing — Wind from the North\n\nControls: ← and → arrow keys turn the boat. That is the only control — speed comes from the wind."
+    },
+    "mid": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 229150616,
+      "text": "Bay Sailing — Wind from the North\n\nControls: ← and → arrow keys turn the boat. That is the only control — speed comes from the wind."
+    },
+    "after": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 229052878,
+      "text": "Bay Sailing — Wind from the North\n\nControls: ← and → arrow keys turn the boat. That is the only control — speed comes from the wind."
+    },
+    "pixel_change_idle": true,
+    "pixel_change_right": true
+  },
+  {
+    "arm": "think-off-r3",
+    "port": 39025,
+    "errors": [
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "before": {
+      "hasCanvas": true,
+      "width": 900,
+      "height": 620,
+      "nonzero": 139500,
+      "checksum": 201515299,
+      "text": "Bay Sail\n\nControls: ← → arrow keys turn the boat. No engine — speed comes only from the wind. Wind blows from the north.\n\nNext: Buoy 1\nTime: 2.0 s"
+    },
+    "mid": {
+      "hasCanvas": true,
+      "width": 900,
+      "height": 620,
+      "nonzero": 139500,
+      "checksum": 201480255,
+      "text": "Bay Sail\n\nControls: ← → arrow keys turn the boat. No engine — speed comes only from the wind. Wind blows from the north.\n\nNext: Buoy 1\nTime: 3.2 s"
+    },
+    "after": {
+      "hasCanvas": true,
+      "width": 900,
+      "height": 620,
+      "nonzero": 139500,
+      "checksum": 201434573,
+      "text": "Bay Sail\n\nControls: ← → arrow keys turn the boat. No engine — speed comes only from the wind. Wind blows from the north.\n\nNext: Buoy 1\nTime: 4.9 s"
+    },
+    "pixel_change_idle": true,
+    "pixel_change_right": true
+  },
+  {
+    "arm": "think-on-r3",
+    "port": 43937,
+    "errors": [
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "before": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 225783154,
+      "text": "Bay Sailing\n\nControls: ← and → arrow keys turn the boat. No engine — speed comes only from the wind (blowing from the north)."
+    },
+    "mid": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 225762265,
+      "text": "Bay Sailing\n\nControls: ← and → arrow keys turn the boat. No engine — speed comes only from the wind (blowing from the north)."
+    },
+    "after": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 225742984,
+      "text": "Bay Sailing\n\nControls: ← and → arrow keys turn the boat. No engine — speed comes only from the wind (blowing from the north)."
+    },
+    "pixel_change_idle": true,
+    "pixel_change_right": true
+  }
+]

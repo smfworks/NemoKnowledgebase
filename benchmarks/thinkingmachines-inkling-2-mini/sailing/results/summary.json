@@ -1,0 +1,33 @@
+{
+  "prompt_sha256": "bb01b1197a3bbf660831acf85be81414fd8e2ad1e796d635f1f4236d4f5607d9",
+  "arms": [
+    {
+      "arm": "think-off",
+      "think": false,
+      "http_status": 200,
+      "error": null,
+      "wall_s": 260.746,
+      "ttft_s": 193.104,
+      "done_reason": "stop",
+      "eval_count": 10066,
+      "tokens_per_s": 39.01,
+      "html_bytes": 8935,
+      "thinking_chars": 0,
+      "passes": 10
+    },
+    {
+      "arm": "think-on",
+      "think": true,
+      "http_status": 200,
+      "error": null,
+      "wall_s": 369.105,
+      "ttft_s": 13.187,
+      "done_reason": "stop",
+      "eval_count": 17173,
+      "tokens_per_s": 46.61,
+      "html_bytes": 9659,
+      "thinking_chars": 34785,
+      "passes": 11
+    }
+  ]
+}

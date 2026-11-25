@@ -1,0 +1,24 @@
+# Scorecard: Inkling 2 Mini sailing game (inkling-2-mini:latest), 2026-11-25
+
+- Hardware / endpoint / engine version / quant: Mac Mini `michaels-mac-mini` (Tailscale `100.77.41.111`), Ollama 0.40.17, MLX runner, NVFP4 safetensors, 26.4B `inkling2_loop`. Loaded size on the first probe 22,206,232,204 bytes (20.68 GiB); still loaded before the extra runs at 23,617,055,876 bytes. Loaded context 262144. Native `POST http://michaels-mac-mini.tail09297b.ts.net:11434/api/chat`.
+- Params (temperature, top_p, max_tokens, reasoning effort): temperature 0.7, top_p not sent, num_predict 32768, keep_alive 45m, no system prompt. Think-off is boolean `think: false`. Think-on is boolean `think: true`, not the string `high`. Same both arms, all three runs.
+- Seed policy: sent. Run 1 seed 20261125, confirmed in `think-off/request.json`. Run 2 seed 20261126 on both arms. Run 3 seed 20261127 on both arms. Paired so the only switch inside a run is think. Repeating 20261125 was skipped on purpose so the extra runs could show a range. Written in the plan before those tokens.
+- Suite, prompt-set sha256, credits (authors + commit pin): one prompt, devised for this ask, frozen before any game output. `~/workspace/inkling-2-mini-tests/02-sailing-game/prompt.txt`, sha256 `bb01b1197a3bbf660831acf85be81414fd8e2ad1e796d635f1f4236d4f5607d9`, 1003 bytes. Plan `~/NemoVault/evals/inkling-2-mini-sailing/PLAN-2026-11-25.md`. No external suite, no commit pin.
+- Runs (n>=3): source checklist, 11 items, n=3 each arm.
+  - think-off: 10, 11, 11. Mean 10.67. Range 10 to 11. The 10 is run 1, item 8, the word `buoy` once.
+  - think-on: 11, 11, 11. Mean 11. Range 11 to 11.
+  - Browser check passed on all six stills: canvas not blank, wind dashes on the water, three numbered buoys plus a start mark, timer advanced, boat heading changed after ArrowRight. Favicon 404 from the test server only. No page error.
+- Comparison model(s) and their mean/range: same model, two arms. No second model.
+- Variance notes / overlap verdict (winner only if n>=3 and ranges don't overlap): no winner on the game. The checklist ranges overlap at 11. Thinking-on leads, 11 flat against 10 to 11. A lead, not a lock. Wall-clock ranges do not overlap: think-off 198.299 to 260.746 seconds, think-on 369.105 to 516.271 seconds. Off is the faster arm. That is a speed result, not a quality win.
+- Cost (from provider billing/usage records, not list price): local. No provider charge. $0.
+- Latency (TTFT, tokens/s per task):
+  - think-off wall mean 232.21 s, range 198.299 to 260.746. Tokens/s mean 41.60, range 39.01 to 42.95. Eval tokens mean 9,586, range 8,488 to 10,205. Thinking chars 0 on all three. First-chunk times on the streamed reader were 193.104 s, 116.975 s, and 155.517 s. Ollama's own eval clock covers nearly the whole wall, so those gaps are stream buffering, not idle time.
+  - think-on wall mean 428.95 s, range 369.105 to 516.271. Tokens/s mean 43.96, range 42.57 to 46.61. Eval tokens mean 18,768, range 17,087 to 22,044. Thinking chars 34,785, 33,811, and 44,644. First chunk 13.187 s, 12.259 s, and 11.597 s.
+- Notable failures (item ids):
+  - think-off run 1, item 8 only. The still for that run still showed marks 1, 2, 3 and a start mark. Runs 2 and 3 passed the word check.
+  - No length cuts. All six `done_reason` values are `stop`.
+  - Play notes, not checklist fails: think-off run 2 showed the irons hint after the right arrow, timer 4.5 s. Think-on run 2 left a dotted wake and the bow swung from west toward the east, timer 1.7 s then 4.5 s. Think-on run 3 turned hard right and the boat ended in the bottom-right corner, timer 4.9 s, next mark still Buoy 1.
+- BLOCKED tasks (down endpoints): none.
+- Judge (named, not under test) and blinding: Nemo. Not blinded. Arms were in labeled folders. Source checks are the frozen list in the plan. Browser checks are the stills in each arm directory plus `browser-probe.json` and `browser-probe-r2-r3.json`.
+- Human look: Michael, 2026-11-25, on the run-2 stills. A game is not a diagram. It has to be engaging, and part of that is visual. Richer wins. Thinking-on (Bay Sailing, Wind from the North) is the richer picture. Thinking-off (Bay Sailing) is cheaper, not cleaner. He corrected that wording. The other stills fit the same split: thinking-on has a beach, a sail, and a wake; thinking-off stays a flat playfield.
+- Recommendation (nemo-voice, lead with what Michael should do): Keep the thinking-on file. That is the game. The thinking-off file plays, and it looks cheap. The mechanics checklist ranges still overlap, and that checklist was the wrong yardstick for a game. Don't keep the cheaper one because it finished sooner.

@@ -1,0 +1,42 @@
+{
+  "arm": "think-on",
+  "think": true,
+  "http_status": 200,
+  "error": null,
+  "wall_s": 369.105,
+  "ttft_s": 13.187,
+  "done": true,
+  "done_reason": "stop",
+  "prompt_eval_count": 267,
+  "eval_count": 17173,
+  "eval_duration_ns": 368459436333,
+  "tokens_per_s": 46.61,
+  "load_duration_ns": 342250,
+  "total_duration_ns": 369100197709,
+  "content_chars": 9657,
+  "thinking_chars": 34785,
+  "html_extract": "tags",
+  "html_bytes": 9659,
+  "checks": {
+    "items": {
+      "1_single_html": true,
+      "2_no_network": true,
+      "3_node_check": true,
+      "4_canvas": true,
+      "5_raf": true,
+      "6_arrows": true,
+      "7_wind_not_throttle": true,
+      "8_three_buoys": true,
+      "9_timer": true,
+      "10_irons_text": true,
+      "11_done_stop": true
+    },
+    "pass_count": 11,
+    "item_count": 11,
+    "net_hits": [],
+    "syntax_errors": [],
+    "script_count": 1,
+    "notes": [],
+    "item_12_browser": "pending"
+  }
+}

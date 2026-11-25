@@ -1,0 +1,61 @@
+{
+  "prompt_sha256": "bb01b1197a3bbf660831acf85be81414fd8e2ad1e796d635f1f4236d4f5607d9",
+  "arms": [
+    {
+      "dest": "think-off-r2",
+      "seed": 20261126,
+      "think": false,
+      "http_status": 200,
+      "error": null,
+      "wall_s": 198.299,
+      "done_reason": "stop",
+      "eval_count": 8488,
+      "tokens_per_s": 42.83,
+      "html_bytes": 10473,
+      "thinking_chars": 0,
+      "passes": 11
+    },
+    {
+      "dest": "think-on-r2",
+      "seed": 20261126,
+      "think": true,
+      "http_status": 200,
+      "error": null,
+      "wall_s": 401.486,
+      "done_reason": "stop",
+      "eval_count": 17087,
+      "tokens_per_s": 42.57,
+      "html_bytes": 11473,
+      "thinking_chars": 33811,
+      "passes": 11
+    },
+    {
+      "dest": "think-off-r3",
+      "seed": 20261127,
+      "think": false,
+      "http_status": 200,
+      "error": null,
+      "wall_s": 237.584,
+      "done_reason": "stop",
+      "eval_count": 10205,
+      "tokens_per_s": 42.95,
+      "html_bytes": 10904,
+      "thinking_chars": 0,
+      "passes": 11
+    },
+    {
+      "dest": "think-on-r3",
+      "seed": 20261127,
+      "think": true,
+      "http_status": 200,
+      "error": null,
+      "wall_s": 516.271,
+      "done_reason": "stop",
+      "eval_count": 22044,
+      "tokens_per_s": 42.7,
+      "html_bytes": 13097,
+      "thinking_chars": 44644,
+      "passes": 11
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "arm": "think-off",
+    "port": 36789,
+    "errors": [
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "before": {
+      "hasCanvas": true,
+      "width": 1000,
+      "height": 700,
+      "nonzero": 175000,
+      "checksum": 247000271,
+      "text": "Bay Sail\n\nControls: Left / Right arrow keys turn the boat. Wind blows from the north."
+    },
+    "mid": {
+      "hasCanvas": true,
+      "width": 1000,
+      "height": 700,
+      "nonzero": 175000,
+      "checksum": 246997282,
+      "text": "Bay Sail\n\nControls: Left / Right arrow keys turn the boat. Wind blows from the north."
+    },
+    "after": {
+      "hasCanvas": true,
+      "width": 1000,
+      "height": 700,
+      "nonzero": 175000,
+      "checksum": 247061075,
+      "text": "Bay Sail\n\nControls: Left / Right arrow keys turn the boat. Wind blows from the north."
+    },
+    "pixel_change_idle": true,
+    "pixel_change_right": true
+  },
+  {
+    "arm": "think-on",
+    "port": 38985,
+    "errors": [
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "before": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 258009812,
+      "text": "Bay Sail\n\nControls: ← → arrow keys turn the boat  ·  Wind blows from the north\n\nNext: Buoy 1\nTime: 2.0 s"
+    },
+    "mid": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 258037159,
+      "text": "Bay Sail\n\nControls: ← → arrow keys turn the boat  ·  Wind blows from the north\n\nNext: Buoy 1\nTime: 3.3 s"
+    },
+    "after": {
+      "hasCanvas": true,
+      "width": 960,
+      "height": 640,
+      "nonzero": 153600,
+      "checksum": 257945873,
+      "text": "Bay Sail\n\nControls: ← → arrow keys turn the boat  ·  Wind blows from the north\n\nNext: Buoy 1\nTime: 5.1 s\nIn irons — turn away from the wind"
+    },
+    "pixel_change_idle": true,
+    "pixel_change_right": true
+  }
+]
